@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
 const backgroundImage = require('../../assets/background.png');
-import { Accordion } from '../components/Accordion'
+import { Accordion } from '../components/Accordion';
+const data = require('../../assets/data/data.json')
 
 export default class Page1 extends Component {
   constructor(props) {
@@ -10,12 +11,16 @@ export default class Page1 extends Component {
       
     };
   }
-
+  
   render() {
+    const accordions = []
+    for(let topic of data.page1.data){
+      accordions.push(<Accordion header={topic.head} body={topic.body}/>)
+    }
     return (
       <ImageBackground style={styles.BackgroundImage} source={backgroundImage}>
         <ScrollView style={styles.BackgroundView} contentContainerStyle={styles.CardContainer}>
-          <Accordion/>
+          {accordions}
         </ScrollView>
       </ImageBackground>
     );
@@ -30,8 +35,8 @@ const styles = StyleSheet.create({
     backgroundColor : '#5C3B96CB', 
   },
   CardContainer : {
-    flexDirection : 'row',
-    justifyContent : 'space-around',
+    flexDirection : "column",
+    alignItems : 'center',
     paddingTop : WindowHeight/20,
   },
   BackgroundImage : {

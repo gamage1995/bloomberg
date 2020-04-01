@@ -38,7 +38,7 @@ function HomeStack() {
         name='Page1'
         component={Page1}
         options = {{
-          title : 'THE IMPORTANCE OF COD CERTIFICATION',
+          title : 'THE IMPORTANCE OF COD CERTIFICATION ',
           headerStyle : {height : cardHeight * 1.5,
             shadowColor: 'transparent',
             elevation : 0,

@@ -1,0 +1,18 @@
+{
+    "page1":{
+        "data" : [
+            {
+                "head" : "WHY DEATH CERTIFICATION IS IMPORTANT",
+                "body" : "This application guides doctors in filling out Death certificates.\n\nDeath certification forms an important part of a doctor’s duties because the information recorded in death certificates helps decision makers determine health priorities for prevention of deaths because of similar causes in the future."
+            },
+            {
+                "head" : "UNDERLYING CAUSE OF DEATH",
+                "body" : "The certificate is provided to the family who may need it directly to obtain permission for funeral arrangements and for other legal purposes, including wills and testaments.\n\nThe information on the certificate is also important for family members so that they know what caused the death and are aware of conditions that may occur or could be prevented in other family members."
+            },
+            {
+                "head" : "IDENTIFICATION DATA IN DEATH CERTIFICATE",
+                "body" : "This information is of critical importance to correctly identifying the deceased for both legal and statistical purposes.\n\nThe details vary from country to country but are likely to include; date and place of death, full name and place of residence, sex and race/ethnicity age profession or occupation."
+            }
+        ]
+    }
+}

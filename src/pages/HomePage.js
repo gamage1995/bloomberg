@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     flexDirection : 'column',
     flexWrap : 'wrap',
     paddingTop : WindowHeight/15,
+    paddingBottom : WindowHeight/15,
   },
   BackgroundImage : {
     height : '100%',
