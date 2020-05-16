@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     padding: cardWidth/10,
   },
   CardTextCover: {
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingLeft : cardWidth/10,
     paddingRight : cardWidth/10,
     paddingBottom : cardWidth/7
@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
   CardText : {
     fontFamily : 'Roboto-Bold',
     color : 'white',
-    fontSize : cardWidth/11
+    fontSize : cardWidth/11,
   }
 })

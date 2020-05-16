@@ -13,14 +13,17 @@ export default class Page1 extends Component {
   }
   
   render() {
-    const accordions = []
-    for(let topic of data.page1.data){
-      accordions.push(<Accordion header={topic.head} body={topic.body}/>)
-    }
+    // const accordions = []
+    // for(let topic of data.page1.data){
+    //   accordions.push(<Accordion header={topic.head} body={topic.body}/>)
+    // }
     return (
       <ImageBackground style={styles.BackgroundImage} source={backgroundImage}>
         <ScrollView style={styles.BackgroundView} contentContainerStyle={styles.CardContainer}>
-          {accordions}
+          {/* {accordions} */}
+          {data.page1.data.map(function(topic, index){
+            return <Accordion header={topic.head} body={topic.body} key={index}/>
+          })}
         </ScrollView>
       </ImageBackground>
     );

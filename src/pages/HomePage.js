@@ -22,7 +22,7 @@ export default class HomePage extends Component {
             cardRoute={'Page1'} navigation={this.props.navigation}
             />
             <MainCard 
-            cardTitle={'INTERNATIONAL FORM OF MEDICAL CERTIFICATE OF COD'} 
+            cardTitle={'INTERNATIONAL FORM '} 
             cardIcon={require(`../../assets/icons8-google-forms-96.png`)} 
             cardRoute={'Page1'} navigation={this.props.navigation}
             />
@@ -36,6 +36,7 @@ export default class HomePage extends Component {
             cardIcon={require(`../../assets/icons8-development-skill-96.png`)} 
             cardRoute={'Page1'} navigation={this.props.navigation}
             />
+            
           </View>
           <View style={styles.CardColumn}>
             <MainCard 
@@ -71,6 +72,8 @@ const styles = StyleSheet.create({
   BackgroundView : {
     flex : 1,
     backgroundColor : '#5C3B96CB', 
+    // backgroundColor : '#FFFFFFCB', 
+
   },
   CardContainer : {
     flexDirection : 'row',
@@ -79,8 +82,7 @@ const styles = StyleSheet.create({
   CardColumn : {
     flexDirection : 'column',
     flexWrap : 'wrap',
-    paddingTop : WindowHeight/15,
-    paddingBottom : WindowHeight/15,
+    paddingTop : WindowHeight/22,
   },
   BackgroundImage : {
     height : '100%',

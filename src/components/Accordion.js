@@ -90,10 +90,15 @@ export class Accordion extends Component {
             style={{
                 display : this.state.expanded ? 'flex' : 'none',
                 width: WindowWidth * 0.93,
-                padding: WindowWidth * 0.06,
-                backgroundColor: '#5C3B96AC',
+                paddingTop: WindowWidth * 0.06,
+                paddingLeft: WindowWidth * 0.06,
+                paddingRight: WindowWidth * 0.06,
+                paddingBottom: WindowWidth * 0.09,
+                backgroundColor: '#5C3B96CE',
+                // backgroundColor: '#ffffffAC',
                 borderRadius: WindowWidth * 0.02,
-                marginTop: WindowWidth * 0.015
+                marginTop: WindowWidth * 0.015,
+                
             }}>
             <Text style={styles.AccBodyText}>{this.state.body}</Text>
           </Animatable.View>
@@ -106,7 +111,8 @@ const WindowWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   AccCover: {
     flexDirection: 'column',
-    marginBottom: WindowWidth * 0.035
+    marginBottom: WindowWidth * 0.035,
+    
   },
   AccHead: {
     width: WindowWidth * 0.93,
@@ -114,6 +120,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#5C3B96',
     borderRadius: WindowWidth * 0.02,
     flexDirection: 'row',
+    shadowColor: '#00000029', // IOS
+    shadowOffset: { height: 3, width: 4 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 10,
     // marginBottom: WindowWidth * 0.015
   },
   AccHeadTextCover: {
@@ -124,7 +135,8 @@ const styles = StyleSheet.create({
   AccHeadText: {
     fontFamily: 'Roboto-Bold',
     color: 'white',
-    fontSize: WindowWidth * 0.04
+    fontSize: WindowWidth * 0.04,
+    lineHeight : WindowWidth * 0.05,
   },
   AccHeadIconCover: {
     flex: 1,
@@ -150,6 +162,7 @@ const styles = StyleSheet.create({
   AccBodyText: {
     fontFamily: 'Roboto-Medium',
     color: 'white',
-    fontSize: WindowWidth * 0.04
+    fontSize: WindowWidth * 0.0415,
+    lineHeight : WindowWidth * 0.06
   }
 })
