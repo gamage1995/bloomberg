@@ -17,7 +17,6 @@ export class Accordion extends Component {
     this.animatedListenerValue = 0;
     this.animatedValue.addListener((value) => {
       this.animatedListenerValue = value.value;
-      console.log(this.animatedListenerValue)
     });
     this.frontInterpolate = this.animatedValue.interpolate({
       inputRange : [0 ,180],
@@ -33,14 +32,12 @@ export class Accordion extends Component {
       expanded: !this.state.expanded
     });
     if(this.animatedListenerValue >= 90){
-      console.log('r')
       Animated.spring(this.animatedValue, {
         toValue : 0,
         friction : 8,
         tension : 10
       }).start();
     }else {
-      console.log('b')
       Animated.spring(this.animatedValue, {
         toValue : 180,
         friction : 8,

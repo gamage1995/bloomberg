@@ -34,14 +34,17 @@ function HomeStack() {
       <HomeStackNav.Screen 
       name="Home" 
       component={HomePage} 
-      headerTitle options={{ 
-        headerTitle: props => <LogoTitle {...props} />, 
-        headerTitleAlign : 'center', 
-        headerStyle : {height : cardHeight * 1.5,
-          shadowColor: 'transparent',
-          elevation : 0,
-          } 
-        }} 
+      options = {{
+        headerShown : false
+      }}
+      // headerTitle options={{ 
+      //   headerTitle: props => <LogoTitle {...props} />, 
+      //   headerTitleAlign : 'center', 
+      //   headerStyle : {height : cardHeight * 1.5,
+      //     shadowColor: 'transparent',
+      //     elevation : 0,
+      //     } 
+      //   }} 
         />
       <HomeStackNav.Screen
         name='Page1'
