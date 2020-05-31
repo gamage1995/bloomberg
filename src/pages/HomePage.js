@@ -9,12 +9,13 @@ export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logoOpacity : 1
+      logoOpacity: 1
     };
   }
 
   handleScroll = (event) => {
-    this.setState({logoOpacity : (1-(event.nativeEvent.contentOffset.y/(WindowHeight * 0.1015) ))})
+    this.setState({ logoOpacity: (1 - (event.nativeEvent.contentOffset.y / (WindowHeight * 0.1015))) })
+    console.log(WindowHeight * 0.25 - event.nativeEvent.contentOffset.y)
   }
 
   render() {
@@ -23,55 +24,60 @@ export default class HomePage extends Component {
         <ImageBackground style={styles.HomePageTop} source={backgroundImage}>
           <View style={styles.HomePageTopInner}>
             <View style={styles.LogoCover}>
-              <Image source={logo} style={[styles.LogoImage, {opacity : this.state.logoOpacity}]} />
+              <Image source={logo} style={[styles.LogoImage, { opacity: this.state.logoOpacity }]} />
             </View>
           </View>
         </ImageBackground>
         <ScrollView style={styles.HomePageBottom} contentContainerStyle={styles.CardContainer} onScroll={this.handleScroll} showsVerticalScrollIndicator={false}>
-        <View style={styles.CardColumn}>
-            <MainCard 
-            cardTitle={'THE IMPORTANCE OF COD CERTIFICATION'} 
-            cardIcon={require(`../../assets/icons8-info-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+          <View style={styles.CardColumn}>
+            <MainCard
+              cardTitle={'THE IMPORTANCE OF COD CERTIFICATION'}
+              cardIcon={require(`../../assets/icons8-info-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            <MainCard 
-            cardTitle={'INTERNATIONAL FORM '} 
-            cardIcon={require(`../../assets/icons8-google-forms-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+            <MainCard
+              cardTitle={'INTERNATIONAL FORM '}
+              cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            <MainCard 
-            cardTitle={'CERTIFYING SPECIFIC CAUSES'} 
-            cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+            <MainCard
+              cardTitle={'CERTIFYING SPECIFIC CAUSES'}
+              cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            <MainCard 
-            cardTitle={'CASE EXERCISES'} 
-            cardIcon={require(`../../assets/icons8-development-skill-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+            <MainCard
+              cardTitle={'CASE EXERCISES'}
+              cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            
+            <MainCard
+              cardTitle={'CASE EXERCISES'}
+              cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
+            />
+
           </View>
           <View style={styles.CardColumn}>
-            <MainCard 
-            cardTitle={'COD AND UNDERLYING COD'} 
-            cardIcon={require(`../../assets/icons8-course-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+            <MainCard
+              cardTitle={'COD AND UNDERLYING COD'}
+              cardIcon={require(`../../assets/icons8-course-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            <MainCard 
-            cardTitle={'CASE EXAMPLES'} 
-            cardIcon={require(`../../assets/icons8-list-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+            <MainCard
+              cardTitle={'CASE EXAMPLES'}
+              cardIcon={require(`../../assets/icons8-list-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            <MainCard 
-            cardTitle={'FRAME B'} 
-            cardIcon={require(`../../assets/icons8-user-manual-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
+            <MainCard
+              cardTitle={'FRAME B'}
+              cardIcon={require(`../../assets/icons8-user-manual-96.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
             />
-            <MainCard 
-            cardTitle={'ABOUT APP'} 
-            cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />          
+            <MainCard
+              cardTitle={'ABOUT APP'}
+              cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
+              cardRoute={'Page1'} navigation={this.props.navigation}
+            />
           </View>
         </ScrollView>
         {/* <ScrollView style={styles.BackgroundView} contentContainerStyle={styles.CardContainer}>
@@ -143,17 +149,17 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     backgroundColor: '#FFFFFFCB',
-    justifyContent : 'flex-start'
+    justifyContent: 'flex-start'
   },
-  LogoCover : {
+  LogoCover: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height : WindowHeight * 0.25,
-    width : '100%',
+    height: WindowHeight * 0.25,
+    width: '100%',
   },
   LogoImage: {
-    height : WindowHeight * 0.047,
+    height: WindowHeight * 0.047,
     resizeMode: 'contain'
   },
   HomePageBottom: {
@@ -163,17 +169,17 @@ const styles = StyleSheet.create({
   },
   CardContainer: {
     flexDirection: 'row',
-    paddingTop : WindowHeight * 0.25,
+    paddingTop: WindowHeight * 0.25,
     // alignContent : 'space-around',
-    paddingLeft : WindowWidth * 0.035,
-    paddingRight : WindowWidth * 0.035
+    paddingLeft: WindowWidth * 0.035,
+    paddingRight: WindowWidth * 0.035
     // backgroundColor : 'green'
   },
-  CardColumn : {
-    width : WindowWidth * 0.465,
-    display : 'flex',
-    flexDirection : 'column',
-    alignItems : 'center'
+  CardColumn: {
+    width: WindowWidth * 0.465,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   }
   // BackgroundView : {
   //   flex : 1,
