@@ -9,124 +9,88 @@ export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logoOpacity: 1
+      // logoOpacity: 1,
+      headerOffset: WindowHeight * 0.085
     };
   }
 
   handleScroll = (event) => {
-    this.setState({ logoOpacity: (1 - (event.nativeEvent.contentOffset.y / (WindowHeight * 0.1015))) })
-    console.log(WindowHeight * 0.25 - event.nativeEvent.contentOffset.y)
+    // this.setState({ logoOpacity: (1 - (event.nativeEvent.contentOffset.y / (WindowHeight * 0.1015))) })
+    this.setState({ headerOffset: WindowHeight * 0.085 - event.nativeEvent.contentOffset.y })
   }
 
   render() {
     return (
       <View style={styles.PageWrapper}>
         <ImageBackground style={styles.HomePageTop} source={backgroundImage}>
-          <View style={styles.HomePageTopInner}>
-            <View style={styles.LogoCover}>
-              <Image source={logo} style={[styles.LogoImage, { opacity: this.state.logoOpacity }]} />
-            </View>
-          </View>
-        </ImageBackground>
-        <ScrollView style={styles.HomePageBottom} contentContainerStyle={styles.CardContainer} onScroll={this.handleScroll} showsVerticalScrollIndicator={false}>
-          <View style={styles.CardColumn}>
-            <MainCard
-              cardTitle={'THE IMPORTANCE OF COD CERTIFICATION'}
-              cardIcon={require(`../../assets/icons8-info-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'INTERNATIONAL FORM '}
-              cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'CERTIFYING SPECIFIC CAUSES'}
-              cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'CASE EXERCISES'}
-              cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'CASE EXERCISES'}
-              cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
+          <View style={styles.ImageBackgroundInner}>
 
           </View>
-          <View style={styles.CardColumn}>
-            <MainCard
-              cardTitle={'COD AND UNDERLYING COD'}
-              cardIcon={require(`../../assets/icons8-course-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'CASE EXAMPLES'}
-              cardIcon={require(`../../assets/icons8-list-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'FRAME B'}
-              cardIcon={require(`../../assets/icons8-user-manual-96.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard
-              cardTitle={'ABOUT APP'}
-              cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
-              cardRoute={'Page1'} navigation={this.props.navigation}
-            />
+        </ImageBackground>
+        <ScrollView style={styles.HomePageBottom} onScroll={this.handleScroll} showsVerticalScrollIndicator={false} stickyHeaderIndices={this.state.headerOffset > 0 ? [10] : [0]}>
+          <View style={styles.HomePageBottomInner}>
+            <View style={[styles.LogoCover, this.state.headerOffset < 0 ? [{
+              shadowColor: "#616161",
+              shadowOffset: {
+                width: 0,
+                height: 1,
+              },
+              shadowOpacity: 0.15,
+              shadowRadius: 2.22,
+              elevation: 5,
+              backgroundColor : 'white'
+            }] : []]}>
+              <Image source={logo} style={this.state.headerOffset > 0 ? styles.LogoImage : styles.LogoImageInHead} />
+            </View>
+          </View>
+          <View style={styles.CardContainer}>
+            <View style={styles.CardColumn}>
+              <MainCard
+                cardTitle={'THE IMPORTANCE OF COD CERTIFICATION'}
+                cardIcon={require(`../../assets/icons8-info-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'INTERNATIONAL FORM '}
+                cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'CERTIFYING SPECIFIC CAUSES'}
+                cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'CASE EXERCISES'}
+                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+
+            </View>
+            <View style={styles.CardColumn}>
+              <MainCard
+                cardTitle={'COD AND UNDERLYING COD'}
+                cardIcon={require(`../../assets/icons8-course-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'CASE EXAMPLES'}
+                cardIcon={require(`../../assets/icons8-list-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'FRAME B'}
+                cardIcon={require(`../../assets/icons8-user-manual-96.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'ABOUT APP'}
+                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
+                cardRoute={'Page1'} navigation={this.props.navigation}
+              />
+            </View>
           </View>
         </ScrollView>
-        {/* <ScrollView style={styles.BackgroundView} contentContainerStyle={styles.CardContainer}>
-          <View style={styles.CardColumn}>
-            <MainCard 
-            cardTitle={'THE IMPORTANCE OF COD CERTIFICATION'} 
-            cardIcon={require(`../../assets/icons8-info-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard 
-            cardTitle={'INTERNATIONAL FORM '} 
-            cardIcon={require(`../../assets/icons8-google-forms-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard 
-            cardTitle={'CERTIFYING SPECIFIC CAUSES'} 
-            cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard 
-            cardTitle={'CASE EXERCISES'} 
-            cardIcon={require(`../../assets/icons8-development-skill-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            
-          </View>
-          <View style={styles.CardColumn}>
-            <MainCard 
-            cardTitle={'COD AND UNDERLYING COD'} 
-            cardIcon={require(`../../assets/icons8-course-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard 
-            cardTitle={'CASE EXAMPLES'} 
-            cardIcon={require(`../../assets/icons8-list-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard 
-            cardTitle={'FRAME B'} 
-            cardIcon={require(`../../assets/icons8-user-manual-96.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />
-            <MainCard 
-            cardTitle={'ABOUT APP'} 
-            cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)} 
-            cardRoute={'Page1'} navigation={this.props.navigation}
-            />          
-          </View>
-        </ScrollView> */}
       </View>
     );
   }
@@ -145,35 +109,43 @@ const styles = StyleSheet.create({
   HomePageTop: {
     height: WindowHeight * 0.3,
   },
-  HomePageTopInner: {
-    display: 'flex',
+  ImageBackgroundInner: {
     flex: 1,
     backgroundColor: '#FFFFFFCB',
-    justifyContent: 'flex-start'
+  },
+  HomePageBottomInner: {
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'flex-start',
+    height: WindowHeight * 0.25,
+    width: WindowWidth,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   LogoCover: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: WindowHeight * 0.25,
-    width: '100%',
+    height: WindowHeight * 0.08,
+    width: WindowWidth,
   },
   LogoImage: {
     height: WindowHeight * 0.047,
     resizeMode: 'contain'
   },
+  LogoImageInHead : {
+    height: WindowHeight * 0.04,
+    resizeMode: 'contain'
+  },
   HomePageBottom: {
     height: WindowHeight,
-    // backgroundColor : 'blue',
-    marginTop: -WindowHeight * 0.3
+    marginTop: -WindowHeight * 0.3,
+    width: WindowWidth,
   },
   CardContainer: {
     flexDirection: 'row',
-    paddingTop: WindowHeight * 0.25,
-    // alignContent : 'space-around',
     paddingLeft: WindowWidth * 0.035,
     paddingRight: WindowWidth * 0.035
-    // backgroundColor : 'green'
   },
   CardColumn: {
     width: WindowWidth * 0.465,
@@ -181,23 +153,4 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center'
   }
-  // BackgroundView : {
-  //   flex : 1,
-  //   backgroundColor : '#5C3B96CB', 
-
-  // },
-  // CardContainer : {
-  //   flexDirection : 'row',
-  //   justifyContent : 'space-around'
-  // },
-  // CardColumn : {
-  //   flexDirection : 'column',
-  //   flexWrap : 'wrap',
-  //   paddingTop : WindowHeight/22,
-  // },
-  // BackgroundImage : {
-  //   height : '100%',
-  //   width : '100%',
-  //   alignSelf : 'center'
-  // }
 })
