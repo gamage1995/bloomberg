@@ -1,38 +1,29 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
 import { Header } from '../components/Header'
-
 const data = require('../../assets/data/data.json')
 
-export default class Page1 extends Component {
+
+export default class Page3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fontSizeIncrement : 0
+
     };
   }
-
-  handleTextSizeChange = (size) => {
-    this.setState({fontSizeIncrement : size})
-  }
-
   render() {
     return (
       <React.Fragment>
-        <Header 
-        navigation={this.props.navigation} 
-        heading={'THE IMPORTANCE OF CAUSE OF DEATH CERTIFICATION'}
-        handleChange={this.handleTextSizeChange}
-        /> 
+        <Header navigation={this.props.navigation} heading={'INTERNATIONAL FORM'} />
         <ScrollView style={styles.Body}>
-          {data.page1.data.map(section => {
+          {data.page2.data.map(section => {
             return (
               <React.Fragment>
                 <View style={styles.ContentHeadingCover}>
-                  <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{section.head}</Text>
+                  <Text style={styles.ContentHeading}>{section.head}</Text>
                 </View>
                 <View style={styles.ContentBodyCover}>
-                  <Text style={[styles.ContentBodyText,{fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement}]}>{section.body}</Text>
+                  <Text style={styles.ContentBodyText}>{section.body}</Text>
                 </View>
               </React.Fragment>
             )
@@ -42,7 +33,7 @@ export default class Page1 extends Component {
           </View>
         </ScrollView>
       </React.Fragment>
-    );
+    )
   }
 }
 
@@ -58,6 +49,7 @@ const styles = StyleSheet.create({
   },
   ContentHeading: {
     color: '#6C6C6C',
+    fontSize: WindowWidth / 23,
     fontFamily: 'OpenSans-Bold'
   },
   ContentHeadingCover: {
@@ -73,10 +65,11 @@ const styles = StyleSheet.create({
   },
   ContentBodyText: {
     color: '#6A6A6A',
+    fontSize: WindowWidth / 24,
     fontFamily: 'OpenSans-Regular',
     marginBottom: WindowWidth / 30
   },
   BottomPadding: {
-    height : WindowHeight/20
+    height: WindowHeight / 20
   }
 })

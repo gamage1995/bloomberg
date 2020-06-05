@@ -14,5 +14,17 @@
                 "body" : "This information is of critical importance to correctly identifying the deceased for both legal and statistical purposes.\n\nThe details vary from country to country but are likely to include; date and place of death, full name and place of residence, sex and race/ethnicity age profession or occupation."
             }
         ]
+    },
+    "page2":{
+        "data" : [
+            {
+                "head" : "Cause of death is defined as,",
+                "body" : "All those diseases, morbid conditions or injuries which either resulted in or contributed to death and the circumstance of the accident or violence which produced any such injuries."
+            },
+            {
+                "head" : "The underlying cause of death is,",
+                "body" : "the disease or injury which initiated the train of morbid events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury."
+            }
+        ]
     }
 }

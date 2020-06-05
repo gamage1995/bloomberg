@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
 import { Header } from '../components/Header'
-
 const data = require('../../assets/data/data.json')
 
-export default class Page1 extends Component {
+
+export default class Page2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,11 +21,11 @@ export default class Page1 extends Component {
       <React.Fragment>
         <Header 
         navigation={this.props.navigation} 
-        heading={'THE IMPORTANCE OF CAUSE OF DEATH CERTIFICATION'}
+        heading={'CAUSE OF DEATH & UNDERLYING CAUSE OF DEATH'} 
         handleChange={this.handleTextSizeChange}
-        /> 
+        />
         <ScrollView style={styles.Body}>
-          {data.page1.data.map(section => {
+          {data.page2.data.map(section => {
             return (
               <React.Fragment>
                 <View style={styles.ContentHeadingCover}>
@@ -42,7 +42,7 @@ export default class Page1 extends Component {
           </View>
         </ScrollView>
       </React.Fragment>
-    );
+    )
   }
 }
 
@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
     marginBottom: WindowWidth / 30
   },
   BottomPadding: {
-    height : WindowHeight/20
+    height: WindowHeight / 20
   }
 })

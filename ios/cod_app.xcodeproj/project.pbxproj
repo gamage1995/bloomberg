@@ -28,6 +28,9 @@
 		C4D43671C68547659B2BE719 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71611654A1AC46F0AC515D01 /* Roboto-Regular.ttf */; };
 		3C35DBB9861D4EE0ADD88FAE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0883ADF5FEAC422E8DEEBEE0 /* Roboto-Thin.ttf */; };
 		739876CDD69547639934D74A /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E30872AE40924F55AFAB37ED /* Roboto-ThinItalic.ttf */; };
+		CC0185B1E42A498C8B6CDB8B /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB95E500D1D64E1BA87E9EB5 /* OpenSans-Bold.ttf */; };
+		FA5909E569A242A492F9873F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85901D3B734D479FB6EAB3E2 /* OpenSans-Regular.ttf */; };
+		358E57D0999E4446A14BE4AD /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB7AC09117754764B3325CF1 /* OpenSans-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		71611654A1AC46F0AC515D01 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0883ADF5FEAC422E8DEEBEE0 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; name = "Roboto-Thin.ttf"; path = "../assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E30872AE40924F55AFAB37ED /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB95E500D1D64E1BA87E9EB5 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		85901D3B734D479FB6EAB3E2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FB7AC09117754764B3325CF1 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,9 @@
 				71611654A1AC46F0AC515D01 /* Roboto-Regular.ttf */,
 				0883ADF5FEAC422E8DEEBEE0 /* Roboto-Thin.ttf */,
 				E30872AE40924F55AFAB37ED /* Roboto-ThinItalic.ttf */,
+				CB95E500D1D64E1BA87E9EB5 /* OpenSans-Bold.ttf */,
+				85901D3B734D479FB6EAB3E2 /* OpenSans-Regular.ttf */,
+				FB7AC09117754764B3325CF1 /* OpenSans-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -350,6 +359,9 @@
 				C4D43671C68547659B2BE719 /* Roboto-Regular.ttf in Resources */,
 				3C35DBB9861D4EE0ADD88FAE /* Roboto-Thin.ttf in Resources */,
 				739876CDD69547639934D74A /* Roboto-ThinItalic.ttf in Resources */,
+				CC0185B1E42A498C8B6CDB8B /* OpenSans-Bold.ttf in Resources */,
+				FA5909E569A242A492F9873F /* OpenSans-Regular.ttf in Resources */,
+				358E57D0999E4446A14BE4AD /* OpenSans-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

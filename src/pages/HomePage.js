@@ -33,13 +33,14 @@ export default class HomePage extends Component {
               shadowColor: "#616161",
               shadowOffset: {
                 width: 0,
-                height: 1,
+                height: 10,
               },
-              shadowOpacity: 0.15,
-              shadowRadius: 2.22,
-              elevation: 5,
+              shadowOpacity: 0.51,
+              shadowRadius: 13.16,
+              height : WindowHeight * 0.09,
+              elevation: 20,
               backgroundColor : 'white'
-            }] : []]}>
+            }] : [{height : WindowHeight * 0.08}]]}>
               <Image source={logo} style={this.state.headerOffset > 0 ? styles.LogoImage : styles.LogoImageInHead} />
             </View>
           </View>
@@ -51,7 +52,7 @@ export default class HomePage extends Component {
                 cardRoute={'Page1'} navigation={this.props.navigation}
               />
               <MainCard
-                cardTitle={'INTERNATIONAL FORM '}
+                cardTitle={'INTERNATIONAL FORM'}
                 cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
                 cardRoute={'Page1'} navigation={this.props.navigation}
               />
@@ -69,9 +70,9 @@ export default class HomePage extends Component {
             </View>
             <View style={styles.CardColumn}>
               <MainCard
-                cardTitle={'COD AND UNDERLYING COD'}
+                cardTitle={'COD & UNDERLYING COD'}
                 cardIcon={require(`../../assets/icons8-course-96.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
+                cardRoute={'Page2'} navigation={this.props.navigation}
               />
               <MainCard
                 cardTitle={'CASE EXAMPLES'}
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: WindowHeight * 0.08,
+    // height: WindowHeight * 0.08,
     width: WindowWidth,
   },
   LogoImage: {
