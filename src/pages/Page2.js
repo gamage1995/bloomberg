@@ -32,7 +32,12 @@ export default class Page2 extends Component {
                   <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{section.head}</Text>
                 </View>
                 <View style={styles.ContentBodyCover}>
-                  <Text style={[styles.ContentBodyText,{fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement}]}>{section.body}</Text>
+                  <Text style={[
+                    styles.ContentBodyText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}>{section.body}</Text>
                 </View>
               </React.Fragment>
             )

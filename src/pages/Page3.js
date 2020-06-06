@@ -26,13 +26,19 @@ export default class Page3 extends Component {
         />
         <ScrollView style={styles.Body}>
           <View style={styles.ContentBodyCover}>
-            <Text style={[styles.ContentBodyText,{fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement}]}>{data.Page3.section1}</Text>
+            <Text style={[
+              styles.ContentBodyText,
+              {
+                fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                }]}>{data.Page3.section1}</Text>
           </View>
           <TouchableOpacity style={styles.Button1Cover}>
             <FullWidthButton fill={'solid'} color={'#F8A01D'} buttonText={' VIEW CERTIFICATE '} />
           </TouchableOpacity>
           <View style={styles.ContentHeadingCover}>
-            <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{data.Page3.section2}</Text>
+            <Text style={[
+              styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{data.Page3.section2}</Text>
           </View>
           <View style={styles.Button2Cover}>
             <TouchableOpacity style={{flex : 1, paddingRight : WindowWidth/50}}>
