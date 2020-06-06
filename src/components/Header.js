@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   SliderIconCover: {
-    width : (WindowHeight / 3.5 - WindowWidth / 10) / 4,
+    width : (WindowHeight / 3.5 - WindowWidth / 10) / 8,
     height : '100%',
     justifyContent : 'center',
     alignItems : 'center'
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     width : (WindowHeight / 3.5 - WindowWidth / 10) / 11,
   },
   SliderSliderCover : {
-    width: (WindowWidth * 0.9 - WindowHeight / 15) - (WindowHeight / 3.5 - WindowWidth / 10) / 4,
+    width: (WindowWidth * 0.9 - WindowHeight / 15) - (WindowHeight / 3.5 - WindowWidth / 10) / 8,
     height : '100%',
     justifyContent : 'center',
     alignItems : 'flex-end'

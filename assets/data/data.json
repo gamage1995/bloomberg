@@ -18,13 +18,17 @@
     "page2":{
         "data" : [
             {
-                "head" : "Cause of death is defined as,",
+                "head" : "CAUSE OF DEATH IS DEFINED AS,",
                 "body" : "All those diseases, morbid conditions or injuries which either resulted in or contributed to death and the circumstance of the accident or violence which produced any such injuries."
             },
             {
-                "head" : "The underlying cause of death is,",
+                "head" : "THE UNDERLYING CAUSE OF DEATH IS,",
                 "body" : "the disease or injury which initiated the train of morbid events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury."
             }
         ]
+    },
+    "Page3" : {
+        "section1" : "International Form of Medical Certificate of Cause of Death (known as the death certificate) is recommended by the World Health Organization for certification of death in all countries.",
+        "section2" : "The international form has two main sections"
     }
 }

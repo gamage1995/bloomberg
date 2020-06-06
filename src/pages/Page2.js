@@ -27,7 +27,7 @@ export default class Page2 extends Component {
         <ScrollView style={styles.Body}>
           {data.page2.data.map(section => {
             return (
-              <React.Fragment>
+              <React.Fragment key={section.head}>
                 <View style={styles.ContentHeadingCover}>
                   <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{section.head}</Text>
                 </View>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     paddingTop: WindowHeight / 25,
   },
   ContentHeading: {
-    color: '#6C6C6C',
+    color: '#383838',
     fontFamily: 'OpenSans-Bold'
   },
   ContentHeadingCover: {

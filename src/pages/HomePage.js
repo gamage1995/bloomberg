@@ -54,7 +54,7 @@ export default class HomePage extends Component {
               <MainCard
                 cardTitle={'INTERNATIONAL FORM'}
                 cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
+                cardRoute={'Page3'} navigation={this.props.navigation}
               />
               <MainCard
                 cardTitle={'CERTIFYING SPECIFIC CAUSES'}
