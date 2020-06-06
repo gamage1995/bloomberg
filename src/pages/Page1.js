@@ -29,7 +29,7 @@ export default class Page1 extends Component {
             return (
               <React.Fragment key={section.head}>
                 <View style={styles.ContentHeadingCover}>
-                  <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{section.head}</Text>
+                  <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 21) + this.state.fontSizeIncrement}]}>{section.head}</Text>
                 </View>
                 <View style={styles.ContentBodyCover}>
                   <Text style={[

@@ -38,7 +38,7 @@ export default class Page3 extends Component {
           </TouchableOpacity>
           <View style={styles.ContentHeadingCover}>
             <Text style={[
-              styles.ContentHeading, {fontSize : (WindowWidth / 23) + this.state.fontSizeIncrement}]}>{data.Page3.section2}</Text>
+              styles.ContentHeading, {fontSize : (WindowWidth / 21) + this.state.fontSizeIncrement}]}>{data.Page3.section2}</Text>
           </View>
           <View style={styles.Button2Cover}>
             <TouchableOpacity style={{flex : 1, paddingRight : WindowWidth/50}}>
