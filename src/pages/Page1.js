@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import { Header } from '../components/Header'
 
 const data = require('../../assets/data/data.json')
@@ -10,6 +12,20 @@ export default class Page1 extends Component {
     this.state = {
       fontSizeIncrement : 0
     };
+  }
+  async componentDidMount (){
+    await this.getFontSizeFromAsyncStorage();
+  }
+
+  getFontSizeFromAsyncStorage = async() =>{
+    try{
+      let fontSize = await AsyncStorage.getItem('fontIncrease');
+      if(fontSize !== null){
+        this.setState({fontSizeIncrement : Number(fontSize)})
+      }
+    }catch(err){
+      console.log(err);
+    }
   }
 
   handleTextSizeChange = (size) => {

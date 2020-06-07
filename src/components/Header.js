@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, ImageBackground } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Slider from '@react-native-community/slider';
+import AsyncStorage from '@react-native-community/async-storage';
+
 const backgroundImage = require('../../assets/background.png');
 const backButton = require('../../assets/back.png');
 const IncreaseIcon = require('../../assets/increaseFont.png')
@@ -9,8 +11,31 @@ export class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      initialFontSize : 0
     };
+  }
+
+  async componentDidMount (){
+    await this.getFontSizeFromAsyncStorage();
+  }
+
+  getFontSizeFromAsyncStorage = async() =>{
+    try{
+      let fontSize = await AsyncStorage.getItem('fontIncrease');
+      if(fontSize !== null){
+        this.setState({initialFontSize : Number(fontSize)})
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  setFontSize = async (increase) => {
+    try{
+      await AsyncStorage.setItem('fontIncrease',String(increase))
+    }catch(err){
+      console.log(err);
+    }
   }
 
   render() {
@@ -27,10 +52,14 @@ export class Header extends Component {
                 style={styles.SliderSlider}
                 minimumValue={0}
                 maximumValue={5}
+                value={this.state.initialFontSize}
                 minimumTrackTintColor="#FFFFFF"
                 maximumTrackTintColor="#000000"
                 thumbTintColor="#FFFFFF"
-                onValueChange={(val) => this.props.handleChange(val)}
+                onValueChange={async (val) => {
+                  await this.setFontSize(val);
+                  this.props.handleChange(val)
+                }}
               />
               </View>
               <View style={styles.SliderIconCover}>

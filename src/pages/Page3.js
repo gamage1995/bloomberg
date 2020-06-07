@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
+import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
 import { FullWidthButton } from '../components/FullWidthButton'
 const data = require('../../assets/data/data.json')
@@ -15,6 +16,21 @@ export default class Page3 extends Component {
     };
   }
 
+  async componentDidMount (){
+    await this.getFontSizeFromAsyncStorage();
+  }
+
+  getFontSizeFromAsyncStorage = async() =>{
+    try{
+      let fontSize = await AsyncStorage.getItem('fontIncrease');
+      if(fontSize !== null){
+        this.setState({fontSizeIncrement : Number(fontSize)})
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
+
   handleTextSizeChange = (size) => {
     this.setState({ fontSizeIncrement: size })
   }
@@ -26,8 +42,9 @@ export default class Page3 extends Component {
           <ImageZoom 
             cropWidth={WindowWidth}
             cropHeight={WindowHeight}
-            imageWidth={(WindowWidth)}
-            imageHeight={WindowWidth * 1.3}>
+            imageWidth={WindowWidth - (2 * WindowWidth / 30)}
+            imageHeight={(WindowWidth - (2 * WindowWidth / 30)) * 1.3}
+            >
             <Image source={Image1} style={styles.Image1} />
           </ImageZoom>
         </View>
