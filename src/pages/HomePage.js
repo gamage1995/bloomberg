@@ -77,13 +77,13 @@ export default class HomePage extends Component {
               <MainCard
                 cardTitle={'CASE EXAMPLES'}
                 cardIcon={require(`../../assets/icons8-list-96.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
+                cardRoute={'Page4'} navigation={this.props.navigation}
               />
-              <MainCard
+              {/* <MainCard
                 cardTitle={'FRAME B'}
                 cardIcon={require(`../../assets/icons8-user-manual-96.png`)}
                 cardRoute={'Page1'} navigation={this.props.navigation}
-              />
+              /> */}
               <MainCard
                 cardTitle={'ABOUT APP'}
                 cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}

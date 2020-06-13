@@ -17,6 +17,9 @@ export class Header extends Component {
 
   async componentDidMount (){
     await this.getFontSizeFromAsyncStorage();
+    this.focusListener = this.props.navigation.addListener('focus', () => {
+      this.getFontSizeFromAsyncStorage();
+    })
   }
 
   getFontSizeFromAsyncStorage = async() =>{
@@ -40,7 +43,7 @@ export class Header extends Component {
 
   render() {
     return (
-      <ImageBackground style={styles.HeaderCover} source={backgroundImage}>
+      <ImageBackground style={[styles.HeaderCover, this.props.SubHeader ? {height: WindowHeight / 5} : {height: WindowHeight / 3.5}]} source={backgroundImage}>
         <View style={styles.ImageBackgroundInner}>
           <View style={styles.HeaderTopCover}>
             <TouchableOpacity style={styles.BackButtonCover} onPress={() => this.props.navigation.goBack()}>
@@ -67,7 +70,9 @@ export class Header extends Component {
               </View>
             </View>
           </View>
-          <View style={styles.HeadingCover}>
+          <View style={[styles.HeadingCover, 
+          this.props.SubHeader ? {height: ((WindowHeight / 3.5 - WindowWidth / 10) / 5) * 2, paddingBottom: 0} : 
+          {height: ((WindowHeight / 3.5 - WindowWidth / 10) / 5) * 4,paddingBottom: WindowHeight / 30}]}>
             <Text style={styles.HeadingText}>
               {this.props.heading}
             </Text>
@@ -84,8 +89,7 @@ const WindowHeight = dimensions.height;
 
 const styles = StyleSheet.create({
   HeaderCover: {
-    height: WindowHeight / 3.5,
-    // backgroundColor : 'green'
+
   },
   ImageBackgroundInner: {
     height: '100%',
@@ -136,11 +140,9 @@ const styles = StyleSheet.create({
     height : '100%'
   }, 
   HeadingCover: {
-    height: ((WindowHeight / 3.5 - WindowWidth / 10) / 5) * 4,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     paddingLeft: WindowHeight / 25,
-    paddingBottom: WindowHeight / 30,
     paddingRight: WindowWidth / 50
   },
   HeadingText: {

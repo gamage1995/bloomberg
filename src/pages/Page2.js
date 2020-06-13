@@ -13,8 +13,16 @@ export default class Page2 extends Component {
       fontSizeIncrement : 0
     };
   }
+
   async componentDidMount (){
     await this.getFontSizeFromAsyncStorage();
+    this.focusListener = await this.props.navigation.addListener('focus', () => {
+      this.getFontSizeFromAsyncStorage();
+    })
+  }
+
+  componentWillUnmount () {
+    this.focusListener();
   }
 
   getFontSizeFromAsyncStorage = async() =>{

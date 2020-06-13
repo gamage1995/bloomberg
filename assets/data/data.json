@@ -30,5 +30,84 @@
     "Page3" : {
         "section1" : "International Form of Medical Certificate of Cause of Death (known as the death certificate) is recommended by the World Health Organization for certification of death in all countries.",
         "section2" : "The international form has two main sections"
+    },
+    "FrameA" : {
+        "head" : "The frame A of the death certificate is divided into three sections",
+        "sections" : ["Part 1 : Report sequence / chain of events leading to death","Part 2 : Other significant conditions contributing to death","A column to record the approximate interval between onset of the condition and death"]         
+    },
+    "FrameASection1" : {
+        "Head" : "Part 1 : Report sequence/chain of events leading to death",
+        "HowToFill" : ["Part 1 of the certificate is where you write the chain of events leading to death, starting from the immediate or direct cause. ",
+        "There are four lines in part 1.","Start at line 1(a), with the immediate (direct) cause.","If the direct cause reported on line 1a, was due to another disease or condition, this cause should be entered in line 1b. ",
+        "If there are more events leading to death, they are recorded in lines 1c or 1d.","The underlying cause is recorded in the lowest used line.","Enter only one disease or condition per line",
+        "Do not record the mode of dying, such as cardiac arrest, respiratory failure or heart failure."]
+    },
+    "FrameASection2" : {
+        "Head" : "Part 2 : Other significant conditions contributing to death",
+        "HowToFill" : ["Part 2 of the death certificate records all other significant or contributory diseases or conditions that were present at the time of death but did not directly lead to the underlying cause of death listed in Part 1."]
+    },
+    "FrameASection3" : {
+        "Head" : "A column to record the approximate interval between onset of the condition and death",
+        "HowToFill" : ["The column on the right-hand side of the death certificate is for recording the approximate time interval between onset of the condition and death.",
+            "The time interval should be written for all conditions.","Time periods can be minutes, hours, days, weeks, months or years."]
+    },
+    "Page4" : {
+        "Data" : [
+            "CASE EXAMPLE 1","CASE EXAMPLE 2"
+        ]
+    },
+    "Case1" : {
+        "CaseDescription" : "A 50-year-old woman was admitted to the hospital vomiting blood for two days and was diagnosed as having bleeding oesophageal varices.\n\nSix months ago, she was diagnosed as having liver cirrhosis and portal hypertension.\n\nThe woman had a four-year history of hepatitis B infection. Three days later, she died.",
+        "CaseApplication" : {
+            "Heading" : "Sequence of events leading to death",
+            "Events" : [
+                {
+                    "line3" : "Terminal Event",
+                    "line2" : "Immediate cause of death - Line 1a",
+                    "line1" : "Bleeding Oesophageal Varices"
+                },
+                {
+                    "line2" : "Antecedent cause - Line 1b",
+                    "line1" : "Portal Hypertension"
+                },
+                {
+                    "line2" : "Antecedent cause - Line 1c",
+                    "line1" : "Liver Cirrhosis"
+                },
+                {
+                    "line3" : "Starting Point",
+                    "line2" : "Underlying cause of death - Line 1d",
+                    "line1" : "Hepatitis B"
+                }
+            ]
+        }
+    },
+    "Case2" : {
+        "CaseDescription" : "A man dies of cerebral haemorrhage, three-days after it’s onset.\n\nThis resulted from secondary hypertension which he had for last one year.\n\nHypertension was secondary to chronic pyelonephritis which he had for last two years.\n\nThe chronic pyelonephritis was a result of outflow obstruction, due to benign prostatic hyperplasia that he was having for last five years.\n\nHe also had a history of diabetes mellitus, which had been diagnosed ten years before his death.",
+        "CaseApplication" : {
+            "Heading" : "Sequence of events leading to death",
+            "Events" : [
+                {
+                    "line2" : "Immediate cause of death - Line 1a",
+                    "line1" : "Cerebral Haemorriage"
+                },
+                {
+                    "line2" : "Antecedent cause - Line 1b",
+                    "line1" : "Secondary Hypertension"
+                },
+                {
+                    "line2" : "Antecedent cause - Line 1c",
+                    "line1" : "Chronic Pyelonephritis"
+                },
+                {
+                    "line2" : "Underlying cause of death - Line 1d",
+                    "line1" : "Diabetes Mellitus Type II"
+                },
+                {
+                    "line2" : "Contributory condition - Part-2",
+                    "line1" : "Benign hypertrophy of prostate"
+                }
+            ]
+        }
     }
 }

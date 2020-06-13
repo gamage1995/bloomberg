@@ -18,6 +18,13 @@ export default class Page3 extends Component {
 
   async componentDidMount (){
     await this.getFontSizeFromAsyncStorage();
+    this.focusListener = this.props.navigation.addListener('focus', () => {
+      this.getFontSizeFromAsyncStorage();
+    })
+  }
+
+  componentWillUnmount () {
+    this.focusListener();
   }
 
   getFontSizeFromAsyncStorage = async() =>{
@@ -82,7 +89,7 @@ export default class Page3 extends Component {
               styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.Page3.section2}</Text>
           </View>
           <View style={styles.Button2Cover}>
-            <TouchableOpacity style={{ flex: 1, paddingRight: WindowWidth / 50 }}>
+            <TouchableOpacity style={{ flex: 1, paddingRight: WindowWidth / 50 }} onPress={() => this.props.navigation.navigate('FrameA')}>
               <FullWidthButton color={"#636363"} buttonText={' FRAME A '} />
             </TouchableOpacity>
             <TouchableOpacity style={{ flex: 1, paddingLeft: WindowWidth / 50 }}>
@@ -143,7 +150,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     marginTop: WindowHeight / 25
-
   },
   BottomPadding: {
     height: WindowHeight / 20
@@ -166,7 +172,7 @@ const styles = StyleSheet.create({
   },
   CancelButtonCover: {
     position: 'absolute',
-    bottom: 10,
+    bottom: WindowHeight/30,
     alignSelf : 'center'
   },
   CancelButton: {

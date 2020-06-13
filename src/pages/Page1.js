@@ -15,6 +15,13 @@ export default class Page1 extends Component {
   }
   async componentDidMount (){
     await this.getFontSizeFromAsyncStorage();
+    this.focusListener = this.props.navigation.addListener('focus', () => {
+      this.getFontSizeFromAsyncStorage();
+    })
+  }
+
+  componentWillUnmount () {
+    this.focusListener();
   }
 
   getFontSizeFromAsyncStorage = async() =>{
