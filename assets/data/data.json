@@ -51,6 +51,48 @@
         "HowToFill" : ["The column on the right-hand side of the death certificate is for recording the approximate time interval between onset of the condition and death.",
             "The time interval should be written for all conditions.","Time periods can be minutes, hours, days, weeks, months or years."]
     },
+    "FrameB" : {
+        "head" : "The frame B of the death certificate is divided into four sections",
+        "sections" : ["Surgery within past four weeks","Manner of death","Place of occurrence of the external cause","Foetal or infant death","For women, was the deceased pregnant?"]         
+    },
+    "FrameBPart2" : {
+        "data" : [
+            {
+                "body" : "The manner of death section was added to the death certificate by public health officials to assist in clarifying the circumstances of death and how an injury was sustained—not as a legally binding opinion—and with a major goal of assisting coders who code and classify cause-of-death information from death certificates for statistical purposes."
+            },
+            {
+                "body" : "Manner of death categories, Disease, Accident, Intentional self-harm and Assault are very straight forward and the meaning is clear to the physician."
+            },
+            {
+                "head" : "Could not be determined",
+                "body" : "Includes:\nWhen available information is insufficient to enable a medical or legal authority to make a distinction between unintentional, self-harm and assault.  It includes self-inflicted injuries, but not poisoning, when not specified whether as unintentional or intentional.\n\nExcludes:\nCases where investigation is PENDING or the manner of death is UNKNOWN to the certifier at the time of certification."
+            },
+            {
+                "head" : "War",
+                "body" : "Includes:\nInjuries to military personnel and civilians caused by war and civil insurrection"
+            },
+            {
+                "head" : "Pending (Investigation)",
+                "body" : "Includes:\nWhen certification of cause of death and/or manner of death is incomplete because an investigation is pending.\n\nExcludes:\nWhen an investigation has been completed and the manner of death COULD NOT BE DETERMINED"
+            },
+            {
+                "head" : "Unknown",
+                "body" : "Includes:\nWhen the manner of death is unknown to the certifier at the time of reporting\n\nExcludes:\nDeaths PENDING (INVESTIGATION) and when an investigation has been completed and the manner of death COULD NOT BE DETERMINED"
+            }
+        ]     
+    },
+    "FrameBPart3" : {
+        "data" : [
+            {
+                "body" : "The certifier must record the accurate place of occurrence of the accident, violence or poisoning."
+            }
+        ]
+    },
+    "FrameBPart4" : {
+        "data" : [
+           
+        ]
+    },
     "Page4" : {
         "Data" : [
             "CASE EXAMPLE 1","CASE EXAMPLE 2"

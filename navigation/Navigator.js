@@ -5,9 +5,15 @@ import Page1 from '../src/pages/Page1'
 import Page2 from '../src/pages/Page2'
 import Page3 from '../src/pages/Page3'
 import FrameA from '../src/pages/FrameA'
+import FrameB from '../src/pages/FrameB'
 import FrameAPart1 from '../src/pages/FrameAPart1'
 import FrameAPart2 from '../src/pages/FrameAPart2'
 import FrameAPart3 from '../src/pages/FrameAPart3'
+import FrameBPart1 from '../src/pages/FrameBPart1'
+import FrameBPart2 from '../src/pages/FrameBPart2'
+import FrameBPart3 from '../src/pages/FrameBPart3'
+import FrameBPart4 from '../src/pages/FrameBPart4'
+import FrameBPart5 from '../src/pages/FrameBPart5'
 import Page4 from '../src/pages/Page4'
 import Case1 from '../src/pages/Case1'
 import Case2 from '../src/pages/Case2'
@@ -52,6 +58,13 @@ function HomeStack() {
         }}
       />
       <HomeStackNav.Screen
+        name='FrameB'
+        component={FrameB}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
         name='FrameAPart1'
         component={FrameAPart1}
         options={{
@@ -68,6 +81,41 @@ function HomeStack() {
        <HomeStackNav.Screen
         name='FrameAPart3'
         component={FrameAPart3}
+        options={{
+          headerShown: false
+        }}
+      />
+       <HomeStackNav.Screen
+        name='FrameBPart1'
+        component={FrameBPart1}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='FrameBPart2'
+        component={FrameBPart2}
+        options={{
+          headerShown: false
+        }}
+      />
+       <HomeStackNav.Screen
+        name='FrameBPart3'
+        component={FrameBPart3}
+        options={{
+          headerShown: false
+        }}
+      />
+       <HomeStackNav.Screen
+        name='FrameBPart4'
+        component={FrameBPart4}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='FrameBPart5'
+        component={FrameBPart5}
         options={{
           headerShown: false
         }}

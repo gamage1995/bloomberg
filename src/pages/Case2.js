@@ -73,8 +73,8 @@ export default class Case2 extends Component {
   Event = (index, line1, line2, line3) => {
     return (
       <View style={styles.EventCover} key={index}>
-       <View style={[styles.EventArrowCover, {display : index == 0 ? 'none' : 'flex'}]}>
-            <Image style={styles.EventArrow} source={Arrow}/>
+        <View style={[styles.EventArrowCover, { display: index == 0 ? 'none' : 'flex' }]}>
+          <Image style={styles.EventArrow} source={Arrow} />
         </View>
         <View style={styles.EventSectionCover}>
           <Text style={[
@@ -139,17 +139,17 @@ export default class Case2 extends Component {
             })
           }
         </View>
+        <TouchableOpacity style={styles.Button1Cover} onPress={() => this.setState({ showModal: true })}>
+          <FullWidthButton fill={'solid'} color={'#F8A01D'} buttonText={' VIEW CERTIFICATE '} />
+        </TouchableOpacity>
         <Modal
-            animationType="slide"
-            transparent={true}
-            visible={this.state.showModal}
-            onRequestClose={() => this.setState({ showModal: false })}
-          >
-            <this.ModalContent />
-          </Modal>
-          <TouchableOpacity style={styles.Button1Cover} onPress={() => this.setState({ showModal: true })}>
-            <FullWidthButton fill={'solid'} color={'#F8A01D'} buttonText={' VIEW CERTIFICATE '} />
-          </TouchableOpacity>
+          animationType="slide"
+          transparent={true}
+          visible={this.state.showModal}
+          onRequestClose={() => this.setState({ showModal: false })}
+        >
+          <this.ModalContent />
+        </Modal>
         <View style={styles.BottomPadding}>
 
         </View>
@@ -236,8 +236,8 @@ const styles = StyleSheet.create({
   SectionsWrapper: {
     display: 'flex',
     flexDirection: 'column',
-    paddingTop : WindowHeight/50,
-    paddingBottom : WindowHeight/20
+    paddingTop: WindowHeight / 50,
+    paddingBottom: WindowHeight / 20
   },
   Line1Text: {
     color: '#6A6A6A',
@@ -264,19 +264,19 @@ const styles = StyleSheet.create({
     borderColor: '#d9d9d9',
     borderWidth: 2
   },
-  EventCover : {
-    display : 'flex',
-    flexDirection : 'column',
+  EventCover: {
+    display: 'flex',
+    flexDirection: 'column',
     marginTop: WindowHeight / 90,
   },
-  EventArrow : {
-    height : WindowHeight/30,
-    width : WindowHeight/30,
+  EventArrow: {
+    height: WindowHeight / 30,
+    width: WindowHeight / 30,
   },
-  EventArrowCover : {
-    justifyContent : 'center',
-    alignItems : 'center',
-    marginBottom : WindowHeight/90
+  EventArrowCover: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: WindowHeight / 90
   },
 
   /** Modal styles */
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
   },
   CancelButtonCover: {
     position: 'absolute',
-    bottom: WindowHeight/30,
+    bottom: WindowHeight / 30,
     alignSelf: 'center'
   },
   CancelButton: {
