@@ -61,12 +61,11 @@ export default class HomePage extends Component {
                 cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
                 cardRoute={'Page1'} navigation={this.props.navigation}
               />
-              <MainCard
-                cardTitle={'CASE EXERCISES'}
-                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+               <MainCard
+                cardTitle={'ABOUT APP'}
+                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
                 cardRoute={'Page1'} navigation={this.props.navigation}
               />
-
             </View>
             <View style={styles.CardColumn}>
               <MainCard
@@ -79,15 +78,10 @@ export default class HomePage extends Component {
                 cardIcon={require(`../../assets/icons8-list-96.png`)}
                 cardRoute={'Page4'} navigation={this.props.navigation}
               />
-              {/* <MainCard
-                cardTitle={'FRAME B'}
-                cardIcon={require(`../../assets/icons8-user-manual-96.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
-              /> */}
               <MainCard
-                cardTitle={'ABOUT APP'}
-                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
+                cardTitle={'CASE EXERCISES'}
+                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+                cardRoute={'Page6'} navigation={this.props.navigation}
               />
             </View>
           </View>

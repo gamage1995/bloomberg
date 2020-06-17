@@ -17,6 +17,9 @@ import FrameBPart5 from '../src/pages/FrameBPart5'
 import Page4 from '../src/pages/Page4'
 import Case1 from '../src/pages/Case1'
 import Case2 from '../src/pages/Case2'
+import Page6 from '../src/pages/Page6'
+import Exercise from '../src/pages/Exercise'
+
 const HomeStackNav = createStackNavigator();
 
 function HomeStack() {
@@ -137,6 +140,20 @@ function HomeStack() {
        <HomeStackNav.Screen
         name='Case2'
         component={Case2}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='Page6'
+        component={Page6}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='Exercise'
+        component={Exercise}
         options={{
           headerShown: false
         }}

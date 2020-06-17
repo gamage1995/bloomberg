@@ -10,7 +10,6 @@ const data = require('../../assets/data/data.json')
 const Image1 = require('../../assets/Case1.png')
 const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/EventArrow.png');
-const linkArray = ['FrameAPart1', 'FrameAPart2', 'FrameAPart3'];
 export default class Case1 extends Component {
   constructor(props) {
     super(props);

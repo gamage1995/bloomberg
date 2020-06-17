@@ -149,6 +149,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('bloomberg.keystore')
+            storePassword '01210519'
+            keyAlias 'bloomberg_key_alias'
+            keyPassword '01210519'
+        }
     }
     buildTypes {
         debug {

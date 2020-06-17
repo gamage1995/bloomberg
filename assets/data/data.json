@@ -151,5 +151,75 @@
                 }
             ]
         }
-    }
+    },
+    "Page6" : {
+        "Data" : [
+            "CASE EXERCISE 1","CASE EXERCISE 2","CASE EXERCISE 3","CASE EXERCISE 4","CASE EXERCISE 5"
+        ]
+    },
+    "CaseExercises" : [
+        {
+            "Description" : "Some exercise description",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "1a" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    },
+                    "1b" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    },
+                    "1c" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    },
+                    "1d" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    }
+                },
+                "Question" : [
+                    {
+                        "line" : "1a",
+                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
+                        "timeOptions" : ["1a","1b","1c","1d"]
+                    },
+                    {
+                        "line" : "1b",
+                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
+                        "timeOptions" : ["1a","1b","1c","1d"]
+                    },
+                    {
+                        "line" : "1c",
+                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
+                        "timeOptions" : ["1a","1b","1c","1d"]
+                    },
+                    {
+                        "line" : "1d",
+                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
+                        "timeOptions" : ["1a","1b","1c","1d"]
+                    }
+                ],
+                "CurrentAnswer" : {
+                    "1a" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    },
+                    "1b" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    },
+                    "1c" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    },
+                    "1d" : {
+                        "event" : "Select an event",
+                        "time"  : "0 d"
+                    }
+                }
+            }
+        }
+    ]
 }
