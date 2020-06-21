@@ -163,20 +163,20 @@
             "Exercise" : {
                 "CorrectAnswer" : {
                     "1a" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
+                        "event" : "line 1 a",
+                        "time"  : "1a"
                     },
                     "1b" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
+                        "event" : "line 1 b",
+                        "time"  : "1b"
                     },
                     "1c" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
+                        "event" : "line 1 c",
+                        "time"  : "1c"
                     },
                     "1d" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
+                        "event" : "line 1 d",
+                        "time"  : "1d"
                     }
                 },
                 "Question" : [
