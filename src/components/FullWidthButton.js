@@ -12,6 +12,39 @@ const screenHeight = dimensions.height;
 const screenWidth = dimensions.width;
 
 export class FullWidthButton extends Component {
+  getBorderColor = () => {
+    if(this.props.disabled){
+      if(this.props.disabledColor){
+        return this.props.disabledColor
+      }
+      return this.props.color;
+    }
+    return this.props.color
+  }
+
+  getBackgroundColor = () => {
+    if(this.props.fill == 'solid'){
+      if(this.props.disabled){
+        if(this.props.disabledColor){
+          return this.props.disabledColor
+        }
+        return this.props.color;
+      }
+      return this.props.color;
+    }
+    return 'transparent'
+  }
+
+  getImageSource = () =>{
+    if(this.props.disabled){
+      if(this.props.disabledIcon){
+        return this.props.disabledIcon;
+      }
+      return this.props.icon;
+    }
+    return this.props.icon;
+  }
+
   render() {
     return (
       <View style={{
@@ -23,15 +56,15 @@ export class FullWidthButton extends Component {
         borderRadius: cardHeight / 8,
         minHeight: screenHeight * 0.07,
         maxHeight: screenHeight * 0.07,
-        backgroundColor: this.props.fill == 'solid' ? `${this.props.color}` : 'transparent',
-        borderColor: this.props.disabled ? '#e0e0e0' : `${this.props.color}`,
+        backgroundColor: this.getBackgroundColor(),
+        borderColor: this.getBorderColor(),
         paddingLeft: cardHeight * 0.3,
         paddingRight: cardHeight * 0.3,
-        // opacity: this.props.disabled ? 0.4 : 1
+        opacity: this.props.disabled ? 0.6 : 1
       }}>
         {
           this.props.icon ?
-            <Image source={this.props.icon} style={{
+            <Image source={this.getImageSource()} style={{
               height: screenHeight * 0.04,
               width : screenHeight * 0.04,
               opacity: this.props.disabled ? 0.5 : 1

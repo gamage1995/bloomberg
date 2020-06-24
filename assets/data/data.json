@@ -177,28 +177,143 @@
                     "1d" : {
                         "event" : "line 1 d",
                         "time"  : "1d"
+                    },
+                    "Other Significant Conditions Contributing To Death" : {
+                        "event" : "osc 1"
                     }
                 },
                 "Question" : [
                     {
                         "line" : "1a",
-                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
-                        "timeOptions" : ["1a","1b","1c","1d"]
+                        "eventOptions" : [{
+                            "short" : "line 1 a",
+                            "full" : "line 1 a"
+                        },{
+                            "short" : "line 1 b",
+                            "full"  : "line 1 b"
+                        },{
+                            "short" : "line 1 c",
+                            "full" : "line 1 c"
+                        },{
+                            "short" : "line 1 d",
+                            "full"  : "line 1 d"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "1a",
+                            "full"  : "1a full"
+                        },{
+                            "short" : "1b",
+                            "full"  : "1b full"
+                        },{
+                            "short" : "1c",
+                            "full"  : "1c full"
+                        },{
+                            "short" : "1d",
+                            "full"  : "1d full"
+                        }]
                     },
                     {
                         "line" : "1b",
-                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
-                        "timeOptions" : ["1a","1b","1c","1d"]
+                        "eventOptions" : [{
+                            "short" : "line 1 a",
+                            "full" : "line 1 a"
+                        },{
+                            "short" : "line 1 b",
+                            "full"  : "line 1 b"
+                        },{
+                            "short" : "line 1 c",
+                            "full" : "line 1 c"
+                        },{
+                            "short" : "line 1 d",
+                            "full"  : "line 1 d"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "1a",
+                            "full"  : "1a full"
+                        },{
+                            "short" : "1b",
+                            "full"  : "1b full"
+                        },{
+                            "short" : "1c",
+                            "full"  : "1c full"
+                        },{
+                            "short" : "1d",
+                            "full"  : "1d full"
+                        }]
                     },
                     {
                         "line" : "1c",
-                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
-                        "timeOptions" : ["1a","1b","1c","1d"]
+                        "eventOptions" : [{
+                            "short" : "line 1 a",
+                            "full" : "line 1 a"
+                        },{
+                            "short" : "line 1 b",
+                            "full"  : "line 1 b"
+                        },{
+                            "short" : "line 1 c",
+                            "full" : "line 1 c"
+                        },{
+                            "short" : "line 1 d",
+                            "full"  : "line 1 d"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "1a",
+                            "full"  : "1a full"
+                        },{
+                            "short" : "1b",
+                            "full"  : "1b full"
+                        },{
+                            "short" : "1c",
+                            "full"  : "1c full"
+                        },{
+                            "short" : "1d",
+                            "full"  : "1d full"
+                        }]
                     },
                     {
                         "line" : "1d",
-                        "eventOptions" : ["line 1 a","line 1 b","line 1 c","line 1 d"],
-                        "timeOptions" : ["1a","1b","1c","1d"]
+                        "eventOptions" : [{
+                            "short" : "line 1 a",
+                            "full" : "line 1 a"
+                        },{
+                            "short" : "line 1 b",
+                            "full"  : "line 1 b"
+                        },{
+                            "short" : "line 1 c",
+                            "full" : "line 1 c"
+                        },{
+                            "short" : "line 1 d",
+                            "full"  : "line 1 d"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "1a",
+                            "full"  : "1a full"
+                        },{
+                            "short" : "1b",
+                            "full"  : "1b full"
+                        },{
+                            "short" : "1c",
+                            "full"  : "1c full"
+                        },{
+                            "short" : "1d",
+                            "full"  : "1d full"
+                        }]
+                    },
+                    {
+                        "line" : "Other Significant Conditions Contributing To Death",
+                        "eventOptions" : [{
+                            "short" : "osc 1",
+                            "full" : "osc 1"
+                        },{
+                            "short" : "osc 2",
+                            "full"  : "osc 2"
+                        },{
+                            "short" : "osc 3",
+                            "full" : "osc 3"
+                        },{
+                            "short" : "osc 4",
+                            "full"  : "osc 4"
+                        }]
                     }
                 ],
                 "CurrentAnswer" : {
@@ -217,6 +332,9 @@
                     "1d" : {
                         "event" : "Select an event",
                         "time"  : "0 d"
+                    },
+                    "Other Significant Conditions Contributing To Death" : {
+                        "event" : "Select an event"
                     }
                 }
             }
