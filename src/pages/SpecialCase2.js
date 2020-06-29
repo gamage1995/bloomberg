@@ -7,10 +7,10 @@ import { FullWidthButton } from '../components/FullWidthButton';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 const data = require('../../assets/data/data.json')
-const Image1 = require('../../assets/Case1.png')
+const Image1 = require('../../assets/specialCase2.png')
 const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/EventArrow.png');
-export default class Case1 extends Component {
+export default class SpecialCase2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,8 +18,9 @@ export default class Case1 extends Component {
       showModal: false,
       index: 0,
       routes: [
-        { key: 'first', title: 'Description' },
-        { key: 'second', title: 'APPLICATION' },
+        { key: 'first', title: 'EXPLAINATION' },
+        { key: 'second', title: 'EXAMPLE' },
+        { key: 'third', title: 'APPLICATION' },
       ]
     };
   }
@@ -54,7 +55,7 @@ export default class Case1 extends Component {
               cropWidth={WindowWidth}
               cropHeight={WindowHeight}
               imageWidth={WindowWidth - (2 * WindowWidth / 60)}
-              imageHeight={(WindowWidth - (2 * WindowWidth / 60)) * 0.4}
+              imageHeight={(WindowWidth - (2 * WindowWidth / 60)) * 1.1}
             >
               <Image source={Image1} style={styles.Image1} />
             </ImageZoom>
@@ -88,7 +89,8 @@ export default class Case1 extends Component {
             styles.Line2Text,
             {
               fontSize: (WindowWidth / 28) + this.state.fontSizeIncrement,
-              lineHeight: (WindowWidth / 28) + this.state.fontSizeIncrement + 10
+              lineHeight: (WindowWidth / 28) + this.state.fontSizeIncrement + 10,
+              display: line2 != undefined ? 'flex' : 'none'
             }]}>{line2}
           </Text>
           <Text style={[
@@ -116,7 +118,7 @@ export default class Case1 extends Component {
             {
               fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
               lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
-            }]}>{data.Case1.CaseDescription}</Text>
+            }]}>{data.SpecialCases[1].CaseDescription}</Text>
         </View>
         <View style={styles.BottomPadding}>
   
@@ -126,16 +128,34 @@ export default class Case1 extends Component {
   };
 
   SecondRoute = () => {
+      return(
+        <ScrollView style={styles.Body}>
+        <View style={styles.ContentBodyCover}>
+          <Text style={[
+            styles.ContentBodyText,
+            {
+              fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+              lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+            }]}>{data.SpecialCases[1].CaseExample}</Text>
+        </View>
+        <View style={styles.BottomPadding}>
+  
+        </View>
+      </ScrollView>
+      )
+  }
+
+  ThirdRoute = () => {
     return (
       <ScrollView style={styles.Body}>
         <View style={styles.ContentHeadingCover}>
           <Text style={[
-            styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.Case1.CaseApplication.Heading}
+            styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.SpecialCases[0].CaseApplication.Heading}
           </Text>
         </View>
         <View style={styles.SectionsWrapper}>
           {
-            data.Case1.CaseApplication.Events.map((event, index) => {
+            data.SpecialCases[1].CaseApplication.Events.map((event, index) => {
               return this.Event(index, event.line1, event.line2, event.line3)
             })
           }
@@ -150,6 +170,7 @@ export default class Case1 extends Component {
     )
   };
 
+
   render() {
     const renderTabBar = props => (
       <TabBar
@@ -163,7 +184,7 @@ export default class Case1 extends Component {
       <React.Fragment>
         <Header
           navigation={this.props.navigation}
-          heading={'CASE EXAMPLE 1'}
+          heading={data.SpecialCases[1].Title.toUpperCase()}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
@@ -175,6 +196,8 @@ export default class Case1 extends Component {
                 return <this.FirstRoute />
               case 'second':
                 return <this.SecondRoute />
+              case 'third':
+                return <this.ThirdRoute />
               default:
                 return null;
             }
@@ -301,7 +324,7 @@ const styles = StyleSheet.create({
   Image1: {
     resizeMode: 'contain',
     width: WindowWidth - (2 * WindowWidth / 60),
-    height: (WindowWidth - (2 * WindowWidth / 60)) * 0.4,
+    height: (WindowWidth - (2 * WindowWidth / 60)) * 1.1,
     alignSelf: 'center'
   },
   CancelButtonCover: {

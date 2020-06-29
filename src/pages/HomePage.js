@@ -59,7 +59,7 @@ export default class HomePage extends Component {
               <MainCard
                 cardTitle={'CERTIFYING SPECIFIC CAUSES'}
                 cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
+                cardRoute={'Page5'} navigation={this.props.navigation}
               />
                <MainCard
                 cardTitle={'ABOUT APP'}

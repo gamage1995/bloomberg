@@ -5,19 +5,11 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header';
 import { FullWidthButton } from '../components/FullWidthButton';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { Picker } from '@react-native-community/picker';
 
-const data = require('../../assets/data/data.json')
-const Image1 = require('../../assets/Case1.png')
-const ModalCancel = require('../../assets/modalCancel.png')
-const Arrow = require('../../assets/EventArrow.png');
+const data = require('../../assets/data/data.json');
 const PickerIcon = require('../../assets/pickerIcon.png');
-const RadioCircle = require('../../assets/radioCircle.png');
-const RadioCircleHL = require('../../assets/radioCircleHL.png');
-
-var radio_props = [
-  { label: 'param1', value: 0 },
-  { label: 'param2', value: 1 }
-];
+const addIcon = require('../../assets/addIcon.png');
 
 export default class Exercise extends Component {
   constructor(props) {
@@ -36,7 +28,10 @@ export default class Exercise extends Component {
       ModalType: '',
       checkAnswer: false,
       showAnswer: false,
-      showAlertModal: true,
+      showAlertModal: false,
+      showPart2Modal: false,
+      part2SelectedEvent: data.CaseExercises[Number(props.route.params.index)].Exercise.Question.part2.eventOptions[0].full,
+      part2SelectedTime: data.CaseExercises[Number(props.route.params.index)].Exercise.Question.part2.timeOptions[0].full
     };
   }
 
@@ -63,59 +58,91 @@ export default class Exercise extends Component {
   }
 
   getEventBackGroundColor = (Event, EventHeading, Time) => {
-    if (
-      Event === this.state.Exercise.Exercise.CorrectAnswer[EventHeading].event &&
-      Time === this.state.Exercise.Exercise.CorrectAnswer[EventHeading].time &&
-      this.state.checkAnswer
-    ) {
-      return { backgroundColor: '#7fba77' };
-    } else if (this.state.checkAnswer) {
-      return { backgroundColor: '#de5b68' };
+    if (this.state.checkAnswer) {
+      if (
+        Event === this.state.Exercise.Exercise.CorrectAnswer.part1[EventHeading].event &&
+        Time === this.state.Exercise.Exercise.CorrectAnswer.part1[EventHeading].time
+      ) {
+        return { backgroundColor: '#7fba77' };
+      } else {
+        return { backgroundColor: '#de5b68' };
+      }
     } else {
       return { backgroundColor: '#e0e0e0' };
     }
   }
 
+
+  getPart2BackgroundColor = () => {
+    if (this.state.checkAnswer) {
+      if (JSON.stringify(this.state.Exercise.Exercise.CurrentAnswer.part2.sort(
+        (a, b) => (a.event > b.event) ? 1 : -1
+      )) == JSON.stringify(this.state.Exercise.Exercise.CorrectAnswer.part2.sort(
+        (a, b) => (a.event > b.event) ? 1 : -1
+      ))) {
+        return { backgroundColor: '#7fba77' };
+      } else {
+        return { backgroundColor: '#de5b68' };
+      }
+    } else {
+      return { backgroundColor: '#ebebeb' }
+    }
+  }
+
   resetAnswer = () => {
     let exerciseEdit = this.state.Exercise;
-    for (let [key, _value] of Object.entries(exerciseEdit.Exercise.CurrentAnswer)) {
-      exerciseEdit.Exercise.CurrentAnswer[key].event = 'Select an event';
-      if (exerciseEdit.Exercise.CurrentAnswer[key].time) {
-        exerciseEdit.Exercise.CurrentAnswer[key].time = '0d';
-      }
+    for (let [key, _value] of Object.entries(exerciseEdit.Exercise.CurrentAnswer.part1)) {
+      exerciseEdit.Exercise.CurrentAnswer.part1[key].event = 'Select an event';
+      exerciseEdit.Exercise.CurrentAnswer.part1[key].time = '0d';
     }
-    this.setState({ Exercise: exerciseEdit, checkAnswer: false, showAnswer: false })
+    exerciseEdit.Exercise.CurrentAnswer.part2 = [];
+    this.setState({ Exercise: exerciseEdit, checkAnswer: false, showAnswer: false }, () => {
+      console.log(this.state.Exercise.Exercise.CurrentAnswer, this.state.Exercise.Exercise.CorrectAnswer)
+    })
   }
 
   showAnswer = () => {
     let exerciseEdit = this.state.Exercise;
-    for (let [key, _value] of Object.entries(exerciseEdit.Exercise.CurrentAnswer)) {
-      exerciseEdit.Exercise.CurrentAnswer[key].event = exerciseEdit.Exercise.CorrectAnswer[key].event;
-      if (exerciseEdit.Exercise.CurrentAnswer[key].time) {
-        exerciseEdit.Exercise.CurrentAnswer[key].time = exerciseEdit.Exercise.CorrectAnswer[key].time;
-      }
+    for (let [key, _value] of Object.entries(exerciseEdit.Exercise.CurrentAnswer.part1)) {
+      exerciseEdit.Exercise.CurrentAnswer.part1[key].event = exerciseEdit.Exercise.CorrectAnswer.part1[key].event;
+      exerciseEdit.Exercise.CurrentAnswer.part1[key].time = exerciseEdit.Exercise.CorrectAnswer.part1[key].time;
     }
+    exerciseEdit.Exercise.CurrentAnswer.part2 = exerciseEdit.Exercise.CorrectAnswer.part2;
     this.setState({ Exercise: exerciseEdit, checkAnswer: false, showAnswer: true })
   }
 
   checkAnswer = () => {
     this.setState({ checkAnswer: true });
-    for (let [key, _value] of Object.entries(this.state.Exercise.Exercise.CurrentAnswer)) {
-      if (this.state.Exercise.Exercise.CurrentAnswer[key].time) {
+    for (let [key, _value] of Object.entries(this.state.Exercise.Exercise.CurrentAnswer.part1)) {
+      if (this.state.Exercise.Exercise.CurrentAnswer.part1[key].time) {
         if (
-          this.state.Exercise.Exercise.CurrentAnswer[key].event != this.state.Exercise.Exercise.CorrectAnswer[key].event ||
-          this.state.Exercise.Exercise.CurrentAnswer[key].time != this.state.Exercise.Exercise.CorrectAnswer[key].time
+          this.state.Exercise.Exercise.CurrentAnswer.part1[key].event != this.state.Exercise.Exercise.CorrectAnswer.part1[key].event ||
+          this.state.Exercise.Exercise.CurrentAnswer.part1[key].time != this.state.Exercise.Exercise.CorrectAnswer.part1[key].time
         ) {
           return;
         }
       } else {
-        if (this.state.Exercise.Exercise.CurrentAnswer[key].event != this.state.Exercise.Exercise.CorrectAnswer[key].event) {
+        if (this.state.Exercise.Exercise.CurrentAnswer.part1[key].event != this.state.Exercise.Exercise.CorrectAnswer.part1[key].event) {
           return;
         }
       }
+    } if (
+      JSON.stringify(this.state.Exercise.Exercise.CurrentAnswer.part2.sort(
+        (a, b) => (a.event > b.event) ? 1 : -1
+      )) != JSON.stringify(this.state.Exercise.Exercise.CorrectAnswer.part2.sort(
+        (a, b) => (a.event > b.event) ? 1 : -1
+      ))
+    ) {
+      return;
     }
     this.setState({ showAlertModal: true });
     return;
+  }
+
+  pushToPart2 = () => {
+    let exerciseEdit = this.state.Exercise;
+    exerciseEdit.Exercise.CurrentAnswer.part2.push({ event: this.state.part2SelectedEvent, time: this.state.part2SelectedTime });
+    this.setState({ Exercise: exerciseEdit, showPart2Modal: false })
   }
 
   ModalContent = () => {
@@ -127,10 +154,10 @@ export default class Exercise extends Component {
               return (
                 <TouchableOpacity key={index} style={[styles.DropDownItem, {
                   backgroundColor:
-                    this.state.Exercise.Exercise.CurrentAnswer[this.state.ModalLine][this.state.ModalType] == option.short ? '#F8A01D' : '#ffffff'
+                    this.state.Exercise.Exercise.CurrentAnswer.part1[this.state.ModalLine][this.state.ModalType] == option.short ? '#F8A01D' : '#ffffff'
                 }]} onPress={() => {
                   let exerciseEdit = this.state.Exercise;
-                  exerciseEdit.Exercise.CurrentAnswer[this.state.ModalLine][this.state.ModalType] = option.short;
+                  exerciseEdit.Exercise.CurrentAnswer.part1[this.state.ModalLine][this.state.ModalType] = option.short;
                   this.setState({ Exercise: exerciseEdit }, () => {
                     this.setState({ showModal: false });
                   })
@@ -160,7 +187,7 @@ export default class Exercise extends Component {
           <View style={styles.AlertModalTextCover}>
             <Text style={styles.Line1TextModal}>You got it right!</Text>
           </View>
-          <TouchableOpacity style={styles.AlertModalCancelCover} onPress={() => this.setState({showAlertModal : false})}>
+          <TouchableOpacity style={styles.AlertModalCancelCover} onPress={() => this.setState({ showAlertModal: false })}>
             <Text style={styles.AlertModalCancelText}>DISMISS</Text>
           </TouchableOpacity>
         </View>
@@ -176,7 +203,7 @@ export default class Exercise extends Component {
           <TouchableOpacity style={styles.PickerCover} disabled={this.state.showAnswer} onPress={() => {
             this.setState(
               {
-                ModalOptionList: this.state.Exercise.Exercise.Question[index].eventOptions,
+                ModalOptionList: this.state.Exercise.Exercise.Question.part1[index].eventOptions,
                 ModalLine: EventHeading,
                 ModalType: "event",
                 checkAnswer: false,
@@ -199,7 +226,7 @@ export default class Exercise extends Component {
             <Text style={[styles.EventLine2Text, { color: this.state.checkAnswer ? '#ffffff' : '#474747' }]}>{"time"}</Text>
             <TouchableOpacity style={styles.PickerCover} disabled={this.state.showAnswer} onPress={() => {
               this.setState({
-                ModalOptionList: this.state.Exercise.Exercise.Question[index].timeOptions,
+                ModalOptionList: this.state.Exercise.Exercise.Question.part1[index].timeOptions,
                 ModalLine: EventHeading,
                 ModalType: "time",
                 checkAnswer: false,
@@ -218,6 +245,66 @@ export default class Exercise extends Component {
           </View>
         }
       </View>
+    )
+  }
+
+  part2Event = ({ event, time }, index) => {
+    return (
+      <View key={index} style={styles.Part2ItemCover}>
+        <Text style={styles.Part2ItemText}>{`${event} (${time})`}</Text>
+      </View>
+    )
+  }
+
+  Part2ModalContent = () => {
+    return (
+      <React.Fragment>
+        <ScrollView style={styles.ModalCover} contentContainerStyle={styles.EventModalInner}>
+          <View style={[styles.ModalEventSectionCover, { backgroundColor: '#e0e0e0' }]}>
+            <View style={styles.ModalEventItem}>
+              <Text style={[styles.EventLine2Text, { color: '#474747' }]}>{"Event"}</Text>
+              <Picker
+                selectedValue={this.state.part2SelectedEvent}
+                style={{ height: WindowHeight / 15, width: '100%' }}
+                mode={'dropdown'}
+                itemStyle={{ fontFamily: 'OpenSans-Regular', fontSize: (WindowWidth / 21) }}
+                onValueChange={(itemValue, itemIndex) =>
+                  this.setState({ part2SelectedEvent: itemValue })
+                }>
+                {
+                  this.state.Exercise.Exercise.Question.part2.eventOptions.map((option, index) => {
+                    return (<Picker.Item key={index} label={option.full} value={option.full} />)
+                  })
+                }
+              </Picker>
+            </View>
+            <View style={styles.ModalEventItem}>
+              <Text style={[styles.EventLine2Text, { color: '#474747' }]}>{"Time"}</Text>
+              <Picker
+                selectedValue={this.state.part2SelectedTime}
+                style={{ height: WindowHeight / 15, width: '100%' }}
+                mode={'dropdown'}
+                onValueChange={(itemValue, itemIndex) =>
+                  this.setState({ part2SelectedTime: itemValue })
+                }>
+                {
+                  this.state.Exercise.Exercise.Question.part2.timeOptions.map((option, index) => {
+                    return (<Picker.Item key={index} label={option.full} value={option.full} />)
+                  })
+                }
+              </Picker>
+            </View>
+            <View style={styles.EventModalButtonCover}>
+              <TouchableOpacity onPress={() => this.setState({ showPart2Modal: false })} style={[styles.EventModalButton, { borderRightColor: '#595959', borderRightWidth: 0.6 }]}>
+                <Text style={styles.EventModalCancelText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.pushToPart2()} style={[styles.EventModalButton, { borderLeftColor: '#595959', borderLeftWidth: 0.6 }]}>
+                <Text style={styles.EventModalAddText}>Add</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
+      </React.Fragment>
     )
   }
 
@@ -248,15 +335,31 @@ export default class Exercise extends Component {
       <ScrollView style={styles.Body}>
         <View style={styles.SectionsWrapper}>
           {
-            this.state.Exercise.Exercise.Question.map((question, index) => {
+            this.state.Exercise.Exercise.Question.part1.map((question, index) => {
               return this.Event(
                 index,
                 question.line,
-                this.state.Exercise.Exercise.CurrentAnswer[question.line].event,
-                this.state.Exercise.Exercise.CurrentAnswer[question.line].time,
+                this.state.Exercise.Exercise.CurrentAnswer.part1[question.line].event,
+                this.state.Exercise.Exercise.CurrentAnswer.part1[question.line].time,
               )
             })
           }
+          <View style={[styles.Part2EventSectionCover, this.getPart2BackgroundColor()]}>
+            <Text style={styles.EventLine2Text}>
+              {"Part 2 - Other significant conditions contributing to death"}
+            </Text>
+            <View style={styles.Part2EventSectionInner}>
+              {
+                this.state.Exercise.Exercise.CurrentAnswer.part2.map((answer, index) => {
+                  return (this.part2Event(answer, index))
+                })
+              }
+              <TouchableOpacity onPress={() => this.setState({ showPart2Modal: true, checkAnswer : false })}>
+                <Image source={addIcon} style={styles.addEventIcon} />
+              </TouchableOpacity>
+            </View>
+          </View>
+
         </View>
         <View style={styles.Button2Cover}>
           <TouchableOpacity style={{ width: '50%', alignItems: 'flex-start' }} onPress={() => this.resetAnswer()} disabled={!this.state.checkAnswer && !this.state.showAnswer}>
@@ -324,6 +427,14 @@ export default class Exercise extends Component {
           onRequestClose={() => this.setState({ showAlertModal: false })}
         >
           <this.AlertModalContent />
+        </Modal>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.showPart2Modal}
+          onRequestClose={() => this.setState({ showAlertModal: false })}
+        >
+          <this.Part2ModalContent />
         </Modal>
       </React.Fragment>
     )
@@ -419,9 +530,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     display: 'flex',
     flexDirection: 'row',
-    // borderColor: '#d9d9d9',
-    // backgroundColor: '#e0e0e0',
-    // borderWidth: 2,
     marginBottom: WindowHeight / 40
   },
   EventSectionLeft: {
@@ -457,6 +565,44 @@ const styles = StyleSheet.create({
     // backgroundColor : 'blue',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+
+  Part2EventSectionCover: {
+    paddingRight: WindowWidth / 20,
+    paddingTop: WindowWidth / 25,
+    paddingBottom: WindowWidth / 25,
+    paddingLeft: WindowWidth / 20,
+    width: '100%',
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    marginBottom: WindowHeight / 40
+  },
+  Part2EventSectionInner: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: WindowWidth / 25
+  },
+  addEventIcon: {
+    height: WindowWidth / 8,
+    width: WindowWidth / 8
+  },
+  Part2ItemCover: {
+    backgroundColor: '#e0e0e0',
+    width: '100%',
+    paddingTop: WindowWidth / 30,
+    paddingBottom: WindowWidth / 30,
+    paddingLeft: WindowWidth / 25,
+    paddingRight: WindowWidth / 25,
+    borderRadius: 10,
+    marginBottom: WindowHeight / 40
+  },
+  Part2ItemText: {
+    color: '#595959',
+    fontFamily: 'OpenSans-Regular',
+    fontSize: (WindowWidth / 25)
   },
 
   /** Modal styles */
@@ -520,20 +666,64 @@ const styles = StyleSheet.create({
   AlertModalTextCover: {
     marginTop: WindowHeight / 30,
     marginBottom: WindowHeight / 30,
-    justifyContent : 'center',
-    alignItems : 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  AlertModalCancelCover : {
-    justifyContent : 'center',
-    alignItems : 'center',
-    width : '100%',
-    paddingTop : WindowHeight/50,
-    paddingBottom : WindowHeight/50,
-    borderTopColor : '#e0e0e0',
-    borderTopWidth : 1
+  AlertModalCancelCover: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    paddingTop: WindowHeight / 50,
+    paddingBottom: WindowHeight / 50,
+    borderTopColor: '#e0e0e0',
+    borderTopWidth: 1
   },
-  AlertModalCancelText : {
-    color: '#F8A01D', 
+  AlertModalCancelText: {
+    color: '#F8A01D',
+    fontFamily: 'Roboto-Medium'
+  },
+  /**Part2 ModalStyles */
+  EventModalInner: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: WindowWidth / 20,
+    paddingLeft: WindowWidth / 20,
+  },
+  ModalEventSectionCover: {
+    // paddingRight: WindowWidth / 20,
+    paddingTop: WindowWidth / 25,
+    // paddingBottom: WindowWidth / 25,
+    // paddingLeft: WindowWidth / 20,
+    width: '100%',
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    marginBottom: WindowHeight / 40
+  },
+  ModalEventItem: {
+    paddingRight: WindowWidth / 20,
+    paddingLeft: WindowWidth / 20,
+  },
+  EventModalButtonCover: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: WindowHeight / 40
+  },
+  EventModalButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '50%',
+    paddingTop: WindowHeight / 50,
+    paddingBottom: WindowHeight / 50,
+    borderTopColor: '#595959',
+    borderTopWidth: 1
+  },
+  EventModalAddText: {
+    // color: '#F8A01D',
+    fontFamily: 'Roboto-Medium'
+  },
+  EventModalCancelText: {
     fontFamily: 'Roboto-Medium'
   }
 })

@@ -19,6 +19,11 @@ import Case1 from '../src/pages/Case1'
 import Case2 from '../src/pages/Case2'
 import Page6 from '../src/pages/Page6'
 import Exercise from '../src/pages/Exercise'
+import Page5 from '../src/pages/Page5'
+import SpecialCase1 from '../src/pages/SpecialCase1'
+import SpecialCase2 from '../src/pages/SpecialCase2'
+import SpecialCase3 from '../src/pages/SpecialCase3'
+import SpecialCase4 from '../src/pages/SpecialCase4'
 
 const HomeStackNav = createStackNavigator();
 
@@ -140,6 +145,41 @@ function HomeStack() {
        <HomeStackNav.Screen
         name='Case2'
         component={Case2}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='Page5'
+        component={Page5}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='SpecialCase1'
+        component={SpecialCase1}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='SpecialCase2'
+        component={SpecialCase2}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='SpecialCase3'
+        component={SpecialCase3}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='SpecialCase4'
+        component={SpecialCase4}
         options={{
           headerShown: false
         }}

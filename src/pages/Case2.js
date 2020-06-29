@@ -107,8 +107,8 @@ export default class Case2 extends Component {
     this.setState({ fontSizeIncrement: size })
   }
 
-  render() {
-    const FirstRoute = () => (
+  FirstRoute = () => {
+    return (
       <ScrollView style={styles.Body}>
         <View style={styles.ContentBodyCover}>
           <Text style={[
@@ -122,9 +122,11 @@ export default class Case2 extends Component {
 
         </View>
       </ScrollView>
-    );
+    )
+  };
 
-    const SecondRoute = () => (
+  SecondRoute = () => {
+    return (
       <ScrollView style={styles.Body}>
         <View style={styles.ContentHeadingCover}>
           <Text style={[
@@ -141,25 +143,14 @@ export default class Case2 extends Component {
         <TouchableOpacity style={styles.Button1Cover} onPress={() => this.setState({ showModal: true })}>
           <FullWidthButton fill={'solid'} color={'#F8A01D'} buttonText={' VIEW CERTIFICATE '} />
         </TouchableOpacity>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={this.state.showModal}
-          onRequestClose={() => this.setState({ showModal: false })}
-        >
-          <this.ModalContent />
-        </Modal>
         <View style={styles.BottomPadding}>
 
         </View>
       </ScrollView>
-    );
+    )
+  };
 
-    const renderScene = SceneMap({
-      first: FirstRoute,
-      second: SecondRoute,
-    });
-
+  render() {
     const renderTabBar = props => (
       <TabBar
         {...props}
@@ -178,11 +169,28 @@ export default class Case2 extends Component {
         />
         <TabView
           navigationState={{ index: this.state.index, routes: this.state.routes }}
-          renderScene={renderScene}
+          renderScene={({ route }) => {
+            switch (route.key) {
+              case 'first':
+                return <this.FirstRoute />
+              case 'second':
+                return <this.SecondRoute />
+              default:
+                return null;
+            }
+          }}
           onIndexChange={index => this.setState({ index })}
           renderTabBar={renderTabBar}
           initialLayout={{ width: Dimensions.get('window').width }}
         />
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.showModal}
+          onRequestClose={() => this.setState({ showModal: false })}
+        >
+          <this.ModalContent />
+        </Modal>
       </React.Fragment>
     )
   }

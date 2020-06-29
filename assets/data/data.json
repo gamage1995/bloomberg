@@ -162,181 +162,297 @@
             "Description" : "Some exercise description",
             "Exercise" : {
                 "CorrectAnswer" : {
-                    "1a" : {
-                        "event" : "line 1 a",
-                        "time"  : "1a"
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Septic shock",
+                            "time"  : "2d"
+                        },
+                        "1b" : {
+                            "event" : "Staphylococcus aureus sepsis",
+                            "time"  : "3d"
+                        },
+                        "1c" : {
+                            "event" : "Staphylococcus aureus meningitis",
+                            "time"  : ">6d"
+                        }
                     },
-                    "1b" : {
-                        "event" : "line 1 b",
-                        "time"  : "1b"
-                    },
-                    "1c" : {
-                        "event" : "line 1 c",
-                        "time"  : "1c"
-                    },
-                    "1d" : {
-                        "event" : "line 1 d",
-                        "time"  : "1d"
-                    },
-                    "Other Significant Conditions Contributing To Death" : {
-                        "event" : "osc 1"
+                    "part2" : [
+                        {
+                            "event" : "Type 2 diabetes mellitus",
+                            "time" : "10 years"
+                        },
+                        {
+                            "event" : "Renal transplant",
+                            "time" : "6 years"
+                        }
+                    ]
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Staphylococcus aureus sepsis",
+                                "full" : "Staphylococcus aureus sepsis"
+                            },{
+                                "short" : "Staphylococcus aureus meningitis",
+                                "full"  : "Staphylococcus aureus meningitis"
+                            },{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Diagnostic lumbar puncture",
+                                "full"  : "Diagnostic lumbar puncture"
+                            },{
+                                "short" : "Renal transplant",
+                                "full"  : "Renal transplant"
+                            },{
+                                "short" : "Type 2 diabetes mellitus",
+                                "full"  : "Type 2 diabetes mellitus"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "3d",
+                                "full"  : "3 days"
+                            },{
+                                "short" : ">6d",
+                                "full" : "More than 6 days"
+                            },{
+                                "short" : "6yr",
+                                "full"  : "6 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Staphylococcus aureus sepsis",
+                                "full" : "Staphylococcus aureus sepsis"
+                            },{
+                                "short" : "Staphylococcus aureus meningitis",
+                                "full"  : "Staphylococcus aureus meningitis"
+                            },{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Diagnostic lumbar puncture",
+                                "full"  : "Diagnostic lumbar puncture"
+                            },{
+                                "short" : "Renal transplant",
+                                "full"  : "Renal transplant"
+                            },{
+                                "short" : "Type 2 diabetes mellitus",
+                                "full"  : "Type 2 diabetes mellitus"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "3d",
+                                "full"  : "3 days"
+                            },{
+                                "short" : ">6d",
+                                "full" : "More than 6 days"
+                            },{
+                                "short" : "6yr",
+                                "full"  : "6 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                            "eventOptions" : [{
+                                "short" : "Staphylococcus aureus sepsis",
+                                "full" : "Staphylococcus aureus sepsis"
+                            },{
+                                "short" : "Staphylococcus aureus meningitis",
+                                "full"  : "Staphylococcus aureus meningitis"
+                            },{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Diagnostic lumbar puncture",
+                                "full"  : "Diagnostic lumbar puncture"
+                            },{
+                                "short" : "Renal transplant",
+                                "full"  : "Renal transplant"
+                            },{
+                                "short" : "Type 2 diabetes mellitus",
+                                "full"  : "Type 2 diabetes mellitus"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "3d",
+                                "full"  : "3 days"
+                            },{
+                                "short" : ">6d",
+                                "full" : "More than 6 days"
+                            },{
+                                "short" : "6yr",
+                                "full"  : "6 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Staphylococcus aureus sepsis",
+                            "full" : "Staphylococcus aureus sepsis"
+                        },{
+                            "short" : "Staphylococcus aureus meningitis",
+                            "full"  : "Staphylococcus aureus meningitis"
+                        },{
+                            "short" : "Septic shock",
+                            "full" : "Septic shock"
+                        },{
+                            "short" : "Diagnostic lumbar puncture",
+                            "full"  : "Diagnostic lumbar puncture"
+                        },{
+                            "short" : "Renal transplant",
+                            "full"  : "Renal transplant"
+                        },{
+                            "short" : "Type 2 diabetes mellitus",
+                            "full"  : "Type 2 diabetes mellitus"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "2d",
+                            "full" : "2 days"
+                        },{
+                            "short" : "3d",
+                            "full"  : "3 days"
+                        },{
+                            "short" : ">6d",
+                            "full" : "More than 6 days"
+                        },{
+                            "short" : "6yr",
+                            "full"  : "6 years"
+                        },{
+                            "short" : "10yr",
+                            "full"  : "10 years"
+                        }]
                     }
                 },
-                "Question" : [
-                    {
-                        "line" : "1a",
-                        "eventOptions" : [{
-                            "short" : "line 1 a",
-                            "full" : "line 1 a"
-                        },{
-                            "short" : "line 1 b",
-                            "full"  : "line 1 b"
-                        },{
-                            "short" : "line 1 c",
-                            "full" : "line 1 c"
-                        },{
-                            "short" : "line 1 d",
-                            "full"  : "line 1 d"
-                        }],
-                        "timeOptions" : [{
-                            "short" : "1a",
-                            "full"  : "1a full"
-                        },{
-                            "short" : "1b",
-                            "full"  : "1b full"
-                        },{
-                            "short" : "1c",
-                            "full"  : "1c full"
-                        },{
-                            "short" : "1d",
-                            "full"  : "1d full"
-                        }]
-                    },
-                    {
-                        "line" : "1b",
-                        "eventOptions" : [{
-                            "short" : "line 1 a",
-                            "full" : "line 1 a"
-                        },{
-                            "short" : "line 1 b",
-                            "full"  : "line 1 b"
-                        },{
-                            "short" : "line 1 c",
-                            "full" : "line 1 c"
-                        },{
-                            "short" : "line 1 d",
-                            "full"  : "line 1 d"
-                        }],
-                        "timeOptions" : [{
-                            "short" : "1a",
-                            "full"  : "1a full"
-                        },{
-                            "short" : "1b",
-                            "full"  : "1b full"
-                        },{
-                            "short" : "1c",
-                            "full"  : "1c full"
-                        },{
-                            "short" : "1d",
-                            "full"  : "1d full"
-                        }]
-                    },
-                    {
-                        "line" : "1c",
-                        "eventOptions" : [{
-                            "short" : "line 1 a",
-                            "full" : "line 1 a"
-                        },{
-                            "short" : "line 1 b",
-                            "full"  : "line 1 b"
-                        },{
-                            "short" : "line 1 c",
-                            "full" : "line 1 c"
-                        },{
-                            "short" : "line 1 d",
-                            "full"  : "line 1 d"
-                        }],
-                        "timeOptions" : [{
-                            "short" : "1a",
-                            "full"  : "1a full"
-                        },{
-                            "short" : "1b",
-                            "full"  : "1b full"
-                        },{
-                            "short" : "1c",
-                            "full"  : "1c full"
-                        },{
-                            "short" : "1d",
-                            "full"  : "1d full"
-                        }]
-                    },
-                    {
-                        "line" : "1d",
-                        "eventOptions" : [{
-                            "short" : "line 1 a",
-                            "full" : "line 1 a"
-                        },{
-                            "short" : "line 1 b",
-                            "full"  : "line 1 b"
-                        },{
-                            "short" : "line 1 c",
-                            "full" : "line 1 c"
-                        },{
-                            "short" : "line 1 d",
-                            "full"  : "line 1 d"
-                        }],
-                        "timeOptions" : [{
-                            "short" : "1a",
-                            "full"  : "1a full"
-                        },{
-                            "short" : "1b",
-                            "full"  : "1b full"
-                        },{
-                            "short" : "1c",
-                            "full"  : "1c full"
-                        },{
-                            "short" : "1d",
-                            "full"  : "1d full"
-                        }]
-                    },
-                    {
-                        "line" : "Other Significant Conditions Contributing To Death",
-                        "eventOptions" : [{
-                            "short" : "osc 1",
-                            "full" : "osc 1"
-                        },{
-                            "short" : "osc 2",
-                            "full"  : "osc 2"
-                        },{
-                            "short" : "osc 3",
-                            "full" : "osc 3"
-                        },{
-                            "short" : "osc 4",
-                            "full"  : "osc 4"
-                        }]
-                    }
-                ],
                 "CurrentAnswer" : {
-                    "1a" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0 d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0 d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0 d"
+                        }
                     },
-                    "1b" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
-                    },
-                    "1c" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
-                    },
-                    "1d" : {
-                        "event" : "Select an event",
-                        "time"  : "0 d"
-                    },
-                    "Other Significant Conditions Contributing To Death" : {
-                        "event" : "Select an event"
-                    }
+                    "part2" : []
                 }
+            }
+        }
+    ],
+    "SpecialCases" : [
+        {
+            "Title" : "Diabetes Mellitus",
+            "CaseDescription" : "Diabetes mellitus can be the underlying cause of death, or a risk factor for another underlying cause of death.\n\n As a rule, if the patient dies from a complication of diabetes mellitus(e.g. diabetic nephropathy) document diabetes mellitus (type I or II) as the underlying cause of death.\n\nIf a patient dies from stroke or acute myocardial infarction, document diabetes in Part 2 as a risk factor (other significant condition).",
+            "CaseExample" : "A 75-year-old female had a 15-year history of non-insulin-dependent diabetes mellitus (NIDDM), a 13-year history of mild hypertension treated with thiazide diuretics, and an uncomplicated myocardial infarction 6 years prior to the present illness.\n\nShe was found disoriented in her apartment and brought to the hospital.\n\nOn admission she was noted to be unresponsive, without focal neurologic signs, and severely dehydrated with a blood pressure of 90/60.\n\nInitial laboratory tests disclosed severe hyperglycaemia, hyper osmolarity, azotaemia, and mild ketosis without acidosis.\n\nA diagnosis of hyperosmolar non - ketotic coma was made.\n\nThe patient was vigorously treated with fluids, electrolytes, insulin, and broad-spectrum antibiotics, although no source for infection was documented.\n\nWithin 72 hours, the patient’s hyperosmolar, hyperglycaemic state was resolved. However, she remained anuric with progressive azotaemia.\n\nAttempts at renal dialysis were unsuccessful, and the patient died on the 8th hospital day in severe acute renal failure.",
+            "CaseApplication" : {
+                "Heading" : "Sequence of events leading to death",
+                "Events" : [
+                    {
+                        "line2" : "Immediate cause of death",
+                        "line1" : "Acute renal failure"
+                    },
+                    {
+                        "line1" : "Hyperosmolar non ketotic coma"
+                    },
+                    {
+                        "line2" : "Underlying cause of death",
+                        "line1" : "Diabetes mellitus type 2"
+                    },
+                    {
+                        "line2" : "Contributory causes",
+                        "line1" : "Hypertension / Previous myocardial infarction"
+                    }
+                ]
+            }
+        },
+        {
+            "Title" : "Accident, violence and other external causes",
+            "CaseDescription" : "When death occurs as a consequence of injury or violence, the external cause (the circumstance of the injury) should always be listed as the underlying cause.",
+            "CaseExample" : "A 45-year-old electrician fall from a lamp post while attending to repair job in a factory.\n\nHe was admitted to the hospital. An X ray skull done upon admission revealed fractured temporal bone.\n\nCT scan head conducted three-hours after admission showed evidence of sub Dural haematoma.\n\nTwelve hours after the admission, he died of cerebral compression due to subdural haematoma.",
+            "CaseApplication" : {
+                "Heading" : "Sequence of events leading to death",
+                "Events" : [
+                    {
+                        "line2" : "Immediate cause of death",
+                        "line1" : "Cerebral compression"
+                    },
+                    {
+                        "line1" : "Subdural haematoma"
+                    },
+                    {
+                        "line1" : "Temporal bone fracture"
+                    },
+                    {
+                        "line2" : "Underlying cause of death",
+                        "line1" : "Fall from lamp post"
+                    }
+                ]
+            }
+        },
+        {
+            "Title" : "Pregnancy and childbirth",
+            "CaseDescription" : "If a woman dies during pregnancy or within 42 days of the termination of a pregnancy, the fact that the woman was pregnant should be indicated on the certificate, even if the direct cause of death is not related to the pregnancy or to childbirth.",
+            "CaseExample" : "A female aged 24 years, pregnant for 4 months, was admitted to hospital with sudden onset of hemiplegia.\n\nHer history revealed that she had suffered from rheumatic fever at the age of 10 years, and a diagnosis of mitral stenosis was made.\n\nFurthermore, a CT scan of the brain identified a cerebral embolus and on her second day in hospital the patient died.",
+            "CaseApplication" : {
+                "Heading" : "Sequence of events leading to death",
+                "Events" : [
+                    {
+                        "line2" : "Immediate cause of death",
+                        "line1" : "Cerebral embolism"
+                    },
+                    {
+                        "line1" : "Mitral stenosis"
+                    },
+                    {
+                        "line2" : "Underlying cause of death",
+                        "line1" : "Rheumatic fever"
+                    },
+                    {
+                        "line2" : "Contributory causes",
+                        "line1" : "Pregnancy"
+                    }
+                ]
+            }
+        },
+        {
+            "Title" : "Pregnancy and childbirth - II",
+            "CaseDescription" : "If a woman dies during pregnancy or within 42 days of the termination of a pregnancy, the fact that the woman was pregnant should be indicated on the certificate, even if the direct cause of death is not related to the pregnancy or to childbirth.",
+            "CaseExample" : "A 24-year-old woman was admitted with severe right sided abdominal pain of 6 hours duration.\n\nShe collapsed and was resuscitated in the emergency department.\n\nThe history revealed that she had amenorrhoea for 11 weeks.\n\nUltrasound scan confirmed the clinical suspicion of a ruptured ectopic pregnancy and she was prepared for surgery.\n\nBut before the surgery she died of hypovolaemic shock after 2 hours of admission.",
+            "CaseApplication" : {
+                "Heading" : "Sequence of events leading to death",
+                "Events" : [
+                    {
+                        "line2" : "Immediate cause of death",
+                        "line1" : "Internal bleeding"
+                    },
+                    {
+                        "line2" : "Underlying cause of death",
+                        "line1" : "Ruptured ectopic pregnancy"
+                    }
+                ]
             }
         }
     ]
