@@ -18,6 +18,8 @@ import Page4 from '../src/pages/Page4'
 import Case1 from '../src/pages/Case1'
 import Case2 from '../src/pages/Case2'
 import Page6 from '../src/pages/Page6'
+import Page7 from '../src/pages/Page7'
+import Page8 from '../src/pages/Page8'
 import Exercise from '../src/pages/Exercise'
 import Page5 from '../src/pages/Page5'
 import SpecialCase1 from '../src/pages/SpecialCase1'
@@ -192,8 +194,22 @@ function HomeStack() {
         }}
       />
       <HomeStackNav.Screen
+        name='Page7'
+        component={Page7}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
         name='Exercise'
         component={Exercise}
+        options={{
+          headerShown: false
+        }}
+      />
+       <HomeStackNav.Screen
+        name='Page8'
+        component={Page8}
         options={{
           headerShown: false
         }}

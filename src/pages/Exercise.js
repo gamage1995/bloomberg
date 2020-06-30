@@ -10,7 +10,7 @@ import { Picker } from '@react-native-community/picker';
 const data = require('../../assets/data/data.json');
 const PickerIcon = require('../../assets/pickerIcon.png');
 const addIcon = require('../../assets/addIcon.png');
-
+const cancelIcon = require('../../assets/part2CancelImage.png');
 export default class Exercise extends Component {
   constructor(props) {
     super(props);
@@ -96,9 +96,7 @@ export default class Exercise extends Component {
       exerciseEdit.Exercise.CurrentAnswer.part1[key].time = '0d';
     }
     exerciseEdit.Exercise.CurrentAnswer.part2 = [];
-    this.setState({ Exercise: exerciseEdit, checkAnswer: false, showAnswer: false }, () => {
-      console.log(this.state.Exercise.Exercise.CurrentAnswer, this.state.Exercise.Exercise.CorrectAnswer)
-    })
+    this.setState({ Exercise: exerciseEdit, checkAnswer: false, showAnswer: false })
   }
 
   showAnswer = () => {
@@ -143,6 +141,12 @@ export default class Exercise extends Component {
     let exerciseEdit = this.state.Exercise;
     exerciseEdit.Exercise.CurrentAnswer.part2.push({ event: this.state.part2SelectedEvent, time: this.state.part2SelectedTime });
     this.setState({ Exercise: exerciseEdit, showPart2Modal: false })
+  }
+
+  removeFromPart2 = (index) => {
+    let exerciseEdit = this.state.Exercise;
+    exerciseEdit.Exercise.CurrentAnswer.part2.splice(index,1);
+    this.setState({ Exercise: exerciseEdit, checkAnswer : false })
   }
 
   ModalContent = () => {
@@ -251,7 +255,14 @@ export default class Exercise extends Component {
   part2Event = ({ event, time }, index) => {
     return (
       <View key={index} style={styles.Part2ItemCover}>
-        <Text style={styles.Part2ItemText}>{`${event} (${time})`}</Text>
+        <View style={styles.Part2ItemLeft}>
+          <Text style={styles.Part2ItemText}>{`${event} (${time})`}</Text>
+        </View>
+        <View style={styles.Part2ItemRight}>
+          <TouchableOpacity onPress={(index)=> this.removeFromPart2(index)}>
+            <Image source={cancelIcon} style={styles.Part2Icon}/>
+          </TouchableOpacity>
+        </View>
       </View>
     )
   }
@@ -597,12 +608,29 @@ const styles = StyleSheet.create({
     paddingLeft: WindowWidth / 25,
     paddingRight: WindowWidth / 25,
     borderRadius: 10,
-    marginBottom: WindowHeight / 40
+    marginBottom: WindowHeight / 40,
+    display : 'flex',
+    flexDirection : 'row'
+  },
+  Part2ItemLeft : {
+    flex : 9,
+    justifyContent : 'center',
+    alignItems : 'flex-start'
+  },
+  Part2ItemRight : {
+    flex : 2,
+    justifyContent : 'center',
+    alignItems : 'flex-end',
+    // backgroundColor : 'blue'
   },
   Part2ItemText: {
     color: '#595959',
     fontFamily: 'OpenSans-Regular',
     fontSize: (WindowWidth / 25)
+  },
+  Part2Icon : {
+    width : WindowWidth/15,
+    height : WindowWidth/15
   },
 
   /** Modal styles */

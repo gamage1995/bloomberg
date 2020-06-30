@@ -6,10 +6,6 @@
                 "body" : "This application guides doctors in filling out Death certificates.\n\nDeath certification forms an important part of a doctor’s duties because the information recorded in death certificates helps decision makers determine health priorities for prevention of deaths because of similar causes in the future."
             },
             {
-                "head" : "Underlying cause of death",
-                "body" : "The certificate is provided to the family who may need it directly to obtain permission for funeral arrangements and for other legal purposes, including wills and testaments.\n\nThe information on the certificate is also important for family members so that they know what caused the death and are aware of conditions that may occur or could be prevented in other family members."
-            },
-            {
                 "head" : "Identification data in death certificate",
                 "body" : "This information is of critical importance to correctly identifying the deceased for both legal and statistical purposes.\n\nThe details vary from country to country but are likely to include; date and place of death, full name and place of residence, sex and race/ethnicity age profession or occupation."
             }
@@ -94,7 +90,23 @@
         ]
     },
     "Page4" : {
-        "Data" : [
+        "data" :[
+            "Check the accuracy of identification data including correct spelling of the names",
+            "Document only one condition per line",
+            "Use consecutive lines",
+            "Record time interval",
+            "Avoid using abbreviations",
+            "Check the Document on clear sequence of events leading to death",
+            "Do not enter ill-defined conditions as underlying cause of death",
+            "All entries must be legible",
+            "Use black or blue ink",
+            "Do not make alterations or erasures",
+            "If you want to delete an entry, draw a single line across it", 
+            "Do not use correction fluid"
+        ]
+    },
+    "Page5" : {
+        "data" : [
             "CASE EXAMPLE 1","CASE EXAMPLE 2"
         ]
     },
@@ -152,14 +164,9 @@
             ]
         }
     },
-    "Page6" : {
-        "Data" : [
-            "CASE EXERCISE 1","CASE EXERCISE 2","CASE EXERCISE 3","CASE EXERCISE 4","CASE EXERCISE 5"
-        ]
-    },
     "CaseExercises" : [
         {
-            "Description" : "Some exercise description",
+            "Description" : "A male aged 49 years was admitted to hospital with a history of fever, disorientation and drowsiness for the last 2 days.\n\nFocal neurological findings were identified on physical examination and a provisional diagnosis of meningitis was made.\n\nA diagnostic lumber puncture was performed for CSF examination.\n\nStaphylococcus aureus organism was isolated from CSF and the provisional diagnosis was confirmed as Staphylococcus aureus meningitis.\n\nDespite IV antibiotic administration his condition worsened and on 3rd of admission blood cultures were also positive for Staphylococcus aureus and the patient expired on 4th day of admission due to septic shock.\n\nHe was a diagnosed case of type II diabetes for the last 10 years and has had a renal transplant 6 years back.",
             "Exercise" : {
                 "CorrectAnswer" : {
                     "part1" : {
@@ -346,15 +353,206 @@
                     "part1" : {
                         "1a" : {
                             "event" : "Select an event",
-                            "time"  : "0 d"
+                            "time"  : "0d"
                         },
                         "1b" : {
                             "event" : "Select an event",
-                            "time"  : "0 d"
+                            "time"  : "0d"
                         },
                         "1c" : {
                             "event" : "Select an event",
-                            "time"  : "0 d"
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "A male aged 64 years admitted to hospital with an arteriosclerotic cerebral infarction.\n\nHe was transferred to rehabilitation two months later where he developed hypostatic pneumonia.\n\nIn ICU sputum cultured Klebsiella pneumoniae and the patient died 2 days after admission to the ICU.\n\nHe was also addicted to alcohol for the past 20 years and on regular medication for Ischaemic heart disease for the last 10 years.",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Klebsiella pneumonia",
+                            "time"  : "2d"
+                        },
+                        "1b" : {
+                            "event" : "Cerebral infarction",
+                            "time"  : "2Mn"
+                        },
+                        "1c" : {
+                            "event" : "Arteriosclerosis",
+                            "time"  : ">2Mn"
+                        }
+                    },
+                    "part2" : [
+                        {
+                            "event" : "Ischaemic heart disease",
+                            "time" : "10 years"
+                        },
+                        {
+                            "event" : "Alcohol addiction",
+                            "time" : "20 years"
+                        }
+                    ]
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Arteriosclerosis",
+                                "full" : "Arteriosclerosis"
+                            },{
+                                "short" : "Cerebral infarction",
+                                "full"  : "Cerebral infarction"
+                            },{
+                                "short" : "Klebsiella pneumonia",
+                                "full" : "Klebsiella pneumonia"
+                            },{
+                                "short" : "Ischaemic heart disease",
+                                "full"  : "Ischaemic heart disease"
+                            },{
+                                "short" : "Alcohol addiction",
+                                "full"  : "Alcohol addiction"
+                            }],
+                            "timeOptions" : [{
+                                "short" : ">2Mn",
+                                "full" : "More than 2 months"
+                            },{
+                                "short" : "2Mn",
+                                "full"  : "2 months"
+                            },{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "20yr",
+                                "full"  : "20 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Arteriosclerosis",
+                                "full" : "Arteriosclerosis"
+                            },{
+                                "short" : "Cerebral infarction",
+                                "full"  : "Cerebral infarction"
+                            },{
+                                "short" : "Klebsiella pneumonia",
+                                "full" : "Klebsiella pneumonia"
+                            },{
+                                "short" : "Ischaemic heart disease",
+                                "full"  : "Ischaemic heart disease"
+                            },{
+                                "short" : "Alcohol addiction",
+                                "full"  : "Alcohol addiction"
+                            }],
+                            "timeOptions" : [{
+                                "short" : ">2Mn",
+                                "full" : "More than 2 months"
+                            },{
+                                "short" : "2Mn",
+                                "full"  : "2 months"
+                            },{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "20yr",
+                                "full"  : "20 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                            "eventOptions" : [{
+                                "short" : "Arteriosclerosis",
+                                "full" : "Arteriosclerosis"
+                            },{
+                                "short" : "Cerebral infarction",
+                                "full"  : "Cerebral infarction"
+                            },{
+                                "short" : "Klebsiella pneumonia",
+                                "full" : "Klebsiella pneumonia"
+                            },{
+                                "short" : "Ischaemic heart disease",
+                                "full"  : "Ischaemic heart disease"
+                            },{
+                                "short" : "Alcohol addiction",
+                                "full"  : "Alcohol addiction"
+                            }],
+                            "timeOptions" : [{
+                                "short" : ">2Mn",
+                                "full" : "More than 2 months"
+                            },{
+                                "short" : "2Mn",
+                                "full"  : "2 months"
+                            },{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "20yr",
+                                "full"  : "20 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Arteriosclerosis",
+                            "full" : "Arteriosclerosis"
+                        },{
+                            "short" : "Cerebral infarction",
+                            "full"  : "Cerebral infarction"
+                        },{
+                            "short" : "Klebsiella pneumonia",
+                            "full" : "Klebsiella pneumonia"
+                        },{
+                            "short" : "Ischaemic heart disease",
+                            "full"  : "Ischaemic heart disease"
+                        },{
+                            "short" : "Alcohol addiction",
+                            "full"  : "Alcohol addiction"
+                        }],
+                        "timeOptions" : [{
+                            "short" : ">2Mn",
+                            "full" : "More than 2 months"
+                        },{
+                            "short" : "2Mn",
+                            "full"  : "2 months"
+                        },{
+                            "short" : "2d",
+                            "full" : "2 days"
+                        },{
+                            "short" : "20yr",
+                            "full"  : "20 years"
+                        },{
+                            "short" : "10yr",
+                            "full"  : "10 years"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
                         }
                     },
                     "part2" : []

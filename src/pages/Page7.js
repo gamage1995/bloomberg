@@ -8,9 +8,8 @@ const data = require('../../assets/data/data.json')
 const Image1 = require('../../assets/Image1.png')
 const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/arrowDark.png')
-const linkArray = ['SpecialCase1', 'SpecialCase2', 'SpecialCase3', 'SpecialCase4'];
 
-export default class Page6 extends Component {
+export default class Page7 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,16 +43,16 @@ export default class Page6 extends Component {
   handleTextSizeChange = (size) => {
     this.setState({ fontSizeIncrement: size })
   }
-  Section = (heading, nextLink) => {
+  Section = (nextLink,index) => {
     return (
-      <TouchableOpacity key={heading} style={styles.SectionCover} onPress={() => this.props.navigation.navigate(nextLink)}>
+      <TouchableOpacity key={index} style={styles.SectionCover} onPress={() => this.props.navigation.navigate(nextLink,{index})}>
         <View style={styles.SectionTextCover}>
           <Text style={[
             styles.ContentHeading,
             {
               fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
               lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
-            }]}>{heading}
+            }]}>{`Exercise ${index + 1}`}
           </Text>
         </View>
         <View style={styles.SectionArrowCover}>
@@ -67,15 +66,15 @@ export default class Page6 extends Component {
       <React.Fragment>
         <Header
           navigation={this.props.navigation}
-          heading={'CERTIFYING SPECIFIC CAUSES'}
+          heading={'CASE EXERCISES'}
           handleChange={this.handleTextSizeChange}
           SubHeader={false}
         />
         <ScrollView style={styles.Body}>
           <View style={styles.SectionsWrapper}>
             {
-              data.SpecialCases.map((section, index) => {
-                return this.Section(section.Title, linkArray[index])
+              data.CaseExercises.map((section,index) => {
+                return this.Section('Exercise',index)
               })
             }
           </View>
@@ -136,32 +135,32 @@ const styles = StyleSheet.create({
   },
   SectionCover: {
     paddingRight: WindowWidth / 40,
-    paddingTop: WindowWidth / 20,
-    paddingBottom: WindowWidth / 20,
-    paddingLeft: WindowWidth / 20,
+    paddingTop : WindowWidth/20,
+    paddingBottom : WindowWidth/20,
+    paddingLeft : WindowWidth/20,
     width: '100%',
     backgroundColor: '#ebebeb',
-    borderLeftWidth: 2,
-    borderLeftColor: '#F8A01D',
+    borderLeftWidth : 2,
+    borderLeftColor : '#F8A01D',
     marginTop: WindowHeight / 30,
     borderRadius: 10,
-    display: 'flex',
-    flexDirection: 'row'
+    display : 'flex',
+    flexDirection : 'row'
   },
-  SectionTextCover: {
-    flex: 7,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
+  SectionTextCover : {
+    flex : 7,
+    justifyContent : 'center',
+    alignItems : 'flex-start'
   },
-  SectionArrowCover: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-end',
+  SectionArrowCover : {
+    flex : 1,
+    justifyContent : 'center',
+    alignItems : 'flex-end',
     // backgroundColor : 'blue',
-    padding: 0
+    padding : 0
   },
-  SectionArrow: {
-    width: WindowWidth / 20,
-    height: WindowWidth / 20,
+  SectionArrow : {
+    width : WindowWidth/20,
+    height : WindowWidth/20,
   }
 })

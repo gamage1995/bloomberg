@@ -37,10 +37,10 @@ export default class HomePage extends Component {
               },
               shadowOpacity: 0.51,
               shadowRadius: 13.16,
-              height : WindowHeight * 0.09,
+              height: WindowHeight * 0.09,
               elevation: 20,
-              backgroundColor : 'white'
-            }] : [{height : WindowHeight * 0.08}]]}>
+              backgroundColor: 'white'
+            }] : [{ height: WindowHeight * 0.08 }]]}>
               <Image source={logo} style={this.state.headerOffset > 0 ? styles.LogoImage : styles.LogoImageInHead} />
             </View>
           </View>
@@ -57,14 +57,14 @@ export default class HomePage extends Component {
                 cardRoute={'Page3'} navigation={this.props.navigation}
               />
               <MainCard
-                cardTitle={'CERTIFYING SPECIFIC CAUSES'}
-                cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
+                cardTitle={'CASE EXAMPLES'}
+                cardIcon={require(`../../assets/icons8-list-96.png`)}
                 cardRoute={'Page5'} navigation={this.props.navigation}
               />
-               <MainCard
-                cardTitle={'ABOUT APP'}
-                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
-                cardRoute={'Page1'} navigation={this.props.navigation}
+              <MainCard
+                cardTitle={'CASE EXERCISES'}
+                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+                cardRoute={'Page7'} navigation={this.props.navigation}
               />
             </View>
             <View style={styles.CardColumn}>
@@ -74,14 +74,19 @@ export default class HomePage extends Component {
                 cardRoute={'Page2'} navigation={this.props.navigation}
               />
               <MainCard
-                cardTitle={'CASE EXAMPLES'}
-                cardIcon={require(`../../assets/icons8-list-96.png`)}
+                cardTitle={'IMPORTANT POINTS TO REMEMBER WHILE CERTIFYING'}
+                cardIcon={require(`../../assets/icons8-user-manual-96.png`)}
                 cardRoute={'Page4'} navigation={this.props.navigation}
               />
               <MainCard
-                cardTitle={'CASE EXERCISES'}
-                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+                cardTitle={'CERTIFYING SPECIFIC CAUSES'}
+                cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
                 cardRoute={'Page6'} navigation={this.props.navigation}
+              />
+              <MainCard
+                cardTitle={'ABOUT APP'}
+                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
+                cardRoute={'Page8'} navigation={this.props.navigation}
               />
             </View>
           </View>
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
     height: WindowHeight * 0.047,
     resizeMode: 'contain'
   },
-  LogoImageInHead : {
+  LogoImageInHead: {
     height: WindowHeight * 0.04,
     resizeMode: 'contain'
   },
