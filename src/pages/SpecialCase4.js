@@ -55,7 +55,7 @@ export default class SpecialCase3 extends Component {
               cropWidth={WindowWidth}
               cropHeight={WindowHeight}
               imageWidth={WindowWidth - (2 * WindowWidth / 60)}
-              imageHeight={(WindowWidth - (2 * WindowWidth / 60)) * 1.1}
+              imageHeight={(WindowWidth - (2 * WindowWidth / 60)) * 0.7}
             >
               <Image source={Image1} style={styles.Image1} />
             </ImageZoom>
@@ -73,10 +73,10 @@ export default class SpecialCase3 extends Component {
   Event = (index, line1, line2, line3) => {
     return (
       <View style={styles.EventCover} key={index}>
-        <View style={[styles.EventArrowCover, { display: index == 0 ? 'none' : 'flex' }]}>
+        <View style={[styles.EventArrowCover, { display: index == 0 || line2 == 'Contributory cause' ? 'none' : 'flex' }]}>
           <Image style={styles.EventArrow} source={Arrow} />
         </View>
-        <View style={styles.EventSectionCover}>
+        <View style={[styles.EventSectionCover, {marginTop : line2 == 'Contributory cause' ? WindowHeight / 30 : 0}]}>
           <Text style={[
             styles.Line3Text,
             {
@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
   Image1: {
     resizeMode: 'contain',
     width: WindowWidth - (2 * WindowWidth / 60),
-    height: (WindowWidth - (2 * WindowWidth / 60)) * 1.1,
+    height: (WindowWidth - (2 * WindowWidth / 60)) * 0.7,
     alignSelf: 'center'
   },
   CancelButtonCover: {

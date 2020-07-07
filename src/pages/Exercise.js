@@ -145,15 +145,17 @@ export default class Exercise extends Component {
 
   removeFromPart2 = (index) => {
     let exerciseEdit = this.state.Exercise;
-    exerciseEdit.Exercise.CurrentAnswer.part2.splice(index,1);
-    this.setState({ Exercise: exerciseEdit, checkAnswer : false })
+    console.log(index)
+    exerciseEdit.Exercise.CurrentAnswer.part2.splice(index, 1);
+    this.setState({ Exercise: exerciseEdit, checkAnswer: false })
   }
 
   ModalContent = () => {
     return (
       <React.Fragment>
-        <ScrollView style={styles.ModalCover} contentContainerStyle={styles.ModalInner}>
-          <View style={styles.DropDownCover}>
+        <View style={styles.ModalCover} contentContainerStyle={styles.ModalInner}>
+          <ScrollView style={styles.DropDownCover} contentContainerStyle={styles.ModalInner}>
+          <View style={{height : WindowHeight/4}}></View>
             {this.state.ModalOptionList.map((option, index) => {
               return (
                 <TouchableOpacity key={index} style={[styles.DropDownItem, {
@@ -178,8 +180,9 @@ export default class Exercise extends Component {
                 </TouchableOpacity>
               )
             })}
-          </View>
-        </ScrollView>
+            <View style={styles.BottomPadding}></View>
+          </ScrollView>
+        </View>
       </React.Fragment>
     )
   }
@@ -259,8 +262,8 @@ export default class Exercise extends Component {
           <Text style={styles.Part2ItemText}>{`${event} (${time})`}</Text>
         </View>
         <View style={styles.Part2ItemRight}>
-          <TouchableOpacity onPress={(index)=> this.removeFromPart2(index)}>
-            <Image source={cancelIcon} style={styles.Part2Icon}/>
+          <TouchableOpacity onPress={() => this.removeFromPart2(index)}>
+            <Image source={cancelIcon} style={styles.Part2Icon} />
           </TouchableOpacity>
         </View>
       </View>
@@ -365,7 +368,7 @@ export default class Exercise extends Component {
                   return (this.part2Event(answer, index))
                 })
               }
-              <TouchableOpacity onPress={() => this.setState({ showPart2Modal: true, checkAnswer : false })}>
+              <TouchableOpacity onPress={() => this.setState({ showPart2Modal: true, checkAnswer: false })}>
                 <Image source={addIcon} style={styles.addEventIcon} />
               </TouchableOpacity>
             </View>
@@ -609,18 +612,18 @@ const styles = StyleSheet.create({
     paddingRight: WindowWidth / 25,
     borderRadius: 10,
     marginBottom: WindowHeight / 40,
-    display : 'flex',
-    flexDirection : 'row'
+    display: 'flex',
+    flexDirection: 'row'
   },
-  Part2ItemLeft : {
-    flex : 9,
-    justifyContent : 'center',
-    alignItems : 'flex-start'
+  Part2ItemLeft: {
+    flex: 9,
+    justifyContent: 'center',
+    alignItems: 'flex-start'
   },
-  Part2ItemRight : {
-    flex : 2,
-    justifyContent : 'center',
-    alignItems : 'flex-end',
+  Part2ItemRight: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
     // backgroundColor : 'blue'
   },
   Part2ItemText: {
@@ -628,9 +631,9 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Regular',
     fontSize: (WindowWidth / 25)
   },
-  Part2Icon : {
-    width : WindowWidth/15,
-    height : WindowWidth/15
+  Part2Icon: {
+    width: WindowWidth / 15,
+    height: WindowWidth / 15
   },
 
   /** Modal styles */
@@ -640,14 +643,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#212121f1',
   },
   ModalInner: {
-    flex: 1,
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
   },
   DropDownCover: {
     display: 'flex',
     flexDirection: 'column',
-    width: '85%'
+    width: '100%'
   },
   DropDownItem: {
     paddingTop: WindowHeight / 50,
@@ -656,7 +659,8 @@ const styles = StyleSheet.create({
     paddingRight: WindowWidth / 20,
     marginBottom: WindowHeight / 60,
     borderRadius: 10,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: '85%',
   },
   DropDownTextCover: {
     flex: 15,

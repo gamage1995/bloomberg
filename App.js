@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native'
 import HomeStack from './navigation/Navigator';
 
 export default class App extends Component {
@@ -11,9 +12,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <NavigationContainer>
-        <HomeStack />
-      </NavigationContainer>
+      <SafeAreaView style={{flex : 1}}>
+        <NavigationContainer>
+          <HomeStack />
+        </NavigationContainer>
+      </SafeAreaView>
     );
   }
 }

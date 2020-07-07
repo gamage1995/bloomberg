@@ -158,7 +158,7 @@
                     "line1" : "Diabetes Mellitus Type II"
                 },
                 {
-                    "line2" : "Contributory condition - Part-2",
+                    "line2" : "Contributory cause",
                     "line1" : "Benign hypertrophy of prostate"
                 }
             ]
@@ -166,7 +166,7 @@
     },
     "CaseExercises" : [
         {
-            "Description" : "A male aged 49 years was admitted to hospital with a history of fever, disorientation and drowsiness for the last 2 days.\n\nFocal neurological findings were identified on physical examination and a provisional diagnosis of meningitis was made.\n\nA diagnostic lumber puncture was performed for CSF examination.\n\nStaphylococcus aureus organism was isolated from CSF and the provisional diagnosis was confirmed as Staphylococcus aureus meningitis.\n\nDespite IV antibiotic administration his condition worsened and on 3rd of admission blood cultures were also positive for Staphylococcus aureus and the patient expired on 4th day of admission due to septic shock.\n\nHe was a diagnosed case of type II diabetes for the last 10 years and has had a renal transplant 6 years back.",
+            "Description" : "A male aged 49 years was admitted to hospital with a history of fever, disorientation and drowsiness for the last 2 days.\n\nFocal neurological findings were identified on physical examination and a provisional diagnosis of meningitis was made.\n\nA diagnostic lumber puncture was performed for CSF examination.\n\nStaphylococcus aureus organism was isolated from CSF and the provisional diagnosis was confirmed as Staphylococcus aureus meningitis.\n\nDespite IV antibiotic administration his condition worsened and on 3rd day of admission blood cultures were also positive for Staphylococcus aureus and the patient expired on 4th day of admission due to septic shock.\n\nHe was a diagnosed case of type II diabetes for the last 10 years and has had a renal transplant 6 years back.",
             "Exercise" : {
                 "CorrectAnswer" : {
                     "part1" : {
@@ -369,7 +369,7 @@
             }
         },
         {
-            "Description" : "A male aged 64 years admitted to hospital with an arteriosclerotic cerebral infarction.\n\nHe was transferred to rehabilitation two months later where he developed hypostatic pneumonia.\n\nIn ICU sputum cultured Klebsiella pneumoniae and the patient died 2 days after admission to the ICU.\n\nHe was also addicted to alcohol for the past 20 years and on regular medication for Ischaemic heart disease for the last 10 years.",
+            "Description" : "A male aged 64 years admitted to hospital with an arteriosclerotic cerebral infarction.\n\nHe was transferred to rehabilitation two months later where he developed hypostatic pneumonia.\n\nIn the Intensive Care Unit (ICU), sputum cultured Klebsiella pneumoniae and the patient died 2 days after admission to the ICU.\n\nHe was also addicted to alcohol for the past 20 years and on regular medication for Ischaemic heart disease for the last 10 years.",
             "Exercise" : {
                 "CorrectAnswer" : {
                     "part1" : {
@@ -379,11 +379,11 @@
                         },
                         "1b" : {
                             "event" : "Cerebral infarction",
-                            "time"  : "2Mn"
+                            "time"  : "2mn"
                         },
                         "1c" : {
                             "event" : "Arteriosclerosis",
-                            "time"  : ">2Mn"
+                            "time"  : ">2mn"
                         }
                     },
                     "part2" : [
@@ -418,10 +418,10 @@
                                 "full"  : "Alcohol addiction"
                             }],
                             "timeOptions" : [{
-                                "short" : ">2Mn",
+                                "short" : ">2mn",
                                 "full" : "More than 2 months"
                             },{
-                                "short" : "2Mn",
+                                "short" : "2mn",
                                 "full"  : "2 months"
                             },{
                                 "short" : "2d",
@@ -453,10 +453,10 @@
                                 "full"  : "Alcohol addiction"
                             }],
                             "timeOptions" : [{
-                                "short" : ">2Mn",
+                                "short" : ">2mn",
                                 "full" : "More than 2 months"
                             },{
-                                "short" : "2Mn",
+                                "short" : "2mn",
                                 "full"  : "2 months"
                             },{
                                 "short" : "2d",
@@ -488,10 +488,10 @@
                                 "full"  : "Alcohol addiction"
                             }],
                             "timeOptions" : [{
-                                "short" : ">2Mn",
+                                "short" : ">2mn",
                                 "full" : "More than 2 months"
                             },{
-                                "short" : "2Mn",
+                                "short" : "2mn",
                                 "full"  : "2 months"
                             },{
                                 "short" : "2d",
@@ -523,10 +523,10 @@
                             "full"  : "Alcohol addiction"
                         }],
                         "timeOptions" : [{
-                            "short" : ">2Mn",
+                            "short" : ">2mn",
                             "full" : "More than 2 months"
                         },{
-                            "short" : "2Mn",
+                            "short" : "2mn",
                             "full"  : "2 months"
                         },{
                             "short" : "2d",
@@ -537,6 +537,1190 @@
                         },{
                             "short" : "10yr",
                             "full"  : "10 years"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "A 36-year-old man with chronic alcoholism for 10 years had a previous history of duodenal ulcer with antacids treatment for 3 years.\n\nOn the day of admission, he had symptoms of acute abdominal pain with high fever. Initial chest X-rays showed free air under both domes of diaphragm.\n\nThe patient was diagnosed as having peritonitis from peptic ulcer perforation.\n\nEmergency exploratory laparotomy was performed on the 1st day of admission.\n\nThe surgeon found perforated duodenal ulcer size 2cm at anterior wall of first part duodenum.\n\nFive days later, the patient had high fever with chills, his abdominal ultrasound revealed sub-phrenic abscess under the right diaphragm.\n\nA revision exploratory laparotomy was planned.\n\nHowever, the patient suddenly showed signs of septic shock that night and had a sudden cardiac arrest and the patient died within 2 hours of septic shock.",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Septic shock",
+                            "time"  : "2hr"
+                        },
+                        "1b" : {
+                            "event" : "Right subphrenic abscess",
+                            "time"  : "1d"
+                        },
+                        "1c" : {
+                            "event" : "Perforated duodenal ulcer",
+                            "time"  : "6d"
+                        },
+                        "1d" : {
+                            "event" : "Duodenal ulcer",
+                            "time"  : "3yr"
+                        }
+                    },
+                    "part2" : [
+                        {
+                            "event" : "Chronic alcoholism",
+                            "time" : "10 years"
+                        }
+                    ]
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Chronic alcoholism",
+                                "full"  : "Chronic alcoholism"
+                            },{
+                                "short" : "Alcoholic cirrhosis",
+                                "full" : "Alcoholic cirrhosis"
+                            },{
+                                "short" : "Right subphrenic abscess",
+                                "full"  : "Right subphrenic abscess"
+                            },{
+                                "short" : "Perforated duodenal ulcer",
+                                "full"  : "Perforated duodenal ulcer"
+                            },{
+                                "short" : "Duodenal ulcer",
+                                "full"  : "Duodenal ulcer"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2hr",
+                                "full" : "2 hours"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "3yr",
+                                "full"  : "3 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Chronic alcoholism",
+                                "full"  : "Chronic alcoholism"
+                            },{
+                                "short" : "Alcoholic cirrhosis",
+                                "full" : "Alcoholic cirrhosis"
+                            },{
+                                "short" : "Right subphrenic abscess",
+                                "full"  : "Right subphrenic abscess"
+                            },{
+                                "short" : "Perforated duodenal ulcer",
+                                "full"  : "Perforated duodenal ulcer"
+                            },{
+                                "short" : "Duodenal ulcer",
+                                "full"  : "Duodenal ulcer"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2hr",
+                                "full" : "2 hours"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "3yr",
+                                "full"  : "3 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                            "eventOptions" : [{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Chronic alcoholism",
+                                "full"  : "Chronic alcoholism"
+                            },{
+                                "short" : "Alcoholic cirrhosis",
+                                "full" : "Alcoholic cirrhosis"
+                            },{
+                                "short" : "Right subphrenic abscess",
+                                "full"  : "Right subphrenic abscess"
+                            },{
+                                "short" : "Perforated duodenal ulcer",
+                                "full"  : "Perforated duodenal ulcer"
+                            },{
+                                "short" : "Duodenal ulcer",
+                                "full"  : "Duodenal ulcer"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2hr",
+                                "full" : "2 hours"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "3yr",
+                                "full"  : "3 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        }, {
+                            "line" : "1d",
+                            "eventOptions" : [{
+                                "short" : "Septic shock",
+                                "full" : "Septic shock"
+                            },{
+                                "short" : "Chronic alcoholism",
+                                "full"  : "Chronic alcoholism"
+                            },{
+                                "short" : "Alcoholic cirrhosis",
+                                "full" : "Alcoholic cirrhosis"
+                            },{
+                                "short" : "Right subphrenic abscess",
+                                "full"  : "Right subphrenic abscess"
+                            },{
+                                "short" : "Perforated duodenal ulcer",
+                                "full"  : "Perforated duodenal ulcer"
+                            },{
+                                "short" : "Duodenal ulcer",
+                                "full"  : "Duodenal ulcer"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2hr",
+                                "full" : "2 hours"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "3yr",
+                                "full"  : "3 years"
+                            },{
+                                "short" : "10yr",
+                                "full"  : "10 years"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Septic shock",
+                            "full" : "Septic shock"
+                        },{
+                            "short" : "Chronic alcoholism",
+                            "full"  : "Chronic alcoholism"
+                        },{
+                            "short" : "Alcoholic cirrhosis",
+                            "full" : "Alcoholic cirrhosis"
+                        },{
+                            "short" : "Right subphrenic abscess",
+                            "full"  : "Right subphrenic abscess"
+                        },{
+                            "short" : "Perforated duodenal ulcer",
+                            "full"  : "Perforated duodenal ulcer"
+                        },{
+                            "short" : "Duodenal ulcer",
+                            "full"  : "Duodenal ulcer"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "2hr",
+                            "full" : "2 hours"
+                        },{
+                            "short" : "1d",
+                            "full"  : "1 day"
+                        },{
+                            "short" : "6d",
+                            "full" : "6 days"
+                        },{
+                            "short" : "3yr",
+                            "full"  : "3 years"
+                        },{
+                            "short" : "10yr",
+                            "full"  : "10 years"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1d" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "A male aged 54 years admitted to hospital for surgery to remove the colon due to squamous cell carcinoma of the sigmoid colon diagnosed 1 month ago.\n\nHe has had bleeding from anus for the past 1 year.\n\nTwo – days after surgery, the patient developed a postoperative deep vein thrombosis.\n\nA pulmonary embolism later developed, and the patient died shortly after.\n\nHe was diagnosed as having arteriosclerosis and ischaemic heart disease for the last 5 years",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Pulmonary embolism",
+                            "time"  : "Inst"
+                        },
+                        "1b" : {
+                            "event" : "Deep vein thrombosis",
+                            "time"  : "2d"
+                        },
+                        "1c" : {
+                            "event" : "Squamous cell carcinoma of sigmoid colon",
+                            "time"  : "1yr"
+                        }
+                    },
+                    "part2" : [
+                        {
+                            "event" : "Ischaemic heart disease",
+                            "time" : "5 years"
+                        },
+                        {
+                            "event" : "Arteriosclerosis",
+                            "time" : "5 years"
+                        }
+                    ]
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Pulmonary embolism",
+                                "full" : "Pulmonary embolism"
+                            },{
+                                "short" : "Deep vein thrombosis",
+                                "full"  : "Deep vein thrombosis"
+                            },{
+                                "short" : "Arteriosclerosis",
+                                "full" : "Arteriosclerosis"
+                            },{
+                                "short" : "Ischaemic heart disease",
+                                "full"  : "Ischaemic heart disease"
+                            },{
+                                "short" : "Squamous cell carcinoma of sigmoid colon",
+                                "full"  : "Squamous cell carcinoma of sigmoid colon"
+                            },{
+                                "short" : "Bleeding per rectum",
+                                "full"  : "Bleeding per rectum"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "Inst",
+                                "full" : "Instantaneous"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "5yr",
+                                "full"  : "5 years"
+                            },{
+                                "short" : "1yr",
+                                "full"  : "1 year"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Pulmonary embolism",
+                                "full" : "Pulmonary embolism"
+                            },{
+                                "short" : "Deep vein thrombosis",
+                                "full"  : "Deep vein thrombosis"
+                            },{
+                                "short" : "Arteriosclerosis",
+                                "full" : "Arteriosclerosis"
+                            },{
+                                "short" : "Ischaemic heart disease",
+                                "full"  : "Ischaemic heart disease"
+                            },{
+                                "short" : "Squamous cell carcinoma of sigmoid colon",
+                                "full"  : "Squamous cell carcinoma of sigmoid colon"
+                            },{
+                                "short" : "Bleeding per rectum",
+                                "full"  : "Bleeding per rectum"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "Inst",
+                                "full" : "Instantaneous"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "5yr",
+                                "full"  : "5 years"
+                            },{
+                                "short" : "1yr",
+                                "full"  : "1 year"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                            "eventOptions" : [{
+                                "short" : "Pulmonary embolism",
+                                "full" : "Pulmonary embolism"
+                            },{
+                                "short" : "Deep vein thrombosis",
+                                "full"  : "Deep vein thrombosis"
+                            },{
+                                "short" : "Arteriosclerosis",
+                                "full" : "Arteriosclerosis"
+                            },{
+                                "short" : "Ischaemic heart disease",
+                                "full"  : "Ischaemic heart disease"
+                            },{
+                                "short" : "Squamous cell carcinoma of sigmoid colon",
+                                "full"  : "Squamous cell carcinoma of sigmoid colon"
+                            },{
+                                "short" : "Bleeding per rectum",
+                                "full"  : "Bleeding per rectum"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "Inst",
+                                "full" : "Instantaneous"
+                            },{
+                                "short" : "1d",
+                                "full"  : "1 day"
+                            },{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "5yr",
+                                "full"  : "5 years"
+                            },{
+                                "short" : "1yr",
+                                "full"  : "1 year"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Pulmonary embolism",
+                            "full" : "Pulmonary embolism"
+                        },{
+                            "short" : "Deep vein thrombosis",
+                            "full"  : "Deep vein thrombosis"
+                        },{
+                            "short" : "Arteriosclerosis",
+                            "full" : "Arteriosclerosis"
+                        },{
+                            "short" : "Ischaemic heart disease",
+                            "full"  : "Ischaemic heart disease"
+                        },{
+                            "short" : "Squamous cell carcinoma of sigmoid colon",
+                            "full"  : "Squamous cell carcinoma of sigmoid colon"
+                        },{
+                            "short" : "Bleeding per rectum",
+                            "full"  : "Bleeding per rectum"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "Inst",
+                            "full" : "Instantaneous"
+                        },{
+                            "short" : "1d",
+                            "full"  : "1 day"
+                        },{
+                            "short" : "2d",
+                            "full" : "2 days"
+                        },{
+                            "short" : "5yr",
+                            "full"  : "5 years"
+                        },{
+                            "short" : "1yr",
+                            "full"  : "1 year"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "A 25-year-old woman was walking across the road while a truck suddenly bumped her down and crushed her body.\n\nShe was sent to the hospital 10 minutes later.\n\nAt the emergency department she had severe dyspnoea with hypotension. She was diagnosed with flailed chest with haemothorax.\n\nAn endotracheal tube was inserted, and mechanical ventilation was used to facilitate her breathing and stabilized her chest.\n\nHowever, her blood pressure kept dropping and she passed away in 30 minutes after arrival.",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Haemothorax",
+                            "time"  : "40min"
+                        },
+                        "1b" : {
+                            "event" : "Flailed chest",
+                            "time"  : "40min"
+                        },
+                        "1c" : {
+                            "event" : "Pedestrian bumped and crushed by a truck on the highway",
+                            "time"  : "40min"
+                        }
+                    },
+                    "part2" : []
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Haemothorax",
+                                "full" : "Haemothorax"
+                            },{
+                                "short" : "Pedestrian bumped and crushed by a truck on the highway",
+                                "full"  : "Pedestrian bumped and crushed by a truck on the highway"
+                            },{
+                                "short" : "Flailed chest",
+                                "full" : "Flailed chest"
+                            },{
+                                "short" : "Driver injured in a traffic accident",
+                                "full"  : "Driver injured in a traffic accident"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "Inst",
+                                "full" : "Instantaneous"
+                            },{
+                                "short" : "40min",
+                                "full"  : "40 minutes"
+                            },{
+                                "short" : "50min",
+                                "full" : "50 minutes"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Haemothorax",
+                                "full" : "Haemothorax"
+                            },{
+                                "short" : "Pedestrian bumped and crushed by a truck on the highway",
+                                "full"  : "Pedestrian bumped and crushed by a truck on the highway"
+                            },{
+                                "short" : "Flailed chest",
+                                "full" : "Flailed chest"
+                            },{
+                                "short" : "Driver injured in a traffic accident",
+                                "full"  : "Driver injured in a traffic accident"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "Inst",
+                                "full" : "Instantaneous"
+                            },{
+                                "short" : "40min",
+                                "full"  : "40 minutes"
+                            },{
+                                "short" : "50min",
+                                "full" : "50 minutes"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                            "eventOptions" : [{
+                                "short" : "Haemothorax",
+                                "full" : "Haemothorax"
+                            },{
+                                "short" : "Pedestrian bumped and crushed by a truck on the highway",
+                                "full"  : "Pedestrian bumped and crushed by a truck on the highway"
+                            },{
+                                "short" : "Flailed chest",
+                                "full" : "Flailed chest"
+                            },{
+                                "short" : "Driver injured in a traffic accident",
+                                "full"  : "Driver injured in a traffic accident"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "Inst",
+                                "full" : "Instantaneous"
+                            },{
+                                "short" : "40min",
+                                "full"  : "40 minutes"
+                            },{
+                                "short" : "50min",
+                                "full" : "50 minutes"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Haemothorax",
+                            "full" : "Haemothorax"
+                        },{
+                            "short" : "Pedestrian bumped and crushed by a truck on the highway",
+                            "full"  : "Pedestrian bumped and crushed by a truck on the highway"
+                        },{
+                            "short" : "Flailed chest",
+                            "full" : "Flailed chest"
+                        },{
+                            "short" : "Driver injured in a traffic accident",
+                            "full"  : "Driver injured in a traffic accident"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "Inst",
+                            "full" : "Instantaneous"
+                        },{
+                            "short" : "40min",
+                            "full"  : "40 minutes"
+                        },{
+                            "short" : "50min",
+                            "full" : "50 minutes"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "A 30-year-old, gravida-six, para-five, with a history of gestational hypertension, reported to the emergency room at 36 weeks gestation with complaints of abdominal cramping and light vaginal bleeding during the past 12 hours.\n\nAt time of first assessment, foetal heart tones were detected.\n\nThe uterus was tense, irritable, and tender.\n\nThe mother was hypotensive with tachycardia.\n\nA presumptive diagnosis of abruptio placenta was made, and an emergency caesarean section was performed under general anaesthesia.\n\nThe baby was stillborn.\n\nThe mother continued to bleed from her uterus and phlebotomy sites and went into profound shock secondary to disseminated intravascular coagulation.\n\nDespite administration of blood and clotting factors, intravascular pressure could not be maintained, and the mother died on the operating table.\n\nMaternal autopsy confirmed the clinical diagnosis.",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Haemorrhagic shock",
+                            "time"  : "mins"
+                        },
+                        "1b" : {
+                            "event" : "Disseminated intravascular coagulopathy",
+                            "time"  : "hrs"
+                        },
+                        "1c" : {
+                            "event" : "Abruptio placenta",
+                            "time"  : ">13hr"
+                        }
+                    },
+                    "part2" : [
+                        {
+                            "event" : "Gestational hypertension",
+                            "time" : "Less than 36 weeks"
+                        },
+                        {
+                            "event" : "Pregnancy",
+                            "time" : "36 weeks"
+                        }
+                    ]
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Gestational hypertension",
+                                "full" : "Gestational hypertension"
+                            },{
+                                "short" : "Haemorrhagic shock",
+                                "full" : "Haemorrhagic shock"
+                            },{
+                                "short" : "Disseminated intravascular coagulopathy",
+                                "full"  : "Disseminated intravascular coagulopathy"
+                            },{
+                                "short" : "Pregnancy",
+                                "full" : "Pregnancy"
+                            },{
+                                "short" : "Abruptio placenta",
+                                "full"  : "Abruptio placenta"
+                            },{
+                                "short" : "Ruptured uteru",
+                                "full"  : "Ruptured uteru"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "mins",
+                                "full" : "Minutes"
+                            },{
+                                "short" : "hrs",
+                                "full"  : "Hours"
+                            },{
+                                "short" : ">13hr",
+                                "full" : "More than 13 hours"
+                            },{
+                                "short" : "36wk",
+                                "full"  : "36 weeks"
+                            },{
+                                "short" : "1yr",
+                                "full"  : "1 year"
+                            },{
+                                "short" : "<36wk",
+                                "full"  : "Less than 36 weeks"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Gestational hypertension",
+                                "full" : "Gestational hypertension"
+                            },{
+                                "short" : "Haemorrhagic shock",
+                                "full" : "Haemorrhagic shock"
+                            },{
+                                "short" : "Disseminated intravascular coagulopathy",
+                                "full"  : "Disseminated intravascular coagulopathy"
+                            },{
+                                "short" : "Pregnancy",
+                                "full" : "Pregnancy"
+                            },{
+                                "short" : "Abruptio placenta",
+                                "full"  : "Abruptio placenta"
+                            },{
+                                "short" : "Ruptured uteru",
+                                "full"  : "Ruptured uteru"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "mins",
+                                "full" : "Minutes"
+                            },{
+                                "short" : "hrs",
+                                "full"  : "Hours"
+                            },{
+                                "short" : ">13hr",
+                                "full" : "More than 13 hours"
+                            },{
+                                "short" : "36wk",
+                                "full"  : "36 weeks"
+                            },{
+                                "short" : "1yr",
+                                "full"  : "1 year"
+                            },{
+                                "short" : "<36wk",
+                                "full"  : "Less than 36 weeks"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                           "eventOptions" : [{
+                                "short" : "Gestational hypertension",
+                                "full" : "Gestational hypertension"
+                            },{
+                                "short" : "Haemorrhagic shock",
+                                "full" : "Haemorrhagic shock"
+                            },{
+                                "short" : "Disseminated intravascular coagulopathy",
+                                "full"  : "Disseminated intravascular coagulopathy"
+                            },{
+                                "short" : "Pregnancy",
+                                "full" : "Pregnancy"
+                            },{
+                                "short" : "Abruptio placenta",
+                                "full"  : "Abruptio placenta"
+                            },{
+                                "short" : "Ruptured uteru",
+                                "full"  : "Ruptured uteru"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "mins",
+                                "full" : "Minutes"
+                            },{
+                                "short" : "hrs",
+                                "full"  : "Hours"
+                            },{
+                                "short" : ">13hr",
+                                "full" : "More than 13 hours"
+                            },{
+                                "short" : "36wk",
+                                "full"  : "36 weeks"
+                            },{
+                                "short" : "1yr",
+                                "full"  : "1 year"
+                            },{
+                                "short" : "<36wk",
+                                "full"  : "Less than 36 weeks"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Gestational hypertension",
+                            "full" : "Gestational hypertension"
+                        },{
+                            "short" : "Haemorrhagic shock",
+                            "full" : "Haemorrhagic shock"
+                        },{
+                            "short" : "Disseminated intravascular coagulopathy",
+                            "full"  : "Disseminated intravascular coagulopathy"
+                        },{
+                            "short" : "Pregnancy",
+                            "full" : "Pregnancy"
+                        },{
+                            "short" : "Abruptio placenta",
+                            "full"  : "Abruptio placenta"
+                        },{
+                            "short" : "Ruptured uteru",
+                            "full"  : "Ruptured uteru"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "mins",
+                            "full" : "Minutes"
+                        },{
+                            "short" : "hrs",
+                            "full"  : "Hours"
+                        },{
+                            "short" : ">13hr",
+                            "full" : "More than 13 hours"
+                        },{
+                            "short" : "36wk",
+                            "full"  : "36 weeks"
+                        },{
+                            "short" : "1yr",
+                            "full"  : "1 year"
+                        },{
+                            "short" : "<36wk",
+                            "full"  : "Less than 36 weeks"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1c" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "A 3-year-old boy was brought to the hospital with a history of difficulty in breathing and cough.\n\nOn examination he was dyspnoeic with a respiratory rate of 52 per minute. He had tachycardia, peripheral cyanosis and the face was puffy.\n\nThe child had a history of Fallot’s Tetralogy and the surgery was delayed due to lack of consent from the parents.\n\nThe diagnosis of congestive cardiac failure was made, and the boy was treated with inhaled oxygen, Digoxin and Frusemide.\n\nDespite treatment the child died on the second day of admission.",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Congestive cardiac failure",
+                            "time"  : "2d"
+                        },
+                        "1b" : {
+                            "event" : "Fallot’s tetralogy",
+                            "time"  : "3yr"
+                        }
+                    },
+                    "part2" : []
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Congestive cardiac failure",
+                                "full" : "Congestive cardiac failure"
+                            },{
+                                "short" : "Fallot’s tetralogy",
+                                "full"  : "Fallot’s tetralogy"
+                            },{
+                                "short" : "Lack of consent from the parents",
+                                "full" : "Lack of consent from the parents"
+                            },{
+                                "short" : "Congenital heart disease",
+                                "full"  : "Congenital heart disease"
+                            },{
+                                "short" : "Pregnancy",
+                                "full"  : "Pregnancy"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "3yr",
+                                "full"  : "3 years"
+                            },{
+                                "short" : "2mn",
+                                "full" : "2 months"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Congestive cardiac failure",
+                                "full" : "Congestive cardiac failure"
+                            },{
+                                "short" : "Fallot’s tetralogy",
+                                "full"  : "Fallot’s tetralogy"
+                            },{
+                                "short" : "Lack of consent from the parents",
+                                "full" : "Lack of consent from the parents"
+                            },{
+                                "short" : "Congenital heart disease",
+                                "full"  : "Congenital heart disease"
+                            },{
+                                "short" : "Pregnancy",
+                                "full"  : "Pregnancy"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "2d",
+                                "full" : "2 days"
+                            },{
+                                "short" : "3yr",
+                                "full"  : "3 years"
+                            },{
+                                "short" : "2mn",
+                                "full" : "2 months"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Congestive cardiac failure",
+                            "full" : "Congestive cardiac failure"
+                        },{
+                            "short" : "Fallot’s tetralogy",
+                            "full"  : "Fallot’s tetralogy"
+                        },{
+                            "short" : "Lack of consent from the parents",
+                            "full" : "Lack of consent from the parents"
+                        },{
+                            "short" : "Congenital heart disease",
+                            "full"  : "Congenital heart disease"
+                        },{
+                            "short" : "Pregnancy",
+                            "full"  : "Pregnancy"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "2d",
+                            "full" : "2 days"
+                        },{
+                            "short" : "3yr",
+                            "full"  : "3 years"
+                        },{
+                            "short" : "2mn",
+                            "full" : "2 months"
+                        }]
+                    }
+                },
+                "CurrentAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        },
+                        "1b" : {
+                            "event" : "Select an event",
+                            "time"  : "0d"
+                        }
+                    },
+                    "part2" : []
+                }
+            }
+        },
+        {
+            "Description" : "One month ago, an 84-year-old man slipped on same level and fell down, resulting in a fracture while at home. After being admitted for care, fracture of the neck of the left femur was detected. Since he was unfit for surgery due to his old age, it was decided to put him on traction.\n\nDue to prolonged inactivity he developed bronchopneumonia three weeks after and died 6 days later.\n\nAutopsy revealed also fractured neck of left femur, cardiac hypertrophy, chronic fibrous myocarditis and coronary sclerosis.",
+            "Exercise" : {
+                "CorrectAnswer" : {
+                    "part1" : {
+                        "1a" : {
+                            "event" : "Bronchopneumonia",
+                            "time"  : "6d"
+                        },
+                        "1b" : {
+                            "event" : "Fracture of neck of left femur",
+                            "time"  : "30d"
+                        },
+                        "1c" : {
+                            "event" : "Slipped and fell down on the same level at home",
+                            "time"  : "30d"
+                        }
+                    },
+                    "part2" : [
+                        {
+                            "event" : "Cardiac hypertrophy",
+                            "time" : "Unknown"
+                        },
+                        {
+                            "event" : "Chronic fibrous myocarditis",
+                            "time" : "Unknown"
+                        },
+                        {
+                            "event" : "Coronary sclerosis",
+                            "time" : "Unknown"
+                        }
+                    ]
+                },
+                "Question" : {
+                    "part1" : [
+                        {
+                            "line" : "1a",
+                            "eventOptions" : [{
+                                "short" : "Cardiac hypertrophy",
+                                "full" : "Cardiac hypertrophy"
+                            },{
+                                "short" : "Bronchopneumonia",
+                                "full" : "Bronchopneumonia"
+                            },{
+                                "short" : "Fall",
+                                "full"  : "Fall"
+                            },{
+                                "short" : "Slipped and fell down",
+                                "full" : "Slipped and fell down"
+                            },{
+                                "short" : "Chronic fibrous myocarditi",
+                                "full" : "Chronic fibrous myocarditi"
+                            },{
+                                "short" : "Slipped and fell down on the same level at home",
+                                "full"  : "Slipped and fell down on the same level at home"
+                            },{
+                                "short" : "Fracture of neck of left femur",
+                                "full"  : "Fracture of neck of left femur"
+                            },{
+                                "short" : "Coronary sclerosis",
+                                "full" : "Coronary sclerosis"
+                            },{
+                                "short" : "Lack of consent from the parents",
+                                "full"  : "Lack of consent from the parents"
+                            },{
+                                "short" : "Congenital heart disease",
+                                "full"  : "Congenital heart disease"
+                            },{
+                                "short" : "Pregnancy",
+                                "full"  : "Pregnancy"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "30d",
+                                "full"  : "30 days"
+                            },{
+                                "short" : "Unknown",
+                                "full" : "Unknown"
+                            },{
+                                "short" : "84yr",
+                                "full"  : "84 years"
+                            }]
+                        },
+                        {
+                            "line" : "1b",
+                            "eventOptions" : [{
+                                "short" : "Cardiac hypertrophy",
+                                "full" : "Cardiac hypertrophy"
+                            },{
+                                "short" : "Bronchopneumonia",
+                                "full" : "Bronchopneumonia"
+                            },{
+                                "short" : "Fall",
+                                "full"  : "Fall"
+                            },{
+                                "short" : "Slipped and fell down",
+                                "full" : "Slipped and fell down"
+                            },{
+                                "short" : "Chronic fibrous myocarditi",
+                                "full" : "Chronic fibrous myocarditi"
+                            },{
+                                "short" : "Slipped and fell down on the same level at home",
+                                "full"  : "Slipped and fell down on the same level at home"
+                            },{
+                                "short" : "Fracture of neck of left femur",
+                                "full"  : "Fracture of neck of left femur"
+                            },{
+                                "short" : "Coronary sclerosis",
+                                "full" : "Coronary sclerosis"
+                            },{
+                                "short" : "Lack of consent from the parents",
+                                "full"  : "Lack of consent from the parents"
+                            },{
+                                "short" : "Congenital heart disease",
+                                "full"  : "Congenital heart disease"
+                            },{
+                                "short" : "Pregnancy",
+                                "full"  : "Pregnancy"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "30d",
+                                "full"  : "30 days"
+                            },{
+                                "short" : "Unknown",
+                                "full" : "Unknown"
+                            },{
+                                "short" : "84yr",
+                                "full"  : "84 years"
+                            }]
+                        },
+                        {
+                            "line" : "1c",
+                            "eventOptions" : [{
+                                "short" : "Cardiac hypertrophy",
+                                "full" : "Cardiac hypertrophy"
+                            },{
+                                "short" : "Bronchopneumonia",
+                                "full" : "Bronchopneumonia"
+                            },{
+                                "short" : "Fall",
+                                "full"  : "Fall"
+                            },{
+                                "short" : "Slipped and fell down",
+                                "full" : "Slipped and fell down"
+                            },{
+                                "short" : "Chronic fibrous myocarditi",
+                                "full" : "Chronic fibrous myocarditi"
+                            },{
+                                "short" : "Slipped and fell down on the same level at home",
+                                "full"  : "Slipped and fell down on the same level at home"
+                            },{
+                                "short" : "Fracture of neck of left femur",
+                                "full"  : "Fracture of neck of left femur"
+                            },{
+                                "short" : "Coronary sclerosis",
+                                "full" : "Coronary sclerosis"
+                            },{
+                                "short" : "Lack of consent from the parents",
+                                "full"  : "Lack of consent from the parents"
+                            },{
+                                "short" : "Congenital heart disease",
+                                "full"  : "Congenital heart disease"
+                            },{
+                                "short" : "Pregnancy",
+                                "full"  : "Pregnancy"
+                            }],
+                            "timeOptions" : [{
+                                "short" : "6d",
+                                "full" : "6 days"
+                            },{
+                                "short" : "30d",
+                                "full"  : "30 days"
+                            },{
+                                "short" : "Unknown",
+                                "full" : "Unknown"
+                            },{
+                                "short" : "84yr",
+                                "full"  : "84 years"
+                            }]
+                        }
+                    ],
+                    "part2" : {
+                        "eventOptions" : [{
+                            "short" : "Cardiac hypertrophy",
+                            "full" : "Cardiac hypertrophy"
+                        },{
+                            "short" : "Bronchopneumonia",
+                            "full" : "Bronchopneumonia"
+                        },{
+                            "short" : "Fall",
+                            "full"  : "Fall"
+                        },{
+                            "short" : "Slipped and fell down",
+                            "full" : "Slipped and fell down"
+                        },{
+                            "short" : "Chronic fibrous myocarditis",
+                            "full" : "Chronic fibrous myocarditis"
+                        },{
+                            "short" : "Slipped and fell down on the same level at home",
+                            "full"  : "Slipped and fell down on the same level at home"
+                        },{
+                            "short" : "Fracture of neck of left femur",
+                            "full"  : "Fracture of neck of left femur"
+                        },{
+                            "short" : "Coronary sclerosis",
+                            "full" : "Coronary sclerosis"
+                        },{
+                            "short" : "Lack of consent from the parents",
+                            "full"  : "Lack of consent from the parents"
+                        },{
+                            "short" : "Congenital heart disease",
+                            "full"  : "Congenital heart disease"
+                        },{
+                            "short" : "Pregnancy",
+                            "full"  : "Pregnancy"
+                        }],
+                        "timeOptions" : [{
+                            "short" : "6d",
+                            "full" : "6 days"
+                        },{
+                            "short" : "30d",
+                            "full"  : "30 days"
+                        },{
+                            "short" : "Unknown",
+                            "full" : "Unknown"
+                        },{
+                            "short" : "84yr",
+                            "full"  : "84 years"
                         }]
                     }
                 },
@@ -580,7 +1764,7 @@
                         "line1" : "Diabetes mellitus type 2"
                     },
                     {
-                        "line2" : "Contributory causes",
+                        "line2" : "Contributory cause",
                         "line1" : "Hypertension / Previous myocardial infarction"
                     }
                 ]
@@ -629,8 +1813,8 @@
                         "line1" : "Rheumatic fever"
                     },
                     {
-                        "line2" : "Contributory causes",
-                        "line1" : "Pregnancy"
+                        "line2" : "Contributory cause",
+                        "line1" : "Pregnant - 4 months"
                     }
                 ]
             }
@@ -653,5 +1837,10 @@
                 ]
             }
         }
+    ],
+    "ILLDEFINED" : [
+        "Recording ill-defined conditions as underlying causes on death certificates is of no value for public health. These conditions do not provide any information for decision-makers to guide them in designing preventive health programs.",
+        "They can be divided in to four categories",
+        "1.  Causes of death which are impossible as an underlying cause of death\n(e.g. infertility, migraine or the broad category of ill-defined conditions, including signs and symptoms)\n\n2.  Immediate or intermediate causes of death which occur somewhere in the causal sequence\n(e.g. Portal hypertension, Pathological fracture, Secondary hypertension, Septicaemia, Liver failure, Renal failure etc.)\n\n3.  Modes of dying\n(e.g. cardiac or respiratory arrest; these are conditions that the person died from, but were not the precipitating condition in the causal sequence leading to death)\n\n4.  Unspecified causes within a larger disease or injury category\n(e.g. ill-defined cancers, ill-defined injury, Congenital heart disease, Respiratory infection, etc.)\n\n"
     ]
 }

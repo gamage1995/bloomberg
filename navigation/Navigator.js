@@ -26,6 +26,7 @@ import SpecialCase1 from '../src/pages/SpecialCase1'
 import SpecialCase2 from '../src/pages/SpecialCase2'
 import SpecialCase3 from '../src/pages/SpecialCase3'
 import SpecialCase4 from '../src/pages/SpecialCase4'
+import Page9 from '../src/pages/Page9'
 
 const HomeStackNav = createStackNavigator();
 
@@ -210,6 +211,13 @@ function HomeStack() {
        <HomeStackNav.Screen
         name='Page8'
         component={Page8}
+        options={{
+          headerShown: false
+        }}
+      />
+       <HomeStackNav.Screen
+        name='Page9'
+        component={Page9}
         options={{
           headerShown: false
         }}

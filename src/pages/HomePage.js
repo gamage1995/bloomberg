@@ -4,7 +4,7 @@ import { MainCard } from '../components/MainCard';
 
 const backgroundImage = require('../../assets/background.png');
 const logo = require('../../assets/bloomberg.png');
-
+const uniMelbLogo = require('../../assets/unimelbLogo.png');
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -22,26 +22,13 @@ export default class HomePage extends Component {
   render() {
     return (
       <View style={styles.PageWrapper}>
-        <ImageBackground style={styles.HomePageTop} source={backgroundImage}>
-          <View style={styles.ImageBackgroundInner}>
-
-          </View>
-        </ImageBackground>
-        <ScrollView style={styles.HomePageBottom} onScroll={this.handleScroll} showsVerticalScrollIndicator={false} stickyHeaderIndices={this.state.headerOffset > 0 ? [10] : [0]}>
+        <View style={styles.UniMelbCover}>
+          <Image source={uniMelbLogo} style={styles.UniMelbLogo} />
+        </View>
+        <ScrollView style={styles.HomePageBottom} onScroll={this.handleScroll} showsVerticalScrollIndicator={false} stickyHeaderIndices={[0]}>
           <View style={styles.HomePageBottomInner}>
-            <View style={[styles.LogoCover, this.state.headerOffset < 0 ? [{
-              shadowColor: "#616161",
-              shadowOffset: {
-                width: 0,
-                height: 10,
-              },
-              shadowOpacity: 0.51,
-              shadowRadius: 13.16,
-              height: WindowHeight * 0.09,
-              elevation: 20,
-              backgroundColor: 'white'
-            }] : [{ height: WindowHeight * 0.08 }]]}>
-              <Image source={logo} style={this.state.headerOffset > 0 ? styles.LogoImage : styles.LogoImageInHead} />
+            <View style={[styles.LogoCover]}>
+              <Image source={logo} style={styles.LogoImageInHead} />
             </View>
           </View>
           <View style={styles.CardContainer}>
@@ -61,10 +48,15 @@ export default class HomePage extends Component {
                 cardIcon={require(`../../assets/icons8-list-96.png`)}
                 cardRoute={'Page5'} navigation={this.props.navigation}
               />
-              <MainCard
-                cardTitle={'CASE EXERCISES'}
-                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
+               <MainCard
+                cardTitle={'ILL-DEFINED CONDITIONS'}
+                cardIcon={require(`../../assets/illdefined.png`)}
                 cardRoute={'Page7'} navigation={this.props.navigation}
+              />
+               <MainCard
+                cardTitle={'ABOUT APP'}
+                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
+                cardRoute={'Page9'} navigation={this.props.navigation}
               />
             </View>
             <View style={styles.CardColumn}>
@@ -83,9 +75,9 @@ export default class HomePage extends Component {
                 cardIcon={require(`../../assets/icons8-bookmark-book-96.png`)}
                 cardRoute={'Page6'} navigation={this.props.navigation}
               />
-              <MainCard
-                cardTitle={'ABOUT APP'}
-                cardIcon={require(`../../assets/icons8-medical-mobile-app-90.png`)}
+               <MainCard
+                cardTitle={'CASE EXERCISES'}
+                cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
                 cardRoute={'Page8'} navigation={this.props.navigation}
               />
             </View>
@@ -104,20 +96,24 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#EDEDED'
+    backgroundColor: '#fafafa'
   },
-  HomePageTop: {
-    height: WindowHeight * 0.3,
+  UniMelbCover: {
+    height: WindowHeight * 0.075,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0b2e55'
   },
-  ImageBackgroundInner: {
-    flex: 1,
-    backgroundColor: '#FFFFFFCB',
+  UniMelbLogo: {
+    height: WindowHeight * 0.035,
+    resizeMode: 'contain'
   },
   HomePageBottomInner: {
     display: 'flex',
     flex: 1,
     justifyContent: 'flex-start',
-    height: WindowHeight * 0.25,
+    height: WindowHeight * 0.14,
     width: WindowWidth,
     justifyContent: 'center',
     alignItems: 'center',
@@ -126,8 +122,17 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // height: WindowHeight * 0.08,
     width: WindowWidth,
+    shadowColor: "#616161",
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.51,
+    shadowRadius: 13.16,
+    height: WindowHeight * 0.09,
+    elevation: 20,
+    backgroundColor: 'white'
   },
   LogoImage: {
     height: WindowHeight * 0.047,
@@ -139,7 +144,7 @@ const styles = StyleSheet.create({
   },
   HomePageBottom: {
     height: WindowHeight,
-    marginTop: -WindowHeight * 0.3,
+    // marginTop: -WindowHeight * 0.3,
     width: WindowWidth,
   },
   CardContainer: {

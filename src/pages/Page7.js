@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+
 import { Header } from '../components/Header'
-import { FullWidthButton } from '../components/FullWidthButton'
+
 const data = require('../../assets/data/data.json')
-const Image1 = require('../../assets/Image1.png')
-const ModalCancel = require('../../assets/modalCancel.png')
-const Arrow = require('../../assets/arrowDark.png')
 
 export default class Page7 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fontSizeIncrement: 0,
-      showModal: false
+      fontSizeIncrement: 0
     };
   }
-
   async componentDidMount() {
     await this.getFontSizeFromAsyncStorage();
     this.focusListener = this.props.navigation.addListener('focus', () => {
@@ -43,47 +38,42 @@ export default class Page7 extends Component {
   handleTextSizeChange = (size) => {
     this.setState({ fontSizeIncrement: size })
   }
-  Section = (nextLink,index) => {
-    return (
-      <TouchableOpacity key={index} style={styles.SectionCover} onPress={() => this.props.navigation.navigate(nextLink,{index})}>
-        <View style={styles.SectionTextCover}>
-          <Text style={[
-            styles.ContentHeading,
-            {
-              fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-              lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
-            }]}>{`Exercise ${index + 1}`}
-          </Text>
-        </View>
-        <View style={styles.SectionArrowCover}>
-          <Image source={Arrow} style={styles.SectionArrow} />
-        </View>
-      </TouchableOpacity>
-    )
-  }
+
   render() {
     return (
       <React.Fragment>
         <Header
           navigation={this.props.navigation}
-          heading={'CASE EXERCISES'}
+          heading={'ILL-DEFINED CONDITIONS'}
           handleChange={this.handleTextSizeChange}
-          SubHeader={false}
         />
         <ScrollView style={styles.Body}>
-          <View style={styles.SectionsWrapper}>
-            {
-              data.CaseExercises.map((section,index) => {
-                return this.Section('Exercise',index)
-              })
-            }
+          <View style={styles.ContentBodyCover}>
+            <Text style={[
+              styles.ContentBodyText,
+              {
+                fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+              }]}>{data.ILLDEFINED[0]}</Text>
+          </View>
+          <View style={styles.ContentHeadingCover}>
+            <Text style={[
+              styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.ILLDEFINED[1]}</Text>
+          </View>
+          <View style={styles.ContentBodyCover}>
+            <Text style={[
+              styles.ContentBodyText,
+              {
+                fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+              }]}>{data.ILLDEFINED[2]}</Text>
           </View>
           <View style={styles.BottomPadding}>
 
           </View>
         </ScrollView>
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -98,16 +88,16 @@ const styles = StyleSheet.create({
     paddingTop: WindowHeight / 25,
   },
   ContentHeading: {
-    color: '#5e5e5e',
+    color: '#383838',
     fontFamily: 'OpenSans-Bold'
   },
   ContentHeadingCover: {
     paddingLeft: WindowWidth / 18,
     paddingTop: WindowWidth / 60,
     paddingBottom: WindowWidth / 60,
+    marginBottom : WindowWidth/40,
     borderLeftWidth: 4,
-    borderLeftColor: '#F8A01D',
-    marginBottom: WindowHeight / 40
+    borderLeftColor: '#F8A01D'
   },
   ContentBodyCover: {
     marginTop: WindowWidth / 20,
@@ -116,7 +106,7 @@ const styles = StyleSheet.create({
   ContentBodyText: {
     color: '#6A6A6A',
     fontFamily: 'OpenSans-Regular',
-    // marginBottom: WindowWidth / 25
+    marginBottom: WindowWidth / 25
   },
   Button1Cover: {
     marginBottom: WindowHeight / 25
@@ -129,38 +119,29 @@ const styles = StyleSheet.create({
   BottomPadding: {
     height: WindowHeight / 20
   },
-  SectionsWrapper: {
-    display: 'flex',
-    flexDirection: 'column'
+  ModalCover: {
+    height: WindowHeight,
+    width: WindowWidth,
+    backgroundColor: '#212121e1',
   },
-  SectionCover: {
-    paddingRight: WindowWidth / 40,
-    paddingTop : WindowWidth/20,
-    paddingBottom : WindowWidth/20,
-    paddingLeft : WindowWidth/20,
-    width: '100%',
-    backgroundColor: '#ebebeb',
-    borderLeftWidth : 2,
-    borderLeftColor : '#F8A01D',
-    marginTop: WindowHeight / 30,
-    borderRadius: 10,
-    display : 'flex',
-    flexDirection : 'row'
+  Image1Cover: {
+    width: WindowWidth,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  SectionTextCover : {
-    flex : 7,
-    justifyContent : 'center',
-    alignItems : 'flex-start'
+  Image1: {
+    resizeMode: 'contain',
+    width: WindowWidth - (2 * WindowWidth / 30),
+    height: (WindowWidth - (2 * WindowWidth / 30)) * 1.3,
+    alignSelf: 'center'
   },
-  SectionArrowCover : {
-    flex : 1,
-    justifyContent : 'center',
-    alignItems : 'flex-end',
-    // backgroundColor : 'blue',
-    padding : 0
+  CancelButtonCover: {
+    position: 'absolute',
+    bottom: WindowHeight / 30,
+    alignSelf: 'center'
   },
-  SectionArrow : {
-    width : WindowWidth/20,
-    height : WindowWidth/20,
+  CancelButton: {
+    height: WindowHeight / 12,
+    width: WindowHeight / 12,
   }
 })
