@@ -15,11 +15,11 @@
         "data" : [
             {
                 "head" : "Cause of death is defined as,",
-                "body" : "All those diseases, morbid conditions or injuries which either resulted in or contributed to death and the circumstance of the accident or violence which produced any such injuries."
+                "body" : "All those diseases, morbid conditions or injuries which either resulted in or contributed to death and the circumstance of the accident or violence which produced any such injuries.\n(Twentieth World Health Assembly, 1967)"
             },
             {
                 "head" : "The underlying cause of death is,",
-                "body" : "the disease or injury which initiated the train of morbid events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury."
+                "body" : "the disease or injury which initiated the train of morbid events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\n(World Health Organization, 1994)"
             }
         ]
     },
@@ -155,11 +155,11 @@
                 },
                 {
                     "line2" : "Underlying cause of death - Line 1d",
-                    "line1" : "Diabetes Mellitus Type II"
+                    "line1" : "Benign hypertrophy of prostate"
                 },
                 {
                     "line2" : "Contributory cause",
-                    "line1" : "Benign hypertrophy of prostate"
+                    "line1" : "Diabetes Mellitus Type II"
                 }
             ]
         }
@@ -382,7 +382,7 @@
                             "time"  : "2mn"
                         },
                         "1c" : {
-                            "event" : "Arteriosclerosis",
+                            "event" : "Cerebral Arteriosclerosis",
                             "time"  : ">2mn"
                         }
                     },
@@ -402,8 +402,8 @@
                         {
                             "line" : "1a",
                             "eventOptions" : [{
-                                "short" : "Arteriosclerosis",
-                                "full" : "Arteriosclerosis"
+                                "short" : "Cerebral Arteriosclerosis",
+                                "full" : "Cerebral Arteriosclerosis"
                             },{
                                 "short" : "Cerebral infarction",
                                 "full"  : "Cerebral infarction"
@@ -437,8 +437,8 @@
                         {
                             "line" : "1b",
                             "eventOptions" : [{
-                                "short" : "Arteriosclerosis",
-                                "full" : "Arteriosclerosis"
+                                "short" : "Cerebral Arteriosclerosis",
+                                "full" : "Cerebral Arteriosclerosis"
                             },{
                                 "short" : "Cerebral infarction",
                                 "full"  : "Cerebral infarction"
@@ -472,8 +472,8 @@
                         {
                             "line" : "1c",
                             "eventOptions" : [{
-                                "short" : "Arteriosclerosis",
-                                "full" : "Arteriosclerosis"
+                                "short" : "Cerebral Arteriosclerosis",
+                                "full" : "Cerebral Arteriosclerosis"
                             },{
                                 "short" : "Cerebral infarction",
                                 "full"  : "Cerebral infarction"
@@ -507,8 +507,8 @@
                     ],
                     "part2" : {
                         "eventOptions" : [{
-                            "short" : "Arteriosclerosis",
-                            "full" : "Arteriosclerosis"
+                            "short" : "Cerebral Arteriosclerosis",
+                            "full" : "Cerebral Arteriosclerosis"
                         },{
                             "short" : "Cerebral infarction",
                             "full"  : "Cerebral infarction"
@@ -1833,6 +1833,57 @@
                     {
                         "line2" : "Underlying cause of death",
                         "line1" : "Ruptured ectopic pregnancy"
+                    }
+                ]
+            }
+        },
+        {
+            "Title" : "Neoplasms",
+            "CaseDescription" : "When reporting deaths as a result of a neoplasm, try to provide detailed information about the tumour.\n\nThis should include:\n\n• Site of the neoplasm\n• Behaviour of the neoplasm whether benign or malignant, in situ or unknown behaviour\n• Morphology (if known)\n• Whether primary or secondary (if known)\n\nIf the primary site of a secondary neoplasm is known, it must be stated; for example, primary carcinoma of the lung.\n\nIf the primary site of a secondary neoplasm is unknown, ‘primary unknown’ must be stated on the death certificate.",
+            "CaseExample" : "A 49 year old woman complained about a lump in her right breast which she had for last 6 months.\n\nShe also complained of loss of body weight during the last three months.\n\nHer past medical history also showed diabetes mellitus for 6 years.\n\nFine Needle Aspiration biopsy of the lump showed carcinomatous cells.\n\nShe underwent mastectomy 8 months ago and was referred for radiotherapy thereafter.\n\nThe histopathology confirmed infiltrating ductal carcinoma of the breast.\n\nShe was re admitted with severe headache and vomiting.\n\nA CT scan revealed disseminated carcinoma of the brain.\n\nShe died after 5 days in hospital.",
+            "CaseApplication" : {
+                "Heading" : "Sequence of events leading to death",
+                "Events" : [
+                    {
+                        "line2" : "Immediate cause of death",
+                        "line1" : "Metastatic carcinoma brain"
+                    },
+                    {
+                        "line2" : "Underlying cause of death",
+                        "line1" : "Infiltrated ductal carcinoma of right breast"
+                    },
+                    {
+                        "line2" : "Contributory cause",
+                        "line1" : "Diabetes mellitus - 6 years"
+                    }
+                ]
+            }
+        }, {
+            "Title" : "Surgery",
+            "CaseDescription" : "For the deaths following surgical procedures, the reason for surgery becomes the underlying cause of death.\n\nEven if a complication of surgery (haemorrhage, post-operative infection) is also reported in the history, you will still report the reason for surgery as the underlying cause.",
+            "CaseExample" : "A 79-year-old man complained about upper abdominal pain which he had for last 4 months.\n\nShe also complained of loss of body weight during the last three months.\n\nHis past medical history also showed ischaemic heart disease for 6 years.\n\nA CT scan of abdomen revealed 3x4 cm mass at head of his pancreas.\n\nA Whipple’s operation was performed one week after admission date.\n\nThree days after operation the patient had high fever with generalized ileus and peritonitis.\n\nRe-exploration showed leakage anastomosis at cholangio-jejunostomy site.\n\nThe leakage was repaired.\n\nIn 7th post- operative day, the patient developed high fever and chills with signs of peritonitis again.\n\nAnother exploratory laparotomy revealed leakage of pancreatico-jejunal anastomosis.\n\nDuring repairing the anastomosis leakage, the patient had got sudden cardiac arrest in the operating room with unsuccessful resuscitation.\n\nHe died in the operating room.",
+            "CaseApplication" : {
+                "Heading" : "Sequence of events leading to death",
+                "Events" : [
+                    {
+                        "line2" : "Immediate cause of death",
+                        "line1" : "Peritonitis"
+                    },
+                    {
+                        "line2" : "Antecedent cause",
+                        "line1" : "Leakage at bowel anastomotic sites"
+                    },
+                    {
+                        "line2" : "Antecedent cause",
+                        "line1" : "Whipple’s operation"
+                    },
+                    {
+                        "line2" : "Underlying cause of death",
+                        "line1" : "Carcinoma of the head of the pancreas"
+                    },
+                    {
+                        "line2" : "Contributory cause",
+                        "line1" : "Ischaemic heart disease 6 years"
                     }
                 ]
             }

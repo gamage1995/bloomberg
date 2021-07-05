@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import { Header } from '../components/Header'
@@ -43,18 +43,22 @@ export default class Page4 extends Component {
   render() {
     return (
       <React.Fragment>
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'IMPORTANT POINTS TO REMEMBER WHILE CERTIFYING'}
           handleChange={this.handleTextSizeChange}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           {data.Page4.data.map((section, index) => {
             return (
               <React.Fragment key={index}>
-                <View style={[styles.ContentBodyCover, {borderTopWidth : index == 0 ? 0 : 1}]}>
+                <View style={[styles.ContentBodyCover, { borderTopWidth: index == 0 ? 0 : 1 }]}>
                   <View style={styles.ContentBodyCoverInner}>
-                    <Text style={[styles.ContentBodyText, { fontSize: (WindowWidth / 23) + this.state.fontSizeIncrement }]}>{section}</Text>
+                    <Text style={[styles.ContentBodyText, {
+                      fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+                      lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+                    }]}>{section}</Text>
                   </View>
                 </View>
               </React.Fragment>
@@ -96,7 +100,7 @@ const styles = StyleSheet.create({
     paddingBottom: WindowHeight / 45,
     borderTopColor: '#e0e0e0',
   },
-  ContentBodyCoverInner : {
+  ContentBodyCoverInner: {
     paddingTop: WindowHeight / 75,
     paddingBottom: WindowHeight / 75,
     // borderLeftWidth: 4,

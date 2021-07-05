@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Modal, Image, SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
@@ -16,24 +16,24 @@ export default class Page3 extends Component {
     };
   }
 
-  async componentDidMount (){
+  async componentDidMount() {
     await this.getFontSizeFromAsyncStorage();
     this.focusListener = this.props.navigation.addListener('focus', () => {
       this.getFontSizeFromAsyncStorage();
     })
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.focusListener();
   }
 
-  getFontSizeFromAsyncStorage = async() =>{
-    try{
+  getFontSizeFromAsyncStorage = async () => {
+    try {
       let fontSize = await AsyncStorage.getItem('fontIncrease');
-      if(fontSize !== null){
-        this.setState({fontSizeIncrement : Number(fontSize)})
+      if (fontSize !== null) {
+        this.setState({ fontSizeIncrement: Number(fontSize) })
       }
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
   }
@@ -44,41 +44,40 @@ export default class Page3 extends Component {
   ModalContent = () => {
     return (
       <React.Fragment>
-      <ScrollView style={styles.ModalCover}>
-        <View style={styles.Image1Cover}>
-          <ImageZoom 
-            cropWidth={WindowWidth}
-            cropHeight={WindowHeight}
-            imageWidth={WindowWidth - (2 * WindowWidth / 30)}
-            imageHeight={(WindowWidth - (2 * WindowWidth / 30)) * 1.3}
+        <ScrollView style={styles.ModalCover}>
+          <View style={styles.Image1Cover}>
+            <ImageZoom
+              cropWidth={WindowWidth}
+              cropHeight={WindowHeight}
+              imageWidth={WindowWidth - (2 * WindowWidth / 30)}
+              imageHeight={(WindowWidth - (2 * WindowWidth / 30)) * 1.3}
             >
-            <Image source={Image1} style={styles.Image1} />
-          </ImageZoom>
-        </View>
-        {/* <View style={styles.CancelButtonCover}> */}
-        {/* </View> */}
-      </ScrollView>
-      <TouchableOpacity style={styles.CancelButtonCover} onPress={() => this.setState({ showModal: false })}>
-        <Image source={ModalCancel} style={styles.CancelButton} />
-      </TouchableOpacity>
+              <Image source={Image1} style={styles.Image1} />
+            </ImageZoom>
+          </View>
+        </ScrollView>
+        <TouchableOpacity style={styles.CancelButtonCover} onPress={() => this.setState({ showModal: false })}>
+          <Image source={ModalCancel} style={styles.CancelButton} />
+        </TouchableOpacity>
       </React.Fragment>
     )
   }
   render() {
     return (
       <React.Fragment>
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'INTERNATIONAL FORM OF MEDICAL CERTIFICATE OF CAUSE OF DEATH'}
           handleChange={this.handleTextSizeChange}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           <View style={styles.ContentBodyCover}>
             <Text style={[
               styles.ContentBodyText,
               {
-                fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-                lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+                lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
               }]}>{data.Page3.section1}</Text>
           </View>
           <TouchableOpacity style={styles.Button1Cover} onPress={() => this.setState({ showModal: true })}>
@@ -168,12 +167,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     width: WindowWidth - (2 * WindowWidth / 30),
     height: (WindowWidth - (2 * WindowWidth / 30)) * 1.3,
-    alignSelf : 'center'
+    alignSelf: 'center'
   },
   CancelButtonCover: {
     position: 'absolute',
-    bottom: WindowHeight/30,
-    alignSelf : 'center'
+    bottom: WindowHeight / 30,
+    alignSelf: 'center'
   },
   CancelButton: {
     height: WindowHeight / 12,

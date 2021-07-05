@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, Image,SafeAreaView } from 'react-native';
 import { MainCard } from '../components/MainCard';
 
 const backgroundImage = require('../../assets/background.png');
@@ -9,18 +9,18 @@ export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // logoOpacity: 1,
       headerOffset: WindowHeight * 0.085
     };
   }
 
   handleScroll = (event) => {
-    // this.setState({ logoOpacity: (1 - (event.nativeEvent.contentOffset.y / (WindowHeight * 0.1015))) })
     this.setState({ headerOffset: WindowHeight * 0.085 - event.nativeEvent.contentOffset.y })
   }
 
   render() {
     return (
+      <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#094183' }} />
       <View style={styles.PageWrapper}>
         <View style={styles.UniMelbCover}>
           <Image source={uniMelbLogo} style={styles.UniMelbLogo} />
@@ -84,6 +84,7 @@ export default class HomePage extends Component {
           </View>
         </ScrollView>
       </View>
+      </React.Fragment>
     );
   }
 }
@@ -103,10 +104,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0b2e55'
+    backgroundColor: '#094183'
   },
   UniMelbLogo: {
-    height: WindowHeight * 0.035,
+    height: WindowHeight * 0.04,
     resizeMode: 'contain'
   },
   HomePageBottomInner: {
@@ -144,7 +145,6 @@ const styles = StyleSheet.create({
   },
   HomePageBottom: {
     height: WindowHeight,
-    // marginTop: -WindowHeight * 0.3,
     width: WindowWidth,
   },
   CardContainer: {

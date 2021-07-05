@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import { View, Text, StyleSheet, ScrollView,Dimensions, TouchableOpacity,Image,SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
-import { FullWidthButton } from '../components/FullWidthButton'
+
 const data = require('../../assets/data/data.json')
 const Image1 = require('../../assets/Image1.png')
 const ModalCancel = require('../../assets/modalCancel.png')
@@ -64,13 +63,14 @@ export default class Page8 extends Component {
   render() {
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'CASE EXERCISES'}
           handleChange={this.handleTextSizeChange}
           SubHeader={false}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           <View style={styles.SectionsWrapper}>
             {
               data.CaseExercises.map((section,index) => {

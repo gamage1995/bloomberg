@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import { View, Text, StyleSheet, ScrollView,Dimensions, TouchableOpacity,Image,SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
-import { FullWidthButton } from '../components/FullWidthButton'
+
 const data = require('../../assets/data/data.json')
 const Image1 = require('../../assets/Image1.png')
 const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/arrowDark.png')
-const linkArray = ['SpecialCase1', 'SpecialCase2', 'SpecialCase3', 'SpecialCase4'];
+const linkArray = ['SpecialCase1', 'SpecialCase2', 'SpecialCase3', 'SpecialCase4','SpecialCase5','SpecialCase6'];
 
 export default class Page6 extends Component {
   constructor(props) {
@@ -65,13 +64,14 @@ export default class Page6 extends Component {
   render() {
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'CERTIFYING SPECIFIC CAUSES'}
           handleChange={this.handleTextSizeChange}
           SubHeader={false}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           <View style={styles.SectionsWrapper}>
             {
               data.SpecialCases.map((section, index) => {
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     marginTop: WindowHeight / 25
   },
   BottomPadding: {
-    height: WindowHeight / 20
+    height: WindowHeight / 10
   },
   SectionsWrapper: {
     display: 'flex',

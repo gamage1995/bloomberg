@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Modal, Image, SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
@@ -56,8 +56,6 @@ export default class FrameBPart2 extends Component {
               <Image source={Image1} style={styles.Image1} />
             </ImageZoom>
           </View>
-          {/* <View style={styles.CancelButtonCover}> */}
-          {/* </View> */}
         </ScrollView>
         <TouchableOpacity style={styles.CancelButtonCover} onPress={() => this.setState({ showModal: false })}>
           <Image source={ModalCancel} style={styles.CancelButton} />
@@ -69,13 +67,14 @@ export default class FrameBPart2 extends Component {
   render() {
     return (
       <React.Fragment>
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'FRAME B - SECTION 2'}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
-        <ScrollView style={styles.Body} stickyHeaderIndices={[1]}>
+        <ScrollView style={styles.Body} stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
           <View style={styles.ContentHeadingCover}>
             <Text style={[
               styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.FrameB.sections[1]}
@@ -92,17 +91,12 @@ export default class FrameBPart2 extends Component {
           >
             <this.ModalContent />
           </Modal>
-          {/* <View style={styles.ContentBodyCover}>
-            <Text style={[
-              styles.ContentHeading, { fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement }]}>{"How to fill Part 1"}
-            </Text>
-          </View> */}
           <View style={styles.BodyContentWrapper}>
             {
               data.FrameBPart2.data.map((section, index) => {
                 return (
                   <React.Fragment key={index}>
-                    <View style={[styles.ContentSubHeadingCover, {display: section.head == undefined ? 'none' : 'flex'}]}>
+                    <View style={[styles.ContentSubHeadingCover, { display: section.head == undefined ? 'none' : 'flex' }]}>
                       <Text style={[
                         styles.ContentHeading,
                         {
@@ -114,8 +108,8 @@ export default class FrameBPart2 extends Component {
                       <Text style={[
                         styles.ContentBodyText,
                         {
-                          fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-                          lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                          fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+                          lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
                         }]}>{section.body}</Text>
                     </View>
                   </React.Fragment>
@@ -140,7 +134,6 @@ const styles = StyleSheet.create({
   Body: {
     paddingLeft: WindowWidth / 16,
     paddingRight: WindowWidth / 16,
-    // paddingTop: WindowHeight / 25,
   },
   ContentHeading: {
     color: '#383838',
@@ -152,10 +145,9 @@ const styles = StyleSheet.create({
     paddingBottom: WindowWidth / 60,
     borderLeftWidth: 4,
     borderLeftColor: '#F8A01D',
-    // marginBottom: WindowHeight / 40,
     marginTop: WindowHeight / 25
   },
-  ContentSubHeadingCover : {
+  ContentSubHeadingCover: {
     marginTop: WindowWidth / 15,
     marginBottom: WindowWidth / 40
   },
@@ -166,18 +158,15 @@ const styles = StyleSheet.create({
   ContentBodyText: {
     color: '#6A6A6A',
     fontFamily: 'OpenSans-Regular',
-    // marginBottom: WindowWidth / 25
   },
   BodyContentWrapper: {
     display: 'flex',
     flexDirection: 'column'
   },
   Button1Cover: {
-    // marginBottom: WindowHeight / 40,
     marginTop: WindowHeight / 50,
     paddingTop: WindowHeight / 40,
     paddingBottom: WindowHeight / 25,
-    // backgroundColor : '#FFFFFF'
   },
   Button2Cover: {
     display: 'flex',

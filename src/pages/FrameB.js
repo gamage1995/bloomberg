@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Image, SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
-import { FullWidthButton } from '../components/FullWidthButton'
+
 const data = require('../../assets/data/data.json')
-const Image1 = require('../../assets/Image1.png')
-const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/frameAArrow.png')
-const linkArray = ['FrameBPart1','FrameBPart2','FrameBPart3','FrameBPart4','FrameBPart5'];
+const linkArray = ['FrameBPart1', 'FrameBPart2', 'FrameBPart3', 'FrameBPart4', 'FrameBPart5'];
 export default class FrameB extends Component {
   constructor(props) {
     super(props);
@@ -43,15 +40,15 @@ export default class FrameB extends Component {
   handleTextSizeChange = (size) => {
     this.setState({ fontSizeIncrement: size })
   }
-  Section = (heading,nextLink) => {
+  Section = (heading, nextLink) => {
     return (
       <TouchableOpacity key={heading} style={styles.SectionCover} onPress={() => this.props.navigation.navigate(nextLink)}>
         <View style={styles.SectionTextCover}>
           <Text style={[
             styles.ContentBodyText,
             {
-              fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-              lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+              fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+              lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
             }]}>{heading}
           </Text>
         </View>
@@ -64,13 +61,14 @@ export default class FrameB extends Component {
   render() {
     return (
       <React.Fragment>
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'FRAME B'}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           <View style={styles.ContentHeadingCover}>
             <Text style={[
               styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.FrameB.head}
@@ -78,7 +76,7 @@ export default class FrameB extends Component {
           </View>
           <View style={styles.SectionsWrapper}>
             {
-              data.FrameB.sections.map((section,index) => {
+              data.FrameB.sections.map((section, index) => {
                 return this.Section(section, linkArray[index])
               })
             }
@@ -137,34 +135,34 @@ const styles = StyleSheet.create({
   SectionsWrapper: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom : WindowHeight/20,
+    paddingBottom: WindowHeight / 20,
   },
   SectionCover: {
     paddingRight: WindowWidth / 40,
-    paddingTop : WindowWidth/25,
-    paddingBottom : WindowWidth/25,
-    paddingLeft : WindowWidth/20,
+    paddingTop: WindowWidth / 25,
+    paddingBottom: WindowWidth / 25,
+    paddingLeft: WindowWidth / 20,
     width: '100%',
     backgroundColor: '#e8e8e8',
     marginTop: WindowHeight / 30,
     borderRadius: 10,
-    display : 'flex',
-    flexDirection : 'row'
+    display: 'flex',
+    flexDirection: 'row'
   },
-  SectionTextCover : {
-    flex : 7,
-    justifyContent : 'center',
-    alignItems : 'flex-start'
+  SectionTextCover: {
+    flex: 7,
+    justifyContent: 'center',
+    alignItems: 'flex-start'
   },
-  SectionArrowCover : {
-    flex : 1,
-    justifyContent : 'center',
-    alignItems : 'flex-end',
+  SectionArrowCover: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
     // backgroundColor : 'blue',
-    padding : 0
+    padding: 0
   },
-  SectionArrow : {
-    width : WindowWidth/20,
-    height : WindowWidth/20,
+  SectionArrow: {
+    width: WindowWidth / 20,
+    height: WindowWidth / 20,
   }
 })

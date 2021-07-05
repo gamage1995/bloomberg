@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import { Header } from '../components/Header'
@@ -10,58 +10,59 @@ export default class Page2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fontSizeIncrement : 0
+      fontSizeIncrement: 0
     };
   }
 
-  async componentDidMount (){
+  async componentDidMount() {
     await this.getFontSizeFromAsyncStorage();
     this.focusListener = await this.props.navigation.addListener('focus', () => {
       this.getFontSizeFromAsyncStorage();
     })
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.focusListener();
   }
 
-  getFontSizeFromAsyncStorage = async() =>{
-    try{
+  getFontSizeFromAsyncStorage = async () => {
+    try {
       let fontSize = await AsyncStorage.getItem('fontIncrease');
-      if(fontSize !== null){
-        this.setState({fontSizeIncrement : Number(fontSize)})
+      if (fontSize !== null) {
+        this.setState({ fontSizeIncrement: Number(fontSize) })
       }
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
   }
 
   handleTextSizeChange = (size) => {
-    this.setState({fontSizeIncrement : size})
+    this.setState({ fontSizeIncrement: size })
   }
 
   render() {
     return (
       <React.Fragment>
-        <Header 
-        navigation={this.props.navigation} 
-        heading={'CAUSE OF DEATH & UNDERLYING CAUSE OF DEATH'} 
-        handleChange={this.handleTextSizeChange}
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
+        <Header
+          navigation={this.props.navigation}
+          heading={'CAUSE OF DEATH & UNDERLYING CAUSE OF DEATH'}
+          handleChange={this.handleTextSizeChange}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           {data.page2.data.map(section => {
             return (
               <React.Fragment key={section.head}>
                 <View style={styles.ContentHeadingCover}>
-                  <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 21) + this.state.fontSizeIncrement}]}>{section.head}</Text>
+                  <Text style={[styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{section.head}</Text>
                 </View>
                 <View style={styles.ContentBodyCover}>
                   <Text style={[
                     styles.ContentBodyText,
                     {
-                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
-                      }]}>{section.body}</Text>
+                      fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+                      lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+                    }]}>{section.body}</Text>
                 </View>
               </React.Fragment>
             )

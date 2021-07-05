@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Modal, Image, SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
@@ -69,13 +69,14 @@ export default class FrameAPart3 extends Component {
   render() {
     return (
       <React.Fragment>
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'FRAME A - SECTION 3'}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
-        <ScrollView style={styles.Body} stickyHeaderIndices={[1]}>
+        <ScrollView style={styles.Body} stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
           <View style={styles.ContentHeadingCover}>
             <Text style={[
               styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.FrameASection3.Head}
@@ -94,7 +95,10 @@ export default class FrameAPart3 extends Component {
           </Modal>
           <View style={styles.ContentBodyCover}>
             <Text style={[
-              styles.ContentHeading, { fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement }]}>{"Reporting time intervals"}
+              styles.ContentHeading, {
+                fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+                lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+              }]}>{"Reporting time intervals"}
             </Text>
           </View>
           <View style={styles.BodyContentWrapper}>
@@ -105,8 +109,8 @@ export default class FrameAPart3 extends Component {
                     <Text style={[
                       styles.ContentBodyText,
                       {
-                        fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-                        lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                        fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+                        lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
                       }]}>{section}</Text>
                   </View>
                 )
@@ -143,7 +147,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 4,
     borderLeftColor: '#F8A01D',
     // marginBottom: WindowHeight / 40,
-    marginTop : WindowHeight/25
+    marginTop: WindowHeight / 25
   },
   ContentBodyCover: {
     marginTop: WindowWidth / 30,
@@ -161,8 +165,8 @@ const styles = StyleSheet.create({
   Button1Cover: {
     // marginBottom: WindowHeight / 40,
     marginTop: WindowHeight / 50,
-    paddingTop : WindowHeight / 40,
-    paddingBottom : WindowHeight/40,
+    paddingTop: WindowHeight / 40,
+    paddingBottom: WindowHeight / 40,
     // backgroundColor : '#FFFFFF'
   },
   Button2Cover: {
@@ -192,7 +196,7 @@ const styles = StyleSheet.create({
   },
   CancelButtonCover: {
     position: 'absolute',
-    bottom: WindowHeight/30,
+    bottom: WindowHeight / 30,
     alignSelf: 'center'
   },
   CancelButton: {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView,Dimensions, TouchableOpacity, Modal,Image,SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header';
 import { FullWidthButton } from '../components/FullWidthButton';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { TabView, TabBar } from 'react-native-tab-view';
 
 const data = require('../../assets/data/data.json')
 const Image1 = require('../../assets/specialCase2.png')
@@ -111,7 +111,7 @@ export default class SpecialCase2 extends Component {
 
   FirstRoute = () => {
     return (
-      <ScrollView style={styles.Body}>
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentBodyCover}>
           <Text style={[
             styles.ContentBodyText,
@@ -129,7 +129,7 @@ export default class SpecialCase2 extends Component {
 
   SecondRoute = () => {
       return(
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentBodyCover}>
           <Text style={[
             styles.ContentBodyText,
@@ -147,7 +147,7 @@ export default class SpecialCase2 extends Component {
 
   ThirdRoute = () => {
     return (
-      <ScrollView style={styles.Body}>
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentHeadingCover}>
           <Text style={[
             styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.SpecialCases[0].CaseApplication.Heading}
@@ -182,6 +182,7 @@ export default class SpecialCase2 extends Component {
     );
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={data.SpecialCases[1].Title.toUpperCase()}

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import { View, Text, StyleSheet, ScrollView,Dimensions, TouchableOpacity, Modal,Image,SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header';
 import { FullWidthButton } from '../components/FullWidthButton';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { TabView,TabBar } from 'react-native-tab-view';
 import { Picker } from '@react-native-community/picker';
 
 const data = require('../../assets/data/data.json');
@@ -169,9 +168,6 @@ export default class Exercise extends Component {
                   })
                 }}>
                   <View style={styles.DropDownRadioCover}>
-                    {/* <Image source={
-                      this.state.Exercise.Exercise.CurrentAnswer[this.state.ModalLine][this.state.ModalType]==option ? 
-                      RadioCircleHL : RadioCircle} style={styles.RadioCircle} /> */}
                     <Text style={styles.Line1TextModal}>{index + 1})</Text>
                   </View>
                   <View style={styles.DropDownTextCover}>
@@ -279,7 +275,7 @@ export default class Exercise extends Component {
               <Text style={[styles.EventLine2Text, { color: '#474747' }]}>{"Event"}</Text>
               <Picker
                 selectedValue={this.state.part2SelectedEvent}
-                style={{ height: WindowHeight / 15, width: '100%' }}
+                style={{width: '100%' }}
                 mode={'dropdown'}
                 itemStyle={{ fontFamily: 'OpenSans-Regular', fontSize: (WindowWidth / 21) }}
                 onValueChange={(itemValue, itemIndex) =>
@@ -296,7 +292,7 @@ export default class Exercise extends Component {
               <Text style={[styles.EventLine2Text, { color: '#474747' }]}>{"Time"}</Text>
               <Picker
                 selectedValue={this.state.part2SelectedTime}
-                style={{ height: WindowHeight / 15, width: '100%' }}
+                style={{width: '100%' }}
                 mode={'dropdown'}
                 onValueChange={(itemValue, itemIndex) =>
                   this.setState({ part2SelectedTime: itemValue })
@@ -328,7 +324,7 @@ export default class Exercise extends Component {
 
   FirstRoute = () => {
     return (
-      <ScrollView style={styles.Body}>
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentBodyCover}>
           <Text style={[
             styles.ContentBodyText,
@@ -346,7 +342,7 @@ export default class Exercise extends Component {
 
   SecondRoute = () => {
     return (
-      <ScrollView style={styles.Body}>
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.SectionsWrapper}>
           {
             this.state.Exercise.Exercise.Question.part1.map((question, index) => {
@@ -404,6 +400,7 @@ export default class Exercise extends Component {
     );
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={`CASE EXERCISE ${Number(this.props.route.params.index) + 1}`}

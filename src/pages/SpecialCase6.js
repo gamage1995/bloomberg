@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Modal,Image,SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Modal, Image, SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header';
 import { FullWidthButton } from '../components/FullWidthButton';
-import { TabView,TabBar } from 'react-native-tab-view';
+import { TabView, TabBar } from 'react-native-tab-view';
 
 const data = require('../../assets/data/data.json')
-const Image1 = require('../../assets/Case1.png')
+const Image1 = require('../../assets/specialCase6.png')
 const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/EventArrow.png');
-export default class Case1 extends Component {
+export default class SpecialCase6 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,8 +18,9 @@ export default class Case1 extends Component {
       showModal: false,
       index: 0,
       routes: [
-        { key: 'first', title: 'Description' },
-        { key: 'second', title: 'APPLICATION' },
+        { key: 'first', title: 'EXPLAINATION' },
+        { key: 'second', title: 'EXAMPLE' },
+        { key: 'third', title: 'APPLICATION' },
       ]
     };
   }
@@ -54,13 +55,11 @@ export default class Case1 extends Component {
               cropWidth={WindowWidth}
               cropHeight={WindowHeight}
               imageWidth={WindowWidth - (2 * WindowWidth / 60)}
-              imageHeight={(WindowWidth - (2 * WindowWidth / 60)) * 0.74}
+              imageHeight={(WindowWidth - (2 * WindowWidth / 60)) * 1.175}
             >
               <Image source={Image1} style={styles.Image1} />
             </ImageZoom>
           </View>
-          {/* <View style={styles.CancelButtonCover}> */}
-          {/* </View> */}
         </ScrollView>
         <TouchableOpacity style={styles.CancelButtonCover} onPress={() => this.setState({ showModal: false })}>
           <Image source={ModalCancel} style={styles.CancelButton} />
@@ -75,7 +74,7 @@ export default class Case1 extends Component {
         <View style={[styles.EventArrowCover, { display: index == 0 || line2 == 'Contributory cause' ? 'none' : 'flex' }]}>
           <Image style={styles.EventArrow} source={Arrow} />
         </View>
-        <View style={[styles.EventSectionCover, {marginTop : line2 == 'Contributory cause' ? WindowHeight / 30 : 0}]}>
+        <View style={[styles.EventSectionCover, { marginTop: line2 == 'Contributory cause' ? WindowHeight / 30 : 0 }]}>
           <Text style={[
             styles.Line3Text,
             {
@@ -117,10 +116,10 @@ export default class Case1 extends Component {
             {
               fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
               lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
-            }]}>{data.Case1.CaseDescription}</Text>
+            }]}>{data.SpecialCases[5].CaseDescription}</Text>
         </View>
         <View style={styles.BottomPadding}>
-  
+
         </View>
       </ScrollView>
     )
@@ -129,14 +128,32 @@ export default class Case1 extends Component {
   SecondRoute = () => {
     return (
       <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
+        <View style={styles.ContentBodyCover}>
+          <Text style={[
+            styles.ContentBodyText,
+            {
+              fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+              lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+            }]}>{data.SpecialCases[5].CaseExample}</Text>
+        </View>
+        <View style={styles.BottomPadding}>
+
+        </View>
+      </ScrollView>
+    )
+  }
+
+  ThirdRoute = () => {
+    return (
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentHeadingCover}>
           <Text style={[
-            styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.Case1.CaseApplication.Heading}
+            styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.SpecialCases[0].CaseApplication.Heading}
           </Text>
         </View>
         <View style={styles.SectionsWrapper}>
           {
-            data.Case1.CaseApplication.Events.map((event, index) => {
+            data.SpecialCases[5].CaseApplication.Events.map((event, index) => {
               return this.Event(index, event.line1, event.line2, event.line3)
             })
           }
@@ -145,11 +162,12 @@ export default class Case1 extends Component {
           <FullWidthButton fill={'solid'} color={'#F8A01D'} buttonText={' VIEW CERTIFICATE '} />
         </TouchableOpacity>
         <View style={styles.BottomPadding}>
-  
+
         </View>
       </ScrollView>
     )
   };
+
 
   render() {
     const renderTabBar = props => (
@@ -162,10 +180,10 @@ export default class Case1 extends Component {
     );
     return (
       <React.Fragment>
-      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
-          heading={'CASE EXAMPLE 1'}
+          heading={data.SpecialCases[5].Title.toUpperCase()}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
@@ -177,6 +195,8 @@ export default class Case1 extends Component {
                 return <this.FirstRoute />
               case 'second':
                 return <this.SecondRoute />
+              case 'third':
+                return <this.ThirdRoute />
               default:
                 return null;
             }
@@ -227,7 +247,6 @@ const styles = StyleSheet.create({
   ContentBodyText: {
     color: '#6A6A6A',
     fontFamily: 'OpenSans-Regular',
-    // marginBottom: WindowWidth / 25
   },
   Button1Cover: {
     marginBottom: WindowHeight / 25
@@ -303,7 +322,7 @@ const styles = StyleSheet.create({
   Image1: {
     resizeMode: 'contain',
     width: WindowWidth - (2 * WindowWidth / 60),
-    height: (WindowWidth - (2 * WindowWidth / 60)) * 0.74,
+    height: (WindowWidth - (2 * WindowWidth / 60)) * 1.175,
     alignSelf: 'center'
   },
   CancelButtonCover: {

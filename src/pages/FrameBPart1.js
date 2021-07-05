@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView,Dimensions, TouchableOpacity, Modal,Image,SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
@@ -45,7 +45,7 @@ export default class FrameBPart1 extends Component {
   ModalContent = () => {
     return (
       <React.Fragment>
-        <ScrollView style={styles.ModalCover}>
+        <ScrollView style={styles.ModalCover} showsVerticalScrollIndicator={false}>
           <View style={styles.Image1Cover}>
             <ImageZoom
               cropWidth={WindowWidth}
@@ -69,13 +69,14 @@ export default class FrameBPart1 extends Component {
   render() {
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'FRAME B - SECTION 1'}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
-        <ScrollView style={styles.Body} stickyHeaderIndices={[1]}>
+        <ScrollView style={styles.Body} stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
           <View style={styles.ContentHeadingCover}>
             <Text style={[
               styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.FrameB.sections[0]}
@@ -109,7 +110,6 @@ const styles = StyleSheet.create({
   Body: {
     paddingLeft: WindowWidth / 16,
     paddingRight: WindowWidth / 16,
-    // paddingTop: WindowHeight / 25,
   },
   ContentHeading: {
     color: '#383838',
@@ -121,7 +121,6 @@ const styles = StyleSheet.create({
     paddingBottom: WindowWidth / 60,
     borderLeftWidth: 4,
     borderLeftColor: '#F8A01D',
-    // marginBottom: WindowHeight / 40,
     marginTop : WindowHeight/25
   },
   ContentBodyCover: {
@@ -131,7 +130,6 @@ const styles = StyleSheet.create({
   ContentBodyText: {
     color: '#6A6A6A',
     fontFamily: 'OpenSans-Regular',
-    // marginBottom: WindowWidth / 25
   },
   BodyContentWrapper: {
     display: 'flex',

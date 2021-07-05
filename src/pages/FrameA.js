@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import { View, Text, StyleSheet, ScrollView,Dimensions, TouchableOpacity,Image,SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header'
-import { FullWidthButton } from '../components/FullWidthButton'
+
 const data = require('../../assets/data/data.json')
-const Image1 = require('../../assets/Image1.png')
-const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/frameAArrow.png')
 const linkArray = ['FrameAPart1','FrameAPart2','FrameAPart3'];
 export default class FrameA extends Component {
@@ -50,8 +47,8 @@ export default class FrameA extends Component {
           <Text style={[
             styles.ContentBodyText,
             {
-              fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
-              lineHeight: (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+              fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+              lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
             }]}>{heading}
           </Text>
         </View>
@@ -64,6 +61,7 @@ export default class FrameA extends Component {
   render() {
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'FRAME A'}

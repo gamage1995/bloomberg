@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Modal, Alert, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Modal, Image, SafeAreaView } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Header } from '../components/Header';
 import { FullWidthButton } from '../components/FullWidthButton';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { TabView, TabBar } from 'react-native-tab-view';
 
 const data = require('../../assets/data/data.json')
 const Image1 = require('../../assets/specialCase4.png')
 const ModalCancel = require('../../assets/modalCancel.png')
 const Arrow = require('../../assets/EventArrow.png');
-export default class SpecialCase3 extends Component {
+export default class SpecialCase4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,8 +60,6 @@ export default class SpecialCase3 extends Component {
               <Image source={Image1} style={styles.Image1} />
             </ImageZoom>
           </View>
-          {/* <View style={styles.CancelButtonCover}> */}
-          {/* </View> */}
         </ScrollView>
         <TouchableOpacity style={styles.CancelButtonCover} onPress={() => this.setState({ showModal: false })}>
           <Image source={ModalCancel} style={styles.CancelButton} />
@@ -76,7 +74,7 @@ export default class SpecialCase3 extends Component {
         <View style={[styles.EventArrowCover, { display: index == 0 || line2 == 'Contributory cause' ? 'none' : 'flex' }]}>
           <Image style={styles.EventArrow} source={Arrow} />
         </View>
-        <View style={[styles.EventSectionCover, {marginTop : line2 == 'Contributory cause' ? WindowHeight / 30 : 0}]}>
+        <View style={[styles.EventSectionCover, { marginTop: line2 == 'Contributory cause' ? WindowHeight / 30 : 0 }]}>
           <Text style={[
             styles.Line3Text,
             {
@@ -111,7 +109,7 @@ export default class SpecialCase3 extends Component {
 
   FirstRoute = () => {
     return (
-      <ScrollView style={styles.Body}>
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentBodyCover}>
           <Text style={[
             styles.ContentBodyText,
@@ -121,15 +119,15 @@ export default class SpecialCase3 extends Component {
             }]}>{data.SpecialCases[3].CaseDescription}</Text>
         </View>
         <View style={styles.BottomPadding}>
-  
+
         </View>
       </ScrollView>
     )
   };
 
   SecondRoute = () => {
-      return(
-        <ScrollView style={styles.Body}>
+    return (
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentBodyCover}>
           <Text style={[
             styles.ContentBodyText,
@@ -139,15 +137,15 @@ export default class SpecialCase3 extends Component {
             }]}>{data.SpecialCases[3].CaseExample}</Text>
         </View>
         <View style={styles.BottomPadding}>
-  
+
         </View>
       </ScrollView>
-      )
+    )
   }
 
   ThirdRoute = () => {
     return (
-      <ScrollView style={styles.Body}>
+      <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
         <View style={styles.ContentHeadingCover}>
           <Text style={[
             styles.ContentHeading, { fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement }]}>{data.SpecialCases[0].CaseApplication.Heading}
@@ -164,7 +162,7 @@ export default class SpecialCase3 extends Component {
           <FullWidthButton fill={'solid'} color={'#F8A01D'} buttonText={' VIEW CERTIFICATE '} />
         </TouchableOpacity>
         <View style={styles.BottomPadding}>
-  
+
         </View>
       </ScrollView>
     )
@@ -182,6 +180,7 @@ export default class SpecialCase3 extends Component {
     );
     return (
       <React.Fragment>
+        <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={data.SpecialCases[2].Title.toUpperCase()}
@@ -248,7 +247,6 @@ const styles = StyleSheet.create({
   ContentBodyText: {
     color: '#6A6A6A',
     fontFamily: 'OpenSans-Regular',
-    // marginBottom: WindowWidth / 25
   },
   Button1Cover: {
     marginBottom: WindowHeight / 25

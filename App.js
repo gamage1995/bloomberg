@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaView } from 'react-native'
+import SplashScreen from 'react-native-splash-screen'
 import HomeStack from './navigation/Navigator';
 
 export default class App extends Component {
@@ -10,13 +10,17 @@ export default class App extends Component {
     };
   }
 
+  componentDidMount(){
+    SplashScreen.hide();
+  }
+
   render() {
     return (
-      <SafeAreaView style={{flex : 1}}>
-        <NavigationContainer>
-          <HomeStack />
-        </NavigationContainer>
-      </SafeAreaView>
+      <React.Fragment>
+          <NavigationContainer>
+            <HomeStack />
+          </NavigationContainer>
+      </React.Fragment>
     );
   }
 }

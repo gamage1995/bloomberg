@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Dimensions, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView,Dimensions, Image,SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import { Header } from '../components/Header'
 
 const data = require('../../assets/data/data.json')
 const logo = require('../../assets/bloomberg.png');
-const uniMelbLogo = require('../../assets/unimelbLogo.png');
+const uniMelbLogo = require('../../assets/unimelbLogo2.png');
 
 export default class Page9 extends Component {
   constructor(props) {
@@ -44,15 +44,16 @@ export default class Page9 extends Component {
   render() {
     return (
       <React.Fragment>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#5C3B96F7' }} />
         <Header
           navigation={this.props.navigation}
           heading={'ABOUT APPLICATION'}
           handleChange={this.handleTextSizeChange}
           SubHeader={true}
         />
-        <ScrollView style={styles.Body}>
+        <ScrollView style={styles.Body} showsVerticalScrollIndicator={false}>
           <React.Fragment>
-            <View style={[styles.ContentBodyCover, {marginBottom : WindowHeight/70, marginTop : WindowHeight/80}]}>
+            <View style={[styles.ContentBodyCover, {marginTop : WindowHeight/80}]}>
               <Text style={[styles.ContentHeading, { fontSize: (WindowWidth / 22) + this.state.fontSizeIncrement }]}>
               {"This application guides doctors worldwide in correctly filling out death certificates"}
               </Text>
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
     height : WindowHeight/8,
     justifyContent : 'center',
     alignItems : 'center',
-    marginTop : WindowHeight/30
+    marginTop : WindowHeight/60
   },
   UniMelbLogo : {
     height : WindowHeight/20,
