@@ -109,6 +109,6 @@ const styles = StyleSheet.create({
     // marginBottom: WindowWidth / 30
   },
   BottomPadding: {
-    height: WindowHeight / 20
+    height: WindowHeight / 10
   }
 })

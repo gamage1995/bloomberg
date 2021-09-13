@@ -4,6 +4,7 @@ import HomePage from '../src/pages/HomePage'
 import Page1 from '../src/pages/Page1'
 import Page2 from '../src/pages/Page2'
 import Page3 from '../src/pages/Page3'
+import Page10 from '../src/pages/Page10'
 import FrameA from '../src/pages/FrameA'
 import FrameB from '../src/pages/FrameB'
 import FrameAPart1 from '../src/pages/FrameAPart1'
@@ -28,6 +29,7 @@ import SpecialCase3 from '../src/pages/SpecialCase3'
 import SpecialCase4 from '../src/pages/SpecialCase4'
 import Page9 from '../src/pages/Page9'
 
+
 const HomeStackNav = createStackNavigator();
 
 function HomeStack() {
@@ -50,6 +52,13 @@ function HomeStack() {
       <HomeStackNav.Screen
         name='Page2'
         component={Page2}
+        options={{
+          headerShown: false
+        }}
+      />
+      <HomeStackNav.Screen
+        name='Page10'
+        component={Page10}
         options={{
           headerShown: false
         }}

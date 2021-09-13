@@ -39,6 +39,11 @@ export default class HomePage extends Component {
                 cardRoute={'Page1'} navigation={this.props.navigation}
               />
               <MainCard
+                cardTitle={'ASCERTAINMENTOF MANNER OF DEATH'}
+                cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
+                cardRoute={'Page10'} navigation={this.props.navigation}
+              /> 
+              <MainCard
                 cardTitle={'INTERNATIONAL FORM'}
                 cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
                 cardRoute={'Page3'} navigation={this.props.navigation}
@@ -80,6 +85,7 @@ export default class HomePage extends Component {
                 cardIcon={require(`../../assets/icons8-development-skill-96.png`)}
                 cardRoute={'Page8'} navigation={this.props.navigation}
               />
+              
             </View>
           </View>
         </ScrollView>
