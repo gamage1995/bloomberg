@@ -50,25 +50,82 @@ export default class Page10 extends Component {
         handleChange={this.handleTextSizeChange}
         /> 
         <ScrollView style={styles.Body}>
-          {data.Page10.data.map(section => {
+          {data.Page10.data.map((section,index) => {
             return (
               <React.Fragment key={section.head}>
                 <View style={styles.ContentHeadingCover}>
                   <Text style={[styles.ContentHeading, {fontSize : (WindowWidth / 21) + this.state.fontSizeIncrement}]}>{section.head}</Text>
                 </View>
-                <View style={styles.ContentBodyCover}>
+                <View key={index} style={styles.ContentBodyCover}>
                   <Text style={[
                     styles.ContentBodyText,
                     {
                       fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
                       lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
-                      }]}>{section.body}</Text>
-                  <Unorderedlist><Text style={[
+                      }]}>{section.body[0]}</Text>
+               
+                
+                  <Unorderedlist bulletUnicode={0x2022}style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}><Text style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}>{section.bulletlist[0]}</Text></Unorderedlist>
+                  <Unorderedlist bulletUnicode={0x2022}style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}><Text style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}>{section.bulletlist[1]}</Text></Unorderedlist>
+                  <Unorderedlist bulletUnicode={0x2022}style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}><Text style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}>{section.bulletlist[2]}</Text></Unorderedlist>
+                    <Unorderedlist bulletUnicode={0x2022}style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}><Text style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}>{section.bulletlist[3]}</Text></Unorderedlist>
+                    <Unorderedlist bulletUnicode={0x2022}style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}><Text style={[
+                    styles.ContentBodyBulletText,
+                    {
+                      fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
+                      lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
+                      }]}>{section.bulletlist[4]}</Text></Unorderedlist>
+                    <Text style={[
                     styles.ContentBodyText,
                     {
                       fontSize: (WindowWidth / 24) + this.state.fontSizeIncrement,
                       lineHeight : (WindowWidth / 24) + this.state.fontSizeIncrement + 8
-                      }]}>{section.bulletlist}</Text></Unorderedlist>
+                      }]}>{section.body[1]}</Text>
                 </View>
                 
               </React.Fragment>
@@ -112,6 +169,12 @@ const styles = StyleSheet.create({
     color: '#6A6A6A',
     fontFamily: 'OpenSans-Regular',
     marginBottom: WindowWidth / 30
+  },
+  ContentBodyBulletText: {
+    color: '#6A6A6A',
+    fontFamily: 'OpenSans-Regular',
+    marginBottom: WindowWidth / 30,
+    marginLeft: WindowWidth /10,
   },
   BottomPadding: {
     height : WindowHeight/20

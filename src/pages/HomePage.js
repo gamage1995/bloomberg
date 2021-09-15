@@ -39,7 +39,7 @@ export default class HomePage extends Component {
                 cardRoute={'Page1'} navigation={this.props.navigation}
               />
               <MainCard
-                cardTitle={'ASCERTAINMENTOF MANNER OF DEATH'}
+                cardTitle={'ASCERTAINMENT OF MANNER OF DEATH'}
                 cardIcon={require(`../../assets/icons8-google-forms-96.png`)}
                 cardRoute={'Page10'} navigation={this.props.navigation}
               /> 
