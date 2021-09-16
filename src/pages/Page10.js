@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Unorderedlist from 'react-native-unordered-list';
 
 import { Header } from '../components/Header'
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 
 const data = require('../../assets/data/data.json')
@@ -41,7 +42,8 @@ export default class Page10 extends Component {
     this.setState({fontSizeIncrement : size})
   }
 
-  render() {
+  /*render() {*/
+  FirstRoute = () => {
     return (
       <React.Fragment>
         <Header 
@@ -138,7 +140,93 @@ export default class Page10 extends Component {
       </React.Fragment>
     );
   }
+  SecondRoute = () => {
+    return(
+      <ScrollView style={styles.Body}>
+      <View style={styles.ContentBodyCover}>
+        <Text style={[
+          styles.ContentBodyText,
+          {
+            fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+            lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+          }]}>{data.SpecialCases[0].CaseExample}</Text>
+      </View>
+      <View style={styles.BottomPadding}>
+  
+      </View>
+    </ScrollView>
+    )
+  }
+  
+  ThirdRoute = () => {
+  return (
+    <ScrollView style={styles.Body}>
+      <View style={styles.ContentBodyCover}>
+        <Text style={[
+          styles.ContentBodyText,
+          {
+            fontSize: (WindowWidth / 21) + this.state.fontSizeIncrement,
+            lineHeight: (WindowWidth / 21) + this.state.fontSizeIncrement + 8
+          }]}>{data.SpecialCases[0].CaseExample}</Text>
+      </View>
+      <View style={styles.BottomPadding}>
+  
+      </View>
+    </ScrollView>
+  )
+  };
+  
+  render() {
+    const renderTabBar = props => (
+      <TabBar
+        {...props}
+        indicatorStyle={{ backgroundColor: '#F8A01D' }}
+        style={{ backgroundColor: 'white' }}
+        labelStyle={{ color: '#383838', fontFamily: 'Roboto-Medium' }}
+      />
+    );
+    return (
+      <React.Fragment>
+        <Header
+          navigation={this.props.navigation}
+          heading={data.SpecialCases[0].Title.toUpperCase()}
+          handleChange={this.handleTextSizeChange}
+          SubHeader={true}
+        />
+        <TabView
+          navigationState={{ index: this.state.index, routes: this.state.routes }}
+          renderScene={({ route }) => {
+            switch (route.key) {
+              case 'first':
+                return <this.FirstRoute />
+              case 'second':
+                return <this.SecondRoute />
+              case 'third':
+                return <this.ThirdRoute />
+              default:
+                return null;
+            }
+          }}
+          onIndexChange={index => this.setState({ index })}
+          renderTabBar={renderTabBar}
+          initialLayout={{ width: Dimensions.get('window').width }}
+        />
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.showModal}
+          onRequestClose={() => this.setState({ showModal: false })}
+        >
+          <this.ModalContent />
+        </Modal>
+      </React.Fragment>
+    )
+  }
 }
+
+
+
+
 
 const dimensions = Dimensions.get("window");
 const WindowWidth = dimensions.width;
