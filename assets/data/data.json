@@ -31,8 +31,8 @@
         "data" : [
             {
                 "head" : "Manner of death",
-                "body" : ["Distinction between natural and unnatural deaths is fundamental. \n\nA natural death is the result of an evident disease process.\n\nNatural death corresponds to the manner of death ‘disease’.\n\nObvious natural deaths will be certified by the attending physician.\n\nAn unnatural death mostly results from external causes and corresponds to a manner of death of;", "Countries have medico legal death investigation systems (MLDI) for further examination of unnatural deaths.\n\nLegislative system will specify the deaths that require further review in MLDI.\n\nGiven legal framework differences on cases requiring referrals, physicians should familiarize themselves with all categories of reportable cases.\n\nPhysicians should follow the national guidelines for the further examination of unnatural deaths.\n\nPhysicians have the responsibility to refer unnatural deaths to the MLDI system.\n\nOnce the referral has been made it will often be within the remit of the relevant legal authority to determine the cause and manner of death.\n\nUnder-reporting of cases to the MLDI system may result in a miscarriage of justice and the under-reporting of unnatural deaths in vital statistics."],
-                "bulletlist" : ["accident","intentional selfharm", "Assault", "legal intervention", "war"]
+                "body" : "Distinction between natural and unnatural deaths is fundamental. \n\nA natural death is the result of an evident disease process.\n\nNatural death corresponds to the manner of death ‘disease’.\n\nObvious natural deaths will be certified by the attending physician.\n\nAn unnatural death mostly results from external causes and corresponds to a manner of death of;\n ",
+                "bulletlist" : "test"
             }
         ]
 
